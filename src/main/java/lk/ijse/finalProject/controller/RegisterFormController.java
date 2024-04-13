@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -14,19 +15,29 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class RegisterFormController {
+    @FXML
     public TextField txtUsername;
+    @FXML
     public TextField txtPassword;
+    @FXML
     public TextField txtReEnterPassword;
     @FXML
     public AnchorPane pane;
+    @FXML
+    public Label lbluser;
 
     public void txtUsernameOnAction(ActionEvent actionEvent) {
+        String user = txtUsername.getText();
+        lbluser.setText(user);
+        txtPassword.getOnAction();
     }
 
     public void txtPasswordOnAction(ActionEvent actionEvent) {
+        txtReEnterPassword.getOnAction();
     }
 
     public void txtReEnterPasswordOnAction(ActionEvent actionEvent) {
+        btnRegisterOnAction(actionEvent);
     }
 
     public void btnRegisterOnAction(ActionEvent actionEvent) {

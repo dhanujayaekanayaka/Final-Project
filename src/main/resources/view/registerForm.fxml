@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.RegisterFormController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.76">
+      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52">
          <image>
             <Image url="@../image/16700399_1261374977273187_911085346465028800_o.jpg" />
          </image>
