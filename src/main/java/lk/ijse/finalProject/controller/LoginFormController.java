@@ -49,5 +49,6 @@ public class LoginFormController {
         stage.setTitle("Registration Form");
         stage.centerOnScreen();
         stage.show();
+
     }
 }

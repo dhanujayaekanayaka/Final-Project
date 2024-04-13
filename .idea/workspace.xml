@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f2dabec-2685-459b-9e48-9371582c313d" name="Changes" comment="git push">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/DB/Dbconnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/680b1b25-8f6d-4030-b1cf-6e54b1969b26.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/680b1b25-8f6d-4030-b1cf-6e54b1969b26.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/LoginFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/LoginFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/RegisterFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/RegisterFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboardForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboardForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/loginForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/loginForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/UserRepo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712992457605</updated>
       <workItem from="1712992458578" duration="8932000" />
-      <workItem from="1713010831554" duration="2964000" />
+      <workItem from="1713010831554" duration="5850000" />
     </task>
     <task id="LOCAL-00001" summary="git push">
       <option name="closed" value="true" />
@@ -153,7 +148,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713003773388</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="git push">
+      <option name="closed" value="true" />
+      <created>1713014085113</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713014085113</updated>
+    </task>
+    <task id="LOCAL-00008" summary="git push">
+      <option name="closed" value="true" />
+      <created>1713014127915</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713014127915</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
