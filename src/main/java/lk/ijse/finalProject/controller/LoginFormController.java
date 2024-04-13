@@ -1,6 +1,7 @@
 package lk.ijse.finalProject.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +15,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginFormController {
+    @FXML
     public TextField txtUsername;
+    @FXML
     public TextField txtPassword;
 
     public void txtUsernameOnAction(ActionEvent actionEvent) {
