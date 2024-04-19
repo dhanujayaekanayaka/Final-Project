@@ -17,7 +17,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="rootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DashboardFormController">
    <children>
       <Text layoutX="232.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to">
@@ -30,7 +29,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <Label fx:id="lblDatePicker" layoutX="1004.0" layoutY="26.0" text="DATE">
+      <Label fx:id="lblDatePicker" layoutX="983.0" layoutY="26.0" text="2024-01-01">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -70,23 +69,25 @@
          <effect>
             <DropShadow spread="0.16" />
          </effect>
+         <children>
+            <Text fill="#1d4e89" layoutX="74.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US CARGO">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="33.0" layoutY="18.0">
+               <image>
+                  <Image url="@../icon/icons8-logo-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="54.0" layoutY="139.0" onAction="#btnMovetoDriverFormOnAction" text="Driver">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
       </Pane>
-      <Text fill="#1d4e89" layoutX="87.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US CARGO">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="46.0" layoutY="27.0">
-         <image>
-            <Image url="@../icon/icons8-logo-50.png" />
-         </image>
-      </ImageView>
       <Text layoutX="64.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="64.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -117,7 +118,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <JFXButton layoutX="64.0" layoutY="652.0" prefHeight="24.0" prefWidth="107.0" text="Logout">
+      <JFXButton layoutX="64.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Logout">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

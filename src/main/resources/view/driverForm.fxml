@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="709.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DriverFormController">
+<AnchorPane fx:id="rootNode" prefHeight="709.0" prefWidth="779.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DriverFormController">
    <children>
-      <Pane prefHeight="709.0" prefWidth="200.0" style="-fx-background-color: lightgray;">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Pane>
       <Pane layoutX="209.0" prefHeight="83.0" prefWidth="871.0" style="-fx-background-color: white;">
          <effect>
             <DropShadow />
@@ -25,8 +24,87 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <TextField layoutX="254.0" layoutY="29.0" prefHeight="27.0" prefWidth="236.0" promptText="Search driver" style="-fx-background-radius: 10;" />
+            <TextField layoutX="328.0" layoutY="29.0" prefHeight="27.0" prefWidth="236.0" promptText="Search driver" style="-fx-background-radius: 10;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0">
+               <image>
+                  <Image url="@../icon/icons8-search-50.png" />
+               </image>
+            </ImageView>
+            <Circle fill="DODGERBLUE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="DODGERBLUE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="758.0" layoutY="33.0" text="user" />
+            <Circle fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
+      </Pane>
+      <Pane layoutX="209.0" layoutY="96.0" prefHeight="595.0" prefWidth="564.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text layoutX="36.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="296.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtFirstName" alignment="CENTER" layoutX="36.0" layoutY="198.0" prefHeight="34.0" prefWidth="236.0" promptText="Dhanujaya" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtLastName" alignment="CENTER" layoutX="296.0" layoutY="198.0" prefHeight="34.0" prefWidth="236.0" promptText="Ekanayake" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtAddress" alignment="CENTER" layoutX="36.0" layoutY="278.0" prefHeight="34.0" prefWidth="495.0" promptText="No 116/1,Grace Piries Road,Panadura" style="-fx-background-radius: 10;" />
+            <Text layoutX="36.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtDob" alignment="CENTER" layoutX="36.0" layoutY="359.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtNic" alignment="CENTER" layoutX="296.0" layoutY="359.0" prefHeight="34.0" prefWidth="236.0" promptText="2003XXXXXXXX" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtPhone" alignment="CENTER" layoutX="36.0" layoutY="439.0" prefHeight="34.0" prefWidth="236.0" promptText="07XXXXXXXX" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtEmail" alignment="CENTER" layoutX="296.0" layoutY="439.0" prefHeight="34.0" prefWidth="236.0" promptText="abc@gmail.com" style="-fx-background-radius: 10;" />
+            <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="513.0" onAction="#btnConformOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="conform">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="212.0" layoutY="513.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="clear">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="513.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="save">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <Text layoutX="36.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birthday">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="296.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="36.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="296.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="imvProfilePicture" fitHeight="150.0" fitWidth="200.0" layoutX="172.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane layoutX="786.0" layoutY="96.0" prefHeight="595.0" prefWidth="288.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow />
+         </effect>
       </Pane>
    </children>
 </AnchorPane>
