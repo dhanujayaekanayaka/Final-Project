@@ -85,39 +85,39 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
+            <JFXButton layoutX="54.0" layoutY="189.0" onAction="#btnMoveToVehicleFormAction" style="-fx-cursor: hand;" text="Vehicle">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="54.0" layoutY="239.0" onAction="#btnMoveToPackageFormOnAction" style="-fx-cursor: hand;" text="Package">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="54.0" layoutY="289.0" onAction="#btnMoveToRouteOnAction" style="-fx-cursor: hand;" text="Route">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="54.0" layoutY="339.0" onAction="#btnMoveToServiceOnAction" style="-fx-cursor: hand;" text="Service">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="54.0" layoutY="461.0" onAction="#btnMyProfileOnAction" style="-fx-cursor: hand;" text="My Profile">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="54.0" layoutY="89.0" onAction="#btnMoveToDashboardOnAction" style="-fx-cursor: hand;" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
-      <Text layoutX="64.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="64.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="64.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="64.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Route">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="64.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
       <Circle fill="#ffffff00" layoutX="107.0" layoutY="440.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-      <Text layoutX="64.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
       <JFXButton layoutX="64.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Logout">
          <font>
             <Font name="System Bold" size="13.0" />

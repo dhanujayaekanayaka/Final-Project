@@ -40,4 +40,23 @@ public class DashboardFormController {
         stage.setTitle("Driver Form");
         stage.centerOnScreen();
     }
+
+    public void btnMoveToVehicleFormAction(ActionEvent event) {
+
+    }
+
+    public void btnMoveToPackageFormOnAction(ActionEvent event) {
+    }
+
+    public void btnMoveToRouteOnAction(ActionEvent event) {
+    }
+
+    public void btnMoveToServiceOnAction(ActionEvent event) {
+    }
+
+    public void btnMyProfileOnAction(ActionEvent event) {
+    }
+
+    public void btnMoveToDashboardOnAction(ActionEvent event) {
+    }
 }
