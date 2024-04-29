@@ -51,15 +51,9 @@ public class DriverRepo {
         return null;
     }
 
-    public static void setUpScrollPane(AnchorPane scrollPane) throws SQLException {
-        String sql = "SELECT first_name FROM Driver";
+    public static void setValues() throws SQLException {
+        String sql = "SELECT * FROM Driver";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        ResultSet resultSet = pstm.executeQuery();
-        if (resultSet.next()){
-            String dbName = resultSet.getString("first_name");
-            List<String> dbNameList = new ArrayList();
-            dbNameList.add(dbName);
-            scrollPane.getChildren().add((Node) dbNameList);
-        }
+        pstm.executeQuery();
     }
 }

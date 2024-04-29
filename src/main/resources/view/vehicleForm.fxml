@@ -250,76 +250,76 @@
             <Image url="@../icon/icons8-driver-48.png" />
          </image>
       </ImageView>
-      <ScrollPane fx:id="scrollPane" layoutX="777.0" layoutY="107.0" prefHeight="595.0" prefWidth="299.0">
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="777.0" layoutY="107.0" prefHeight="595.0" prefWidth="299.0" vbarPolicy="ALWAYS">
          <content>
             <AnchorPane prefHeight="592.0" prefWidth="299.0" style="-fx-background-color: white;">
                <children>
-                  <Circle fx:id="vp1" fill="WHITE" layoutX="39.0" layoutY="49.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp1" fill="WHITE" layoutX="39.0" layoutY="39.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fx:id="vp2" fill="WHITE" layoutX="39.0" layoutY="109.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="vp3" fill="WHITE" layoutX="39.0" layoutY="169.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="vp4" fill="WHITE" layoutX="39.0" layoutY="229.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="vp5" fill="WHITE" layoutX="39.0" layoutY="289.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="vp6" fill="WHITE" layoutX="39.0" layoutY="349.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="vp7" fill="WHITE" layoutX="39.0" layoutY="409.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="vp8" fill="WHITE" layoutX="39.0" layoutY="469.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Hyperlink layoutX="114.0" layoutY="530.0" text="see all" />
-                  <Label fx:id="vn1" layoutX="71.0" layoutY="33.0" text="Name">
+                  <Circle fx:id="vp3" fill="WHITE" layoutX="39.0" layoutY="179.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp4" fill="WHITE" layoutX="39.0" layoutY="249.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp5" fill="WHITE" layoutX="39.0" layoutY="319.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp6" fill="WHITE" layoutX="39.0" layoutY="389.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp7" fill="WHITE" layoutX="39.0" layoutY="459.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp8" fill="WHITE" layoutX="39.0" layoutY="529.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Hyperlink layoutX="114.0" layoutY="561.0" text="see all" />
+                  <Label fx:id="vn1" layoutX="71.0" layoutY="23.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Line endX="100.0" layoutX="150.0" layoutY="79.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="69.0" startX="-100.0" stroke="#9a9a9a" />
                   <Line endX="100.0" layoutX="150.0" layoutY="139.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Line endX="100.0" layoutX="150.0" layoutY="199.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Line endX="100.0" layoutX="150.0" layoutY="259.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Line endX="100.0" layoutX="150.0" layoutY="319.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Line endX="100.0" layoutX="150.0" layoutY="379.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Line endX="100.0" layoutX="150.0" layoutY="439.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Line endX="100.0" layoutX="150.0" layoutY="499.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="vnp1" layoutX="71.0" layoutY="45.0" text="Name" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="209.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="279.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="349.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="419.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="489.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="559.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Label fx:id="vnp1" layoutX="71.0" layoutY="35.0" text="Name" />
                   <Label fx:id="vn2" layoutX="71.0" layoutY="93.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                   <Label fx:id="vnp2" layoutX="71.0" layoutY="105.0" text="Name" />
-                  <Label fx:id="vn3" layoutX="71.0" layoutY="153.0" text="Name">
+                  <Label fx:id="vn3" layoutX="71.0" layoutY="163.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="vnp3" layoutX="71.0" layoutY="165.0" text="Name" />
-                  <Label fx:id="vn4" layoutX="71.0" layoutY="213.0" text="Name">
+                  <Label fx:id="vnp3" layoutX="71.0" layoutY="175.0" text="Name" />
+                  <Label fx:id="vn4" layoutX="71.0" layoutY="233.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="vnp4" layoutX="71.0" layoutY="225.0" text="Name" />
-                  <Label fx:id="vn5" layoutX="71.0" layoutY="273.0" text="Name">
+                  <Label fx:id="vnp4" layoutX="71.0" layoutY="245.0" text="Name" />
+                  <Label fx:id="vn5" layoutX="71.0" layoutY="303.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="vnp5" layoutX="71.0" layoutY="285.0" text="Name" />
-                  <Label fx:id="vn6" layoutX="71.0" layoutY="333.0" text="Name">
+                  <Label fx:id="vnp5" layoutX="71.0" layoutY="315.0" text="Name" />
+                  <Label fx:id="vn6" layoutX="71.0" layoutY="373.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="vnp6" layoutX="71.0" layoutY="345.0" text="Name" />
-                  <Label fx:id="vn7" layoutX="71.0" layoutY="393.0" text="Name">
+                  <Label fx:id="vnp6" layoutX="71.0" layoutY="385.0" text="Name" />
+                  <Label fx:id="vn7" layoutX="71.0" layoutY="443.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="vnp7" layoutX="71.0" layoutY="405.0" text="Name" />
-                  <Label fx:id="vn8" layoutX="71.0" layoutY="453.0" text="Name">
+                  <Label fx:id="vnp7" layoutX="71.0" layoutY="455.0" text="Name" />
+                  <Label fx:id="vn8" layoutX="71.0" layoutY="513.0" text="Name">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="vnp8" layoutX="71.0" layoutY="465.0" text="Name" />
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="44.0" onSwipeLeft="#goToDetailOnSwipeLeft" rotate="180.0">
+                  <Label fx:id="vnp8" layoutX="71.0" layoutY="525.0" text="Name" />
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="34.0" onSwipeLeft="#goToDetailOnSwipeLeft" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
@@ -329,32 +329,32 @@
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="164.0" rotate="180.0">
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="174.0" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="224.0" rotate="180.0">
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="244.0" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="284.0" rotate="180.0">
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="314.0" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="344.0" rotate="180.0">
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="384.0" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="404.0" rotate="180.0">
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="454.0" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="464.0" rotate="180.0">
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="524.0" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>

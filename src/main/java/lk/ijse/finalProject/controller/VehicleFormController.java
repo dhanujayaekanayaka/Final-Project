@@ -8,7 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.SwipeEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -66,9 +65,30 @@ public class VehicleFormController {
     }
 
     private void setProfile() {
-        Image image = new Image(String.valueOf(getClass().getResource("/image/humen1.jpeg")));
+        Image image = new Image(String.valueOf(this.getClass().getResource("/image/humen1.jpeg")));
         profilePicture.setFill(new ImagePattern(image));
         profilePicture1.setFill(new ImagePattern(image));
+
+        Image image1 = new Image(String.valueOf(this.getClass().getResource("/truck/daf.jpeg")));
+        Image image2 = new Image(String.valueOf(this.getClass().getResource("/truck/Scania3.jpg")));
+        Image image3 = new Image(String.valueOf(this.getClass().getResource("/truck/image-2.jpeg")));
+        Image image4 = new Image(String.valueOf(this.getClass().getResource("/truck/Scania1.jpeg")));
+        Image image5 = new Image(String.valueOf(this.getClass().getResource("/truck/DAF1.jpeg")));
+        Image image6 = new Image(String.valueOf(this.getClass().getResource("/truck/Scania2.jpg")));
+        Image image7 = new Image(String.valueOf(this.getClass().getResource("/truck/daf.jpg")));
+        Image image8 = new Image(String.valueOf(this.getClass().getResource("/truck/images.jpeg")));
+
+        vp1.setFill(new ImagePattern(image1));
+        vp2.setFill(new ImagePattern(image2));
+        vp3.setFill(new ImagePattern(image3));
+        vp4.setFill(new ImagePattern(image4));
+        vp5.setFill(new ImagePattern(image5));
+        vp6.setFill(new ImagePattern(image6));
+        vp7.setFill(new ImagePattern(image7));
+        vp8.setFill(new ImagePattern(image8));
+
+        Image blank = new Image(String.valueOf(this.getClass().getResource("/blankProfile/images.png")));
+        vehicleProfile.setFill(new ImagePattern(blank));
     }
 
     public void btnConformOnAction(ActionEvent event) {
@@ -131,7 +151,7 @@ public class VehicleFormController {
     }
 
     public void goToDetailOnSwipeLeft(SwipeEvent swipeEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/vehicleViewForm.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(this.getClass().getResource("/view/vehicleViewForm.fxml"));
         Scene scene = new Scene(anchorPane);
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setScene(scene);
