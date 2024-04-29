@@ -24,6 +24,7 @@ public class LoginFormController {
     public TextField txtPassword;
     public AnchorPane rootNode;
 
+
     public void txtUsernameOnAction(ActionEvent actionEvent) {
         txtPasswordOnAction(actionEvent);
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -8,8 +9,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -25,16 +28,33 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <TextField layoutX="328.0" layoutY="29.0" prefHeight="27.0" prefWidth="236.0" promptText="Search driver" style="-fx-background-radius: 10;" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0" style="-fx-cursor: hand;">
+            <Circle fill="WHITE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="username" layoutX="758.0" layoutY="33.0" text="user" />
+            <Circle fx:id="profilePicture1" fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="629.0" layoutY="31.0">
                <image>
-                  <Image url="@../icon/icons8-search-50.png" />
+                  <Image url="@../gift/icons8-alert.gif" />
                </image>
             </ImageView>
-            <Circle fill="#62a9eb" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#62a9eb" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label layoutX="758.0" layoutY="33.0" text="user" />
-            <Circle fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="583.0" layoutY="30.0">
+               <image>
+                  <Image url="@../gift/icons8-mail(1).gif" />
+               </image>
+            </ImageView>
+            <HBox layoutX="359.0" layoutY="30.0" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 13;">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" style="-fx-cursor: hand;">
+                     <image>
+                        <Image url="@../icon/icons8-search-50.png" />
+                     </image>
+                  </ImageView>
+                  <TextField prefHeight="27.0" prefWidth="197.0" promptText="Search driver" style="-fx-background-radius: 10; -fx-background-color: white;" />
+               </children>
+               <effect>
+                  <DropShadow height="6.0" radius="2.5" width="6.0" />
+               </effect>
+            </HBox>
          </children>
       </Pane>
       <Pane layoutX="206.0" layoutY="90.0" prefHeight="613.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
@@ -63,7 +83,6 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <ImageView fx:id="imvProfilePicture" fitHeight="150.0" fitWidth="200.0" layoutX="172.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" />
             <TextField fx:id="txtChassisNumber" alignment="CENTER" layoutX="36.0" layoutY="278.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
             <TextField fx:id="txtEngineNumber" alignment="CENTER" layoutX="296.0" layoutY="278.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
             <Pane layoutX="58.0" layoutY="186.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
@@ -120,6 +139,17 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
+            <Circle fx:id="vehicleProfile" fill="WHITE" layoutX="283.0" layoutY="96.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+            <Pane layoutX="308.0" layoutY="145.0" prefHeight="19.0" prefWidth="25.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXButton layoutX="6.0" layoutY="-1.0" prefHeight="15.0" prefWidth="28.0" text="." />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="-2.0" layoutY="-6.0">
+                     <image>
+                        <Image url="@../icon/icons8-camera-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane prefHeight="709.0" prefWidth="200.0" style="-fx-background-color: white;">
@@ -139,17 +169,17 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="59.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Logout" textFill="#979696">
+            <JFXButton layoutX="59.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Back" textFill="#979696">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <ImageView layoutX="56.0" layoutY="649.0">
+            <Circle fx:id="profilePicture" fill="WHITE" layoutX="102.0" layoutY="519.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="59.0" layoutY="652.0">
                <image>
-                  <Image url="@../icon/icons8-logout-30.png" />
+                  <Image url="@../icon/icons8-back-64(1).png" />
                </image>
             </ImageView>
-            <Circle fill="WHITE" layoutX="102.0" layoutY="519.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
          <effect>
             <DropShadow height="18.03" radius="5.5525" width="6.18" />
@@ -185,7 +215,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="65.0" layoutY="128.0" onAction="#btnMoveToDashboardOnAction" style="-fx-cursor: hand;" text="Dashboard" textFill="#979696">
+      <JFXButton layoutX="65.0" layoutY="128.0" onAction="#btnMoveToDashboardOnAction" prefWidth="131.0" style="-fx-cursor: hand;" text="Dashboard" textFill="#979696">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -221,9 +251,117 @@
          </image>
       </ImageView>
       <ScrollPane fx:id="scrollPane" layoutX="777.0" layoutY="107.0" prefHeight="595.0" prefWidth="299.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="296.0" style="-fx-background-color: white;" />
-        </content>
+         <content>
+            <AnchorPane prefHeight="592.0" prefWidth="299.0" style="-fx-background-color: white;">
+               <children>
+                  <Circle fx:id="vp1" fill="WHITE" layoutX="39.0" layoutY="49.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp2" fill="WHITE" layoutX="39.0" layoutY="109.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp3" fill="WHITE" layoutX="39.0" layoutY="169.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp4" fill="WHITE" layoutX="39.0" layoutY="229.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp5" fill="WHITE" layoutX="39.0" layoutY="289.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp6" fill="WHITE" layoutX="39.0" layoutY="349.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp7" fill="WHITE" layoutX="39.0" layoutY="409.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vp8" fill="WHITE" layoutX="39.0" layoutY="469.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Hyperlink layoutX="114.0" layoutY="530.0" text="see all" />
+                  <Label fx:id="vn1" layoutX="71.0" layoutY="33.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Line endX="100.0" layoutX="150.0" layoutY="79.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="139.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="199.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="259.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="319.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="379.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="439.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Line endX="100.0" layoutX="150.0" layoutY="499.0" startX="-100.0" stroke="#9a9a9a" />
+                  <Label fx:id="vnp1" layoutX="71.0" layoutY="45.0" text="Name" />
+                  <Label fx:id="vn2" layoutX="71.0" layoutY="93.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vnp2" layoutX="71.0" layoutY="105.0" text="Name" />
+                  <Label fx:id="vn3" layoutX="71.0" layoutY="153.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vnp3" layoutX="71.0" layoutY="165.0" text="Name" />
+                  <Label fx:id="vn4" layoutX="71.0" layoutY="213.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vnp4" layoutX="71.0" layoutY="225.0" text="Name" />
+                  <Label fx:id="vn5" layoutX="71.0" layoutY="273.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vnp5" layoutX="71.0" layoutY="285.0" text="Name" />
+                  <Label fx:id="vn6" layoutX="71.0" layoutY="333.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vnp6" layoutX="71.0" layoutY="345.0" text="Name" />
+                  <Label fx:id="vn7" layoutX="71.0" layoutY="393.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vnp7" layoutX="71.0" layoutY="405.0" text="Name" />
+                  <Label fx:id="vn8" layoutX="71.0" layoutY="453.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vnp8" layoutX="71.0" layoutY="465.0" text="Name" />
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="44.0" onSwipeLeft="#goToDetailOnSwipeLeft" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="104.0" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="164.0" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="224.0" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="284.0" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="344.0" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="404.0" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="464.0" rotate="180.0">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(2).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </content>
       </ScrollPane>
    </children>
 </AnchorPane>

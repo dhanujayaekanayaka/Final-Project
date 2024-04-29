@@ -1,14 +1,10 @@
 package lk.ijse.finalProject.repository;
 
-import javafx.scene.Node;
-import javafx.scene.control.ScrollPane;
 import lk.ijse.finalProject.DB.Dbconnection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class VehicleRepo {
     public static boolean registerVehicle(String availableId,String model, String vehicleNumber, String chassisNumber, String engineNumber, String color, String yom, String registerDate, String currentDistance) throws SQLException {
@@ -44,18 +40,6 @@ public class VehicleRepo {
             return "V" + ++idNum;
         } else {
             return "V1";
-        }
-    }
-
-    public static void setUpScrollPane(ScrollPane scrollpane) throws SQLException {
-        String sql = "SELECT first_name FROM Vehicle";
-        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        ResultSet resultSet = pstm.executeQuery();
-        if (resultSet.next()) {
-            String dbName = resultSet.getString("first_name");
-            List<String> dbNameList = new ArrayList();
-            dbNameList.add(dbName);
-            scrollpane.getChildrenUnmodifiable().add((Node) dbNameList);
         }
     }
 }

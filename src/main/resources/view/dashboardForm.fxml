@@ -4,8 +4,8 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
@@ -34,36 +34,19 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <LineChart layoutX="206.0" layoutY="77.0" prefHeight="409.0" prefWidth="500.0">
+      <LineChart fx:id="lineChart" layoutX="206.0" layoutY="77.0" prefHeight="409.0" prefWidth="500.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
           <NumberAxis side="LEFT" />
         </yAxis>
-         <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
-         </effect>
       </LineChart>
-      <DialogPane layoutX="714.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="352.0">
-          <header>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
-          </header>
-          <expandableContent>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0" />
-          </expandableContent>
-         <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
-         </effect>
-      </DialogPane>
-      <TableView layoutX="228.0" layoutY="485.0" prefHeight="200.0" prefWidth="839.0">
+      <TableView fx:id="tblRoute" layoutX="228.0" layoutY="485.0" prefHeight="200.0" prefWidth="466.0" style="-fx-background-color: lightgray;">
         <columns>
-          <TableColumn prefWidth="75.0" text="Route" />
-          <TableColumn prefWidth="90.0" text="Availability" />
+          <TableColumn fx:id="clanRoute" prefWidth="75.0" text="Route" />
+          <TableColumn fx:id="clmnAvailability" prefWidth="90.0" text="Availability" />
         </columns>
-         <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
-         </effect>
       </TableView>
       <Pane prefHeight="709.0" prefWidth="200.0" style="-fx-background-color: white;">
          <effect>
@@ -147,7 +130,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Circle fill="#ffffff00" layoutX="107.0" layoutY="440.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="107.0" layoutY="440.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
       <JFXButton layoutX="64.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Logout" textFill="#979696">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -160,7 +143,17 @@
       </ImageView>
       <Circle fill="#62a9eb" layoutX="815.0" layoutY="33.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#62a9eb" layoutX="861.0" layoutY="33.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="978.0" layoutY="23.0" text="user" />
-      <Circle fill="WHITE" layoutX="1041.0" layoutY="33.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="userName" layoutX="978.0" layoutY="23.0" text="user" />
+      <Circle fx:id="profilePicture1" fill="WHITE" layoutX="1041.0" layoutY="33.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="706.0" layoutY="107.0" pannable="true" prefHeight="578.0" prefWidth="362.0" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="577.0" prefWidth="360.0" style="-fx-background-color: white;" />
+        </content>
+      </ScrollPane>
+      <Text layoutX="706.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Packages">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
