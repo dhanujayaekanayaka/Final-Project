@@ -4,12 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f2dabec-2685-459b-9e48-9371582c313d" name="Changes" comment="git push">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3f2dabec-2685-459b-9e48-9371582c313d" name="Changes" comment="git add">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverViewFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleSelectionForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleViewFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/VehicleRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gift/icons8-combo-chart.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gift/icons8-package.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gift/icons8-route.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gift/icons8-tools.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gift/icons8-truck.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-cargo-96(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-dashboard-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-driver-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-package-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-tools-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-truck-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/humen1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/driverViewForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleSelection.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleViewForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DashboardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DashboardFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/DriverRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/DriverRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboardForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboardForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/driverForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/driverForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vehicleForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +79,10 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/home/dhanujaya/Desktop/FinalProject/Final-Project/src/main/java/lk/ijse/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -70,6 +94,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/icon" />
+      <recent name="$PROJECT_DIR$/src/main/resources/gift" />
       <recent name="$PROJECT_DIR$/src/main/resources/image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -263,7 +288,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713675715545</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="new one">
+      <option name="closed" value="true" />
+      <created>1713852946335</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1713852946335</updated>
+    </task>
+    <task id="LOCAL-00020" summary="git add">
+      <option name="closed" value="true" />
+      <created>1713884145623</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1713884145623</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +312,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git push" />
-    <option name="LAST_COMMIT_MESSAGE" value="git push" />
+    <MESSAGE value="new one" />
+    <MESSAGE value="git add" />
+    <option name="LAST_COMMIT_MESSAGE" value="git add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

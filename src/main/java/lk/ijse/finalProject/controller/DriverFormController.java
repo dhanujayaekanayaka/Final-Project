@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import lk.ijse.finalProject.repository.DriverRepo;
 
 import java.sql.SQLException;
@@ -19,6 +20,14 @@ public class DriverFormController {
     public TextField txtEmail;
     public ImageView imvProfilePicture;
     public AnchorPane rootNode;
+    public AnchorPane scrollPane;
+    public void initialize(){
+        try {
+            DriverRepo.setUpScrollPane(scrollPane);
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
 
     public void btnConformOnAction(ActionEvent event) {
     }
@@ -42,5 +51,29 @@ public class DriverFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    }
+
+    public void btnMovetoDriverFormOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMoveToVehicleFormAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMoveToPackageFormOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMoveToRouteOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMoveToServiceOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMyProfileOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMoveToDashboardOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnBackToLoginOnAction(ActionEvent actionEvent) {
     }
 }

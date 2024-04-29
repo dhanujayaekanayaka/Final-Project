@@ -2,6 +2,7 @@ package lk.ijse.finalProject.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -24,7 +25,7 @@ public class DashboardFormController {
     }
 
     public void btnBackToLoginOnAction(ActionEvent event) throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/loginForm.fxml"));
         Scene scene = new Scene(rootNode);
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setScene(scene);
@@ -32,8 +33,8 @@ public class DashboardFormController {
         stage.centerOnScreen();
     }
 
-    public void btnMovetoDriverFormOnAction(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/driverForm.fxml"));
+    public void btnMoveToDriverFormOnAction(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/driverForm.fxml"));
         Scene scene = new Scene(pane);
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setScene(scene);
@@ -41,8 +42,13 @@ public class DashboardFormController {
         stage.centerOnScreen();
     }
 
-    public void btnMoveToVehicleFormAction(ActionEvent event) {
-
+    public void btnMoveToVehicleFormAction(ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/view/vehicleForm.fxml"));
+        Scene scene = new Scene(parent);
+        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Vehicle Form");
+        stage.centerOnScreen();
     }
 
     public void btnMoveToPackageFormOnAction(ActionEvent event) {

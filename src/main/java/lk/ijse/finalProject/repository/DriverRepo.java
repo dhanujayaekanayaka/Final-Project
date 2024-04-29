@@ -1,11 +1,15 @@
 package lk.ijse.finalProject.repository;
 
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
 import lk.ijse.finalProject.DB.Dbconnection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DriverRepo {
     public static void saveDriver(String driverId, String firstName, String lastName, String address, String dob, String nic, String phone, String email) throws SQLException {
@@ -45,5 +49,17 @@ public class DriverRepo {
             return dbDriverId;
         }
         return null;
+    }
+
+    public static void setUpScrollPane(AnchorPane scrollPane) throws SQLException {
+        String sql = "SELECT first_name FROM Driver";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()){
+            String dbName = resultSet.getString("first_name");
+            List<String> dbNameList = new ArrayList();
+            dbNameList.add(dbName);
+            scrollPane.getChildren().add((Node) dbNameList);
+        }
     }
 }
