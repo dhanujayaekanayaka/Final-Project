@@ -1,9 +1,12 @@
 package lk.ijse.finalProject.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -15,6 +18,7 @@ import lk.ijse.finalProject.repository.DriverRepo;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Stack;
 
 public class DriverFormController {
@@ -53,11 +57,17 @@ public class DriverFormController {
     public Circle dp8;
     public Label dn8;
     public Label dnp8;
+    public ComboBox<String > comboBox;
 
     public void initialize(){
+        setCombo();
         setProfilePicture();
 
     }
+
+    private void setCombo() {
+    }
+
 
     private void setProfilePicture() {
         Image image = new Image(String.valueOf(this.getClass().getResource("/image/humen1.jpeg")));

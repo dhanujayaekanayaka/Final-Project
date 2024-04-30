@@ -1,8 +1,8 @@
 package lk.ijse.finalProject.repository;
 
-import javafx.scene.Node;
+import javafx.collections.FXCollections;
 import javafx.scene.control.Alert;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ComboBox;
 import lk.ijse.finalProject.DB.Dbconnection;
 
 import java.sql.PreparedStatement;
@@ -56,4 +56,16 @@ public class DriverRepo {
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.executeQuery();
     }
+
+    public static void setComboBox(ComboBox comboBox) throws SQLException {
+        String sql = "SELECT driver_id FROM Driver";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()){
+            String driverId = resultSet.getString("driver_id");
+            comboBox.setItems(FXCollections.observableArrayList("driverId"));
+        }
+    }
+
+
 }
