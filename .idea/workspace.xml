@@ -5,15 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f2dabec-2685-459b-9e48-9371582c313d" name="Changes" comment="git push">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/model/tm/CustomerTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverAddFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/model/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/model/tm/VehicleTm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-close-24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/driverAddForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DashboardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DashboardFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverViewFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/DriverViewFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/DriverRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/DriverRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/LoginFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/LoginFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleSelectionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleSelectionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/VehicleRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/repository/VehicleRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboardForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboardForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/driverForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/driverForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/driverViewForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/driverViewForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vehicleForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vehicleSelection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleSelection.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vehicleViewForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleViewForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,39 +53,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.LauncherWrapper.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dhanujaya/Desktop/FinalProject/Final-Project/src/main/resources/driver&quot;,
-    &quot;mysql-explain.agentPath&quot;: &quot;/home/dhanujaya/.local/share/JetBrains/IdeaIC2023.3/mysql-explain-intellij-plugin/lib/mysql-explain-agent-1.1.1-with-dependencies.jar&quot;,
-    &quot;mysql-explain.existMysqlJar&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/dhanujaya/Desktop/FinalProject/Final-Project/src/main/java/lk/ijse/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.LauncherWrapper.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/dhanujaya/Desktop/FinalProject/Final-Project/src/main/resources/icon",
+    "mysql-explain.agentPath": "/home/dhanujaya/.local/share/JetBrains/IdeaIC2023.3/mysql-explain-intellij-plugin/lib/mysql-explain-agent-1.1.1-with-dependencies.jar",
+    "mysql-explain.existMysqlJar": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/dhanujaya/Desktop/FinalProject/Final-Project/src/main/java/lk/ijse/Main.java",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/driver" />
       <recent name="$PROJECT_DIR$/src/main/resources/icon" />
+      <recent name="$PROJECT_DIR$/src/main/resources/driver" />
       <recent name="$PROJECT_DIR$/src/main/resources/gift" />
       <recent name="$PROJECT_DIR$/src/main/resources/blankProfile" />
       <recent name="$PROJECT_DIR$/src/main/resources/truck" />
@@ -102,6 +114,13 @@
         <item itemvalue="Application.LauncherWrapper" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-f644763e9732-f00315f9" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -303,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714425180239</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="git push">
+      <option name="closed" value="true" />
+      <created>1714500343752</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1714500343752</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

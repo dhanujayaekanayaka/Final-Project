@@ -7,146 +7,157 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootNode" prefHeight="709.0" prefWidth="1080.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DriverViewFormController">
-   <children>
-      <Pane layoutX="5.0" layoutY="4.0" prefHeight="699.0" prefWidth="209.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-         <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
-         </effect>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DriverViewFormController">
+   <left>
+      <Pane prefHeight="569.0" prefWidth="236.0" BorderPane.alignment="CENTER">
          <children>
-            <Circle fx:id="profilePic" fill="WHITE" layoutX="105.0" layoutY="124.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="lblDriver" layoutX="82.0" layoutY="188.0" text="Sahan">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblDriverid" layoutX="50.0" layoutY="204.0" text="200327911636">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="94.0" layoutY="225.0" text="Active" textFill="#3aab47">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="68.0" layoutY="221.0">
-               <image>
-                  <Image url="@../icon/icons8-tick-32.png" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="36.0" layoutY="276.0" onAction="#btnPersonelInfoOnAction" prefHeight="24.0" prefWidth="159.0" text="Personel Info">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="26.0" layoutY="316.0" onAction="#btnJobOnAction" prefHeight="24.0" prefWidth="159.0" text="Jobs &amp; Pay">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="14.0" layoutY="356.0" onAction="#btnJourneyOnAction" prefHeight="24.0" prefWidth="159.0" text="Journey">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="22.0" layoutY="395.0" onAction="#btnDocOnAction" prefHeight="24.0" prefWidth="159.0" text="Document">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="29.0" layoutY="615.0" onAction="#btnBackOnAction" prefHeight="24.0" prefWidth="159.0" text="Back">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="32.0" layoutY="397.0">
-               <image>
-                  <Image url="@../gift/icons8-document.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="32.0" layoutY="278.0">
-               <image>
-                  <Image url="@../gift/icons8-info.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="32.0" layoutY="358.0">
-               <image>
-                  <Image url="@../gift/icons8-aircraft.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="32.0" layoutY="318.0">
-               <image>
-                  <Image url="@../gift/icons8-money-bag.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="60.0" layoutY="617.0">
-               <image>
-                  <Image url="@../icon/icons8-back-64(1).png" />
-               </image>
-            </ImageView>
+            <Pane layoutX="11.0" layoutY="11.0" prefHeight="545.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+               <children>
+                  <Circle fx:id="employeeProfile" fill="WHITE" layoutX="110.0" layoutY="101.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="50.0" layoutY="172.0" text="E.M.S.Dhanujaya">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="66.0" layoutY="188.0" text="2003279116" textFill="#1d4e89">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="102.0" layoutY="208.0" text="Active" textFill="#3aab47">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="76.0" layoutY="204.0">
+                     <image>
+                        <Image url="@../icon/icons8-tick-32.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </Pane>
-      <Pane layoutX="293.0" layoutY="129.0" prefHeight="451.0" prefWidth="706.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-         <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
-         </effect>
+   </left>
+   <top>
+      <Pane prefHeight="140.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Text>
-            <Text layoutX="101.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="101.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="101.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="101.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="101.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="101.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="101.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtFirstName" layoutX="247.0" layoutY="73.0" prefHeight="30.0" prefWidth="358.0" style="-fx-background-radius: 12;" />
-            <TextField fx:id="txtLastName" layoutX="247.0" layoutY="123.0" prefHeight="30.0" prefWidth="358.0" style="-fx-background-radius: 12;" />
-            <TextField fx:id="txtAddress" layoutX="247.0" layoutY="173.0" prefHeight="30.0" prefWidth="358.0" style="-fx-background-radius: 12;" />
-            <TextField fx:id="txtDob" layoutX="247.0" layoutY="223.0" prefHeight="30.0" prefWidth="358.0" style="-fx-background-radius: 12;" />
-            <TextField fx:id="txtNic" layoutX="247.0" layoutY="273.0" prefHeight="30.0" prefWidth="358.0" style="-fx-background-radius: 12;" />
-            <TextField fx:id="txtPhone" layoutX="247.0" layoutY="323.0" prefHeight="30.0" prefWidth="358.0" style="-fx-background-radius: 12;" />
-            <TextField fx:id="txtEmail" layoutX="247.0" layoutY="373.0" prefHeight="30.0" prefWidth="358.0" style="-fx-background-radius: 12;" />
-            <Hyperlink layoutX="649.0" layoutY="10.0" onAction="#hplEditOnction" text="Edit" />
+            <Pane layoutX="8.0" layoutY="6.0" prefHeight="130.0" prefWidth="1063.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+               <children>
+                  <JFXButton layoutX="20.0" layoutY="14.0" onAction="#btnBackOnAction" prefHeight="24.0" prefWidth="82.0" text="   Back">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-back-64(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="21.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Profile">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <JFXButton layoutX="14.0" layoutY="104.0" onAction="#btnPersonelOnAction" text="Personel">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="105.0" layoutY="104.0" onAction="#btnJobOnAction" text="Job &amp; Pay">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="204.0" layoutY="104.0" onAction="#btnDocOnAction" text="Document">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="307.0" layoutY="104.0" onAction="#btnFeedBackOnAction" text="Feedback">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
          </children>
       </Pane>
-   </children>
-</AnchorPane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="13.0" layoutY="13.0" prefHeight="538.0" prefWidth="810.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+               <effect>
+                  <DropShadow offsetX="7.0" offsetY="7.0" spread="0.29">
+                     <color>
+                        <Color red="0.6842105388641357" green="0.6842105388641357" blue="0.6842105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personel Information">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="136.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="136.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="136.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="136.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="136.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="136.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="136.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtFirstName" layoutX="265.0" layoutY="104.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <TextField fx:id="txtLastName" layoutX="265.0" layoutY="154.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <TextField fx:id="txtAddress" layoutX="265.0" layoutY="204.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <TextField fx:id="txtDob" layoutX="265.0" layoutY="254.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <TextField fx:id="txtNic" layoutX="265.0" layoutY="304.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <TextField fx:id="txtPhone" layoutX="265.0" layoutY="354.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <TextField fx:id="txtEmail" layoutX="265.0" layoutY="404.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <Hyperlink layoutX="758.0" layoutY="12.0" onAction="#hplEditOnAction" text="Edit">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

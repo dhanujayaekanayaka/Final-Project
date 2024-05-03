@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -32,7 +33,6 @@ public class DriverFormController {
     public AnchorPane rootNode;
     public AnchorPane scrollPane;
     public Circle userProfile;
-    public Circle userProfile1;
     public Circle driverProfile;
     public Circle dp1;
     public Label dnp1;
@@ -58,6 +58,8 @@ public class DriverFormController {
     public Label dn8;
     public Label dnp8;
     public ComboBox<String > comboBox;
+    public Label dn1;
+    public Pane node;
 
     public void initialize(){
         setCombo();
@@ -72,7 +74,6 @@ public class DriverFormController {
     private void setProfilePicture() {
         Image image = new Image(String.valueOf(this.getClass().getResource("/image/humen1.jpeg")));
         userProfile.setFill(new ImagePattern(image));
-        userProfile1.setFill(new ImagePattern(image));
 
         Image image1 = new Image(String.valueOf(this.getClass().getResource("/driver/humen2.jpeg")));
         Image image2 = new Image(String.valueOf(this.getClass().getResource("/driver/humen3.jpeg")));
@@ -91,9 +92,6 @@ public class DriverFormController {
         dp6.setFill(new ImagePattern(image6));
         dp7.setFill(new ImagePattern(image7));
         dp8.setFill(new ImagePattern(image8));
-    }
-
-    public void btnConformOnAction(ActionEvent event) {
     }
 
     public void btnClearOnAction(ActionEvent event) {
@@ -117,30 +115,6 @@ public class DriverFormController {
         }
     }
 
-    public void btnMovetoDriverFormOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToVehicleFormAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToPackageFormOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToRouteOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToServiceOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMyProfileOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToDashboardOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnBackToLoginOnAction(ActionEvent actionEvent) {
-    }
-
     public void hplViewDriverOnAction(ActionEvent actionEvent) throws IOException {
         AnchorPane node = FXMLLoader.load(this.getClass().getResource("/view/driverViewForm.fxml"));
         Scene scene = new Scene(node);
@@ -148,5 +122,12 @@ public class DriverFormController {
         stage.setScene(scene);
         stage.setTitle("Driver Info");
         stage.centerOnScreen();
+    }
+
+    public void btnNextOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/vehicleSelection.fxml"));
+        this.node.getChildren().clear();
+        this.node.getChildren().add(rootNode);
+
     }
 }

@@ -12,148 +12,175 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DashboardFormController">
-   <children>
-      <Text layoutX="232.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <Text fill="#1d4e89" layoutX="336.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US Cargo...!">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <Label fx:id="lblDatePicker" layoutX="695.0" layoutY="26.0" text="2024-01-01">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <LineChart fx:id="lineChart" layoutX="206.0" layoutY="77.0" prefHeight="409.0" prefWidth="500.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </LineChart>
-      <TableView fx:id="tblRoute" layoutX="228.0" layoutY="485.0" prefHeight="200.0" prefWidth="466.0" style="-fx-background-color: lightgray;">
-        <columns>
-          <TableColumn fx:id="clanRoute" prefWidth="75.0" text="Route" />
-          <TableColumn fx:id="clmnAvailability" prefWidth="90.0" text="Availability" />
-        </columns>
-      </TableView>
-      <Pane prefHeight="709.0" prefWidth="200.0" style="-fx-background-color: white;">
-         <effect>
-            <DropShadow height="6.0" radius="2.5" spread="0.16" width="6.0" />
-         </effect>
+<BorderPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DashboardFormController">
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="#1d4e89" layoutX="74.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US CARGO">
+            <Text fill="#1d4e89" layoutX="77.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US CARGO">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="33.0" layoutY="18.0">
+            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="36.0" layoutY="21.0">
                <image>
                   <Image url="@../icon/icons8-logo-50.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="54.0" layoutY="139.0" onAction="#btnMoveToDriverFormOnAction" style="-fx-cursor: hand;" text="Driver" textFill="#979696">
+            <JFXButton layoutX="-1.0" layoutY="180.0" onAction="#btnMoveToDriverFormOnAction" prefHeight="40.0" prefWidth="200.0" style="-fx-cursor: hand;" text="Driver" textFill="#979696">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="54.0" layoutY="189.0" onAction="#btnMoveToVehicleFormAction" style="-fx-cursor: hand;" text="Vehicle" textFill="#979696">
+            <JFXButton layoutY="227.0" onAction="#btnMoveToVehicleFormAction" prefHeight="40.0" prefWidth="200.0" style="-fx-cursor: hand;" text="  Vehicle" textFill="#979696">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="54.0" layoutY="239.0" onAction="#btnMoveToPackageFormOnAction" style="-fx-cursor: hand;" text="Package" textFill="#979696">
+            <JFXButton layoutX="-1.0" layoutY="277.0" onAction="#btnMoveToPackageFormOnAction" prefHeight="40.0" prefWidth="200.0" style="-fx-cursor: hand;" text="     Package" textFill="#979696">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="54.0" layoutY="289.0" onAction="#btnMoveToRouteOnAction" style="-fx-cursor: hand;" text="Route" textFill="#979696">
+            <JFXButton layoutY="326.0" onAction="#btnMoveToRouteOnAction" prefHeight="40.0" prefWidth="200.0" style="-fx-cursor: hand;" text="Route" textFill="#979696">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="54.0" layoutY="339.0" onAction="#btnMoveToServiceOnAction" style="-fx-cursor: hand;" text="Service" textFill="#979696">
+            <JFXButton layoutX="-1.0" layoutY="375.0" onAction="#btnMoveToServiceOnAction" prefHeight="40.0" prefWidth="200.0" style="-fx-cursor: hand;" text="   Service" textFill="#979696">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="54.0" layoutY="461.0" onAction="#btnMyProfileOnAction" style="-fx-cursor: hand;" text="My Profile" textFill="#979696">
+            <JFXButton layoutX="-2.0" layoutY="131.0" onAction="#btnMoveToDashboardOnAction" prefHeight="40.0" prefWidth="200.0" style="-fx-cursor: hand;" text="        Dashboard" textFill="#1d4e89">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="54.0" layoutY="89.0" onAction="#btnMoveToDashboardOnAction" style="-fx-cursor: hand;" text="Dashboard" textFill="#1d4e89">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="91.0">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="46.0" layoutY="139.0">
                <image>
                   <Image url="@../gift/icons8-combo-chart.gif" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="191.0">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="46.0" layoutY="235.0">
                <image>
                   <Image url="@../gift/icons8-truck.gif" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="341.0">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="46.0" layoutY="383.0">
                <image>
                   <Image url="@../gift/icons8-tools.gif" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="292.0">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="46.0" layoutY="334.0">
                <image>
                   <Image url="@../gift/icons8-route.gif" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="244.0">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="46.0" layoutY="285.0">
                <image>
                   <Image url="@../gift/icons8-package.gif" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="137.0">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="46.0" layoutY="188.0">
                <image>
                   <Image url="@../icon/icons8-driver-48.png" />
                </image>
             </ImageView>
+            <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="98.0" layoutY="523.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <JFXButton layoutY="650.0" onAction="#btnBackToLoginOnAction" prefHeight="40.0" prefWidth="200.0" text="       Logout" textFill="#979696">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView layoutX="58.0" layoutY="655.0">
+               <image>
+                  <Image url="@../icon/icons8-logout-30.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="45.0" layoutY="548.0" onAction="#btnMyProfileOnAction" prefHeight="40.0" style="-fx-cursor: hand;" text="My Profile" textFill="#979696">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
-      <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="107.0" layoutY="440.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-      <JFXButton layoutX="64.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Logout" textFill="#979696">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </JFXButton>
-      <ImageView layoutX="61.0" layoutY="649.0">
-         <image>
-            <Image url="@../icon/icons8-logout-30.png" />
-         </image>
-      </ImageView>
-      <Circle fill="#62a9eb" layoutX="815.0" layoutY="33.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#62a9eb" layoutX="861.0" layoutY="33.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="userName" layoutX="978.0" layoutY="23.0" text="user" />
-      <Circle fx:id="profilePicture1" fill="WHITE" layoutX="1041.0" layoutY="33.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-      <ScrollPane hbarPolicy="NEVER" layoutX="706.0" layoutY="107.0" pannable="true" prefHeight="578.0" prefWidth="362.0" vbarPolicy="ALWAYS">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="577.0" prefWidth="360.0" style="-fx-background-color: white;" />
-        </content>
-      </ScrollPane>
-      <Text layoutX="706.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Packages">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-   </children>
-</AnchorPane>
+   </left>
+   <center>
+      <Pane fx:id="rootNode" prefHeight="200.0" prefWidth="881.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#1d4e89" layoutX="127.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US Cargo...!">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="20.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblDatePicker" layoutX="522.0" layoutY="31.0" text="2024-01-01">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Circle fill="WHITE" layoutX="640.0" layoutY="39.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="687.0" layoutY="39.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="userName" layoutX="741.0" layoutY="31.0" text="user" />
+            <Circle fx:id="profilePicture1" fill="WHITE" layoutX="826.0" layoutY="39.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="628.0" layoutY="27.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-mail(1).gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="675.0" layoutY="27.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-alert.gif" />
+               </image>
+            </ImageView>
+            <LineChart fx:id="lineChart" layoutX="14.0" layoutY="78.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <ScrollPane hbarPolicy="NEVER" layoutX="514.0" layoutY="114.0" prefHeight="340.0" prefWidth="358.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="338.0" prefWidth="356.0" />
+              </content>
+            </ScrollPane>
+            <TableView layoutX="29.0" layoutY="478.0" prefHeight="217.0" prefWidth="473.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <Label fx:id="lblCompanyCount" alignment="CENTER" layoutX="649.0" layoutY="549.0" prefHeight="75.0" prefWidth="77.0" text="10" textAlignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Text layoutX="612.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Active Companies">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#1d4e89" layoutX="514.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Packages">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow height="6.0" radius="2.5" width="6.0" />
+         </effect>
+      </Pane>
+   </center>
+</BorderPane>

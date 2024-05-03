@@ -1,154 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootNode" prefHeight="709.0" prefWidth="880.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.DriverFormController">
+<AnchorPane fx:id="rootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="566.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.VehicleSelectionForm">
+   <effect>
+      <DropShadow height="7.85" radius="2.9625" width="6.0">
+         <color>
+            <Color red="0.05000000074505806" green="0.048500001430511475" blue="0.048500001430511475" opacity="0.0" />
+         </color>
+      </DropShadow>
+   </effect>
    <children>
-      <Pane layoutX="201.0" prefHeight="83.0" prefWidth="879.0" style="-fx-background-color: white;">
+      <Pane layoutX="59.0" layoutY="163.0" prefHeight="239.0" prefWidth="446.0" style="-fx-background-color: white;">
          <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
+            <DropShadow offsetX="7.0" offsetY="7.0">
+               <color>
+                  <Color red="0.43421053886413574" green="0.4281798303127289" blue="0.4281798303127289" />
+               </color>
+            </DropShadow>
          </effect>
          <children>
-            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Driver">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
-            <TextField layoutX="328.0" layoutY="29.0" prefHeight="27.0" prefWidth="236.0" promptText="Search driver" style="-fx-background-radius: 10;" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0">
-               <image>
-                  <Image url="@../icon/icons8-search-50.png" />
-               </image>
-            </ImageView>
-            <Circle fill="#62a9eb" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#62a9eb" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label layoutX="758.0" layoutY="33.0" text="user" />
-            <Circle fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-         </children>
-      </Pane>
-      <Pane prefHeight="709.0" prefWidth="200.0" style="-fx-background-color: white;">
-         <effect>
-            <DropShadow height="6.0" radius="2.5" spread="0.16" width="6.0" />
-         </effect>
-         <children>
-            <Text fill="#1d4e89" layoutX="74.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US CARGO">
+            <Text layoutX="24.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;If you enter a driver in the system, you must enter the registration number of the vehicle that belongs to him.&quot;" wrappingWidth="372.1865234375">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="33.0" layoutY="18.0">
-               <image>
-                  <Image url="@../icon/icons8-logo-50.png" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="65.0" layoutY="178.0" onAction="#btnMovetoDriverFormOnAction" style="-fx-cursor: hand;" text="Driver" textFill="#1d4e89">
+            <Text fill="#1e2679" layoutX="102.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle ID" />
+            <JFXComboBox fx:id="comboId" layoutX="210.0" layoutY="108.0" prefHeight="24.0" prefWidth="151.0" />
+            <JFXButton buttonType="RAISED" layoutX="69.0" layoutY="183.0" onAction="#btnConformOnAction" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: lightgreen;" text="confirm">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="65.0" layoutY="228.0" onAction="#btnMoveToVehicleFormAction" style="-fx-cursor: hand;" text="Vehicle" textFill="#979696">
+            <JFXButton buttonType="RAISED" layoutX="241.0" layoutY="183.0" onAction="#btnCancelOnAction" prefHeight="34.0" prefWidth="136.0" style="-fx-background-color: red;" text="cancel">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="65.0" layoutY="278.0" onAction="#btnMoveToPackageFormOnAction" style="-fx-cursor: hand;" text="Package" textFill="#979696">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="65.0" layoutY="328.0" onAction="#btnMoveToRouteOnAction" style="-fx-cursor: hand;" text="Route" textFill="#979696">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="65.0" layoutY="378.0" onAction="#btnMoveToServiceOnAction" style="-fx-cursor: hand;" text="Service" textFill="#979696">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="65.0" layoutY="128.0" onAction="#btnMoveToDashboardOnAction" style="-fx-cursor: hand;" text="Dashboard" textFill="#979696">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="130.0">
+            <ImageView layoutX="423.0" layoutY="-1.0">
                <image>
-                  <Image url="@../gift/icons8-combo-chart.gif" />
+                  <Image url="@../icon/icons8-close-24.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="230.0">
-               <image>
-                  <Image url="@../gift/icons8-truck.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="380.0">
-               <image>
-                  <Image url="@../gift/icons8-tools.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="331.0">
-               <image>
-                  <Image url="@../gift/icons8-route.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="283.0">
-               <image>
-                  <Image url="@../gift/icons8-package.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="176.0">
-               <image>
-                  <Image url="@../icon/icons8-driver-48.png" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="52.0" layoutY="536.0" onAction="#btnMyProfileOnAction" style="-fx-cursor: hand;" text="My Profile" textFill="#979696">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <Circle fill="#ffffff00" layoutX="105.0" layoutY="515.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-         </children>
-      </Pane>
-      <Text fill="#1d4e89" layoutX="74.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US CARGO">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="33.0" layoutY="18.0">
-         <image>
-            <Image url="@../icon/icons8-logo-50.png" />
-         </image>
-      </ImageView>
-      <JFXButton layoutX="64.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Logout" textFill="#979696">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </JFXButton>
-      <ImageView layoutX="61.0" layoutY="649.0">
-         <image>
-            <Image url="@../icon/icons8-logout-30.png" />
-         </image>
-      </ImageView>
-      <Pane layoutX="370.0" layoutY="192.0" prefHeight="326.0" prefWidth="542.0" style="-fx-background-color: white;">
-         <effect>
-            <DropShadow />
-         </effect>
-         <children>
-            <Text layoutX="22.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Vehicle">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
+            <JFXButton layoutX="421.0" layoutY="1.0" onAction="#btnCancelOnAction1" prefHeight="24.0" prefWidth="24.0" text="." />
          </children>
       </Pane>
    </children>

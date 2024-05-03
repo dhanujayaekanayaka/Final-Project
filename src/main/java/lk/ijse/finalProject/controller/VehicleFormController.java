@@ -1,5 +1,8 @@
 package lk.ijse.finalProject.controller;
 
+import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,10 +17,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import lk.ijse.finalProject.model.Vehicle;
+import lk.ijse.finalProject.model.tm.VehicleTm;
 import lk.ijse.finalProject.repository.VehicleRepo;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
+
+import static lk.ijse.finalProject.repository.VehicleRepo.getVehicleId;
 
 public class VehicleFormController {
     public TextField txtModel;
@@ -55,18 +63,31 @@ public class VehicleFormController {
     public Label vnp7;
     public Label vn8;
     public Label vnp8;
-    public Circle profilePicture;
     public Circle vehicleProfile;
     public Circle profilePicture1;
     public Label username;
+    public JFXComboBox comboBox;
 
     public void initialize(){
         setProfile();
+        getVehiclesId();
+    }
+
+    private void getVehiclesId() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<Vehicle> idList = VehicleRepo.getId();
+            for (Vehicle vehicle : idList){
+                obList.add(vehicle.getId());
+                comboBox.setItems(obList);
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     private void setProfile() {
         Image image = new Image(String.valueOf(this.getClass().getResource("/image/humen1.jpeg")));
-        profilePicture.setFill(new ImagePattern(image));
         profilePicture1.setFill(new ImagePattern(image));
 
         Image image1 = new Image(String.valueOf(this.getClass().getResource("/truck/daf.jpeg")));
@@ -106,10 +127,12 @@ public class VehicleFormController {
         String  yom = txtYom.getText();
         String registerDate = txtRegDate.getText();
         String currentDistance = txtCurrentMillage.getText();
+
         try {
-            String currentId = VehicleRepo.getVehicleId();
-            String availableId = VehicleRepo.getVehicleId(currentId);
-            boolean isSaved = VehicleRepo.registerVehicle(availableId,model,vehicleNumber,chassisNumber,engineNumber,color,yom,registerDate,currentDistance);
+            String currentId = getVehicleId();
+            String availableId = getVehicleId(currentId);
+            Vehicle vehicle = new Vehicle(availableId,model,vehicleNumber,chassisNumber,engineNumber,color,yom,registerDate,currentDistance);
+            boolean isSaved = VehicleRepo.registerVehicle(vehicle);
             if (isSaved){
                 new Alert(Alert.AlertType.CONFIRMATION,"Vehicle saved successfully").show();
             }else {

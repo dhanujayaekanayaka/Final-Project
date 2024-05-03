@@ -1,24 +1,27 @@
 package lk.ijse.finalProject.repository;
 
 import lk.ijse.finalProject.DB.Dbconnection;
+import lk.ijse.finalProject.model.Vehicle;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VehicleRepo {
-    public static boolean registerVehicle(String availableId,String model, String vehicleNumber, String chassisNumber, String engineNumber, String color, String yom, String registerDate, String currentDistance) throws SQLException {
+    public static boolean registerVehicle(Vehicle vehicle) throws SQLException {
         String sql = "INSERT INTO Vehicle VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        pstm.setObject(1,availableId);
-        pstm.setObject(2,model);
-        pstm.setObject(3,vehicleNumber);
-        pstm.setObject(4,chassisNumber);
-        pstm.setObject(5,engineNumber);
-        pstm.setObject(6,color);
-        pstm.setObject(7, yom);
-        pstm.setObject(8,registerDate);
-        pstm.setObject(9,currentDistance);
+        pstm.setObject(1,vehicle.getId());
+        pstm.setObject(2,vehicle.getName());
+        pstm.setObject(3,vehicle.getVehicle_number());
+        pstm.setObject(4,vehicle.getChassis());
+        pstm.setObject(5,vehicle.getEngineNum());
+        pstm.setObject(6,vehicle.getColor());
+        pstm.setObject(7, vehicle.getYom());
+        pstm.setObject(8,vehicle.getRegDate());
+        pstm.setObject(9,vehicle.getCurrentDistance());
         return pstm.executeUpdate() > 0;
     }
 
@@ -41,5 +44,19 @@ public class VehicleRepo {
         } else {
             return "V1";
         }
+    }
+
+    public static List<Vehicle> getId() throws SQLException {
+        String sql = "SELECT vehicle_id FROM Vehicle";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<Vehicle> idList = new ArrayList<>();
+        while (resultSet.next()){
+            String dbId = resultSet.getString("vehicle_id");
+            Vehicle vehicle = new Vehicle();
+            vehicle.setId(dbId);
+            idList.add(vehicle);
+        }
+        return idList;
     }
 }

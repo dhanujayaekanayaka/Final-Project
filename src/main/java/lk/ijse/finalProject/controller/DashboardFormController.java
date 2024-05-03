@@ -14,6 +14,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -29,8 +31,6 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class DashboardFormController implements Initializable {
-
-    public AnchorPane rootNode;
     public Label lblDatePicker;
     public Circle profilePicture;
     public Label userName;
@@ -38,8 +38,12 @@ public class DashboardFormController implements Initializable {
     public TableView tblRoute;
     public TableColumn clanRoute;
     public TableColumn clmnAvailability;
+    public Label lblCompanyCount;
     @FXML
-    private LineChart<?, ?> lineChart;
+    public LineChart<?,?> lineChart;
+    public BorderPane parent;
+    public Pane rootNode;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setUserName();
@@ -82,28 +86,22 @@ public class DashboardFormController implements Initializable {
     public void btnBackToLoginOnAction(ActionEvent event) throws IOException {
         AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/loginForm.fxml"));
         Scene scene = new Scene(rootNode);
-        Stage stage = (Stage) this.rootNode.getScene().getWindow();
+        Stage stage = (Stage) this.parent.getScene().getWindow();
         stage.setScene(scene);
-        stage.setTitle("Login Form");
+        stage.setTitle("Login Page");
         stage.centerOnScreen();
     }
 
     public void btnMoveToDriverFormOnAction(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/driverForm.fxml"));
-        Scene scene = new Scene(pane);
-        Stage stage = (Stage) this.rootNode.getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Driver Form");
-        stage.centerOnScreen();
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
     }
 
     public void btnMoveToVehicleFormAction(ActionEvent event) throws IOException {
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/view/vehicleForm.fxml"));
-        Scene scene = new Scene(parent);
-        Stage stage = (Stage) this.rootNode.getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Vehicle Form");
-        stage.centerOnScreen();
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/vehicleForm.fxml"));
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
     }
 
     public void btnMoveToPackageFormOnAction(ActionEvent event) {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -16,40 +17,66 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootNode" prefHeight="709.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.VehicleFormController">
+<AnchorPane fx:id="rootNode" prefHeight="709.0" prefWidth="881.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.VehicleFormController">
    <children>
-      <Pane layoutX="202.0" prefHeight="83.0" prefWidth="878.0" style="-fx-background-color: white;">
+      <Text fill="#979696" layoutX="588.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Vehicles">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="comboBox" layoutX="412.0" layoutY="94.0" prefHeight="24.0" prefWidth="164.0" />
+      <JFXButton buttonType="RAISED" layoutX="9.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="List" textFill="#1d4e89">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="109.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Add" textFill="#1d4e89">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="209.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Update" textFill="#1d4e89">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="309.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Delete" textFill="#1d4e89">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Pane prefHeight="82.0" prefWidth="887.0" style="-fx-background-color: white;">
          <effect>
             <DropShadow radius="4.75" width="0.0" />
          </effect>
          <children>
-            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle">
+            <Text layoutX="25.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Circle fill="WHITE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="username" layoutX="758.0" layoutY="33.0" text="user" />
-            <Circle fx:id="profilePicture1" fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="629.0" layoutY="31.0">
+            <Circle fill="WHITE" layoutX="609.0" layoutY="42.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="655.0" layoutY="42.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="username" layoutX="763.0" layoutY="33.0" text="user" />
+            <Circle fx:id="profilePicture1" fill="WHITE" layoutX="844.0" layoutY="42.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="643.0" layoutY="30.0">
                <image>
                   <Image url="@../gift/icons8-alert.gif" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="583.0" layoutY="30.0">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="597.0" layoutY="29.0">
                <image>
                   <Image url="@../gift/icons8-mail(1).gif" />
                </image>
             </ImageView>
-            <HBox layoutX="359.0" layoutY="30.0" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 13;">
+            <HBox layoutX="373.0" layoutY="29.0" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 13;">
                <children>
                   <ImageView fitHeight="25.0" fitWidth="25.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-search-50.png" />
                      </image>
                   </ImageView>
-                  <TextField prefHeight="27.0" prefWidth="197.0" promptText="Search driver" style="-fx-background-radius: 10; -fx-background-color: white;" />
+                  <TextField prefHeight="27.0" prefWidth="197.0" promptText="Search vehicle" style="-fx-background-radius: 10; -fx-background-color: white;" />
                </children>
                <effect>
                   <DropShadow height="6.0" radius="2.5" width="6.0" />
@@ -57,41 +84,41 @@
             </HBox>
          </children>
       </Pane>
-      <Pane layoutX="206.0" layoutY="90.0" prefHeight="613.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+      <Pane layoutX="10.0" layoutY="128.0" prefHeight="575.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
          <effect>
             <DropShadow height="6.0" radius="2.5" width="6.0" />
          </effect>
          <children>
-            <TextField fx:id="txtModel" alignment="CENTER" layoutX="36.0" layoutY="198.0" prefHeight="34.0" prefWidth="236.0" promptText="DAF" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtVehicleNumber" alignment="CENTER" layoutX="296.0" layoutY="198.0" prefHeight="34.0" prefWidth="236.0" promptText="LO-XXXX" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtColor" alignment="CENTER" layoutX="36.0" layoutY="359.0" prefHeight="34.0" prefWidth="236.0" promptText="blue" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtYom" alignment="CENTER" layoutX="296.0" layoutY="359.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtRegDate" alignment="CENTER" layoutX="36.0" layoutY="439.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtCurrentMillage" alignment="CENTER" layoutX="296.0" layoutY="439.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXX(km)" style="-fx-background-radius: 10;" />
-            <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="513.0" onAction="#btnConformOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="conform">
+            <TextField fx:id="txtModel" alignment="CENTER" layoutX="36.0" layoutY="183.0" prefHeight="34.0" prefWidth="236.0" promptText="DAF" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtVehicleNumber" alignment="CENTER" layoutX="296.0" layoutY="183.0" prefHeight="34.0" prefWidth="236.0" promptText="LO-XXXX" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtColor" alignment="CENTER" layoutX="36.0" layoutY="344.0" prefHeight="34.0" prefWidth="236.0" promptText="blue" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtYom" alignment="CENTER" layoutX="296.0" layoutY="344.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtRegDate" alignment="CENTER" layoutX="36.0" layoutY="424.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtCurrentMillage" alignment="CENTER" layoutX="296.0" layoutY="424.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXX(km)" style="-fx-background-radius: 10;" />
+            <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="498.0" onAction="#btnConformOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="clear">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="212.0" layoutY="513.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="clear">
+            <JFXButton buttonType="RAISED" layoutX="212.0" layoutY="498.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="save">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="513.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="save">
+            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="498.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="view">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="txtChassisNumber" alignment="CENTER" layoutX="36.0" layoutY="278.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtEngineNumber" alignment="CENTER" layoutX="296.0" layoutY="278.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
-            <Pane layoutX="58.0" layoutY="186.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model">
+            <TextField fx:id="txtChassisNumber" alignment="CENTER" layoutX="36.0" layoutY="263.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtEngineNumber" alignment="CENTER" layoutX="296.0" layoutY="263.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
+            <Pane layoutX="58.0" layoutY="171.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
+            <Text layoutX="60.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Pane layoutX="318.0" layoutY="187.0" prefHeight="19.0" prefWidth="120.0" style="-fx-background-color: white;">
+            <Pane layoutX="318.0" layoutY="172.0" prefHeight="19.0" prefWidth="120.0" style="-fx-background-color: white;">
                <children>
                   <Text layoutX="1.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Number">
                      <font>
@@ -100,13 +127,13 @@
                   </Text>
                </children>
             </Pane>
-            <Pane layoutX="58.0" layoutY="260.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chassis Number">
+            <Pane layoutX="58.0" layoutY="245.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: white;" />
+            <Text layoutX="60.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chassis Number">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Pane layoutX="318.0" layoutY="267.0" prefHeight="19.0" prefWidth="116.0" style="-fx-background-color: white;">
+            <Pane layoutX="318.0" layoutY="252.0" prefHeight="19.0" prefWidth="116.0" style="-fx-background-color: white;">
                <children>
                   <Text layoutX="1.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Engine Number">
                      <font>
@@ -115,35 +142,35 @@
                   </Text>
                </children>
             </Pane>
-            <Pane layoutX="58.0" layoutY="346.0" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color">
+            <Pane layoutX="58.0" layoutY="331.0" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: white;" />
+            <Text layoutX="60.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Pane layoutX="318.0" layoutY="346.0" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: white;" />
-            <Text layoutX="320.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year Of Manufactured">
+            <Pane layoutX="318.0" layoutY="331.0" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: white;" />
+            <Text layoutX="320.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year Of Manufactured">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Pane layoutX="58.0" layoutY="426.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Date">
+            <Pane layoutX="58.0" layoutY="411.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: white;" />
+            <Text layoutX="60.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Date">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Pane layoutX="318.0" layoutY="426.0" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: white;" />
-            <Text layoutX="320.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Distance">
+            <Pane layoutX="318.0" layoutY="411.0" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: white;" />
+            <Text layoutX="320.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Distance">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Circle fx:id="vehicleProfile" fill="WHITE" layoutX="283.0" layoutY="96.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
-            <Pane layoutX="308.0" layoutY="145.0" prefHeight="19.0" prefWidth="25.0" style="-fx-background-color: white;">
+            <Circle fx:id="vehicleProfile" fill="WHITE" layoutX="283.0" layoutY="81.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
+            <Pane layoutX="308.0" layoutY="127.0" prefHeight="19.0" prefWidth="25.0" style="-fx-background-color: white;">
                <children>
-                  <JFXButton layoutX="6.0" layoutY="-1.0" prefHeight="15.0" prefWidth="28.0" text="." />
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="-2.0" layoutY="-6.0">
+                  <JFXButton layoutX="-1.0" layoutY="-3.0" prefHeight="15.0" prefWidth="28.0" text="." />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="-1.0" layoutY="-5.0">
                      <image>
                         <Image url="@../icon/icons8-camera-50.png" />
                      </image>
@@ -152,105 +179,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane prefHeight="709.0" prefWidth="200.0" style="-fx-background-color: white;">
-         <children>
-            <Text fill="#1d4e89" layoutX="74.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US CARGO">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="33.0" layoutY="18.0">
-               <image>
-                  <Image url="@../icon/icons8-logo-50.png" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="54.0" layoutY="541.0" onAction="#btnMyProfileOnAction" style="-fx-cursor: hand;" text="My Profile" textFill="#979696">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="59.0" layoutY="652.0" onAction="#btnBackToLoginOnAction" prefHeight="24.0" prefWidth="107.0" text="Back" textFill="#979696">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <Circle fx:id="profilePicture" fill="WHITE" layoutX="102.0" layoutY="519.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="59.0" layoutY="652.0">
-               <image>
-                  <Image url="@../icon/icons8-back-64(1).png" />
-               </image>
-            </ImageView>
-         </children>
-         <effect>
-            <DropShadow height="18.03" radius="5.5525" width="6.18" />
-         </effect>
-      </Pane>
-      <Text fill="#979696" layoutX="777.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Vehicles">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Text>
-      <JFXButton layoutX="65.0" layoutY="178.0" onAction="#btnMovetoDriverFormOnAction" style="-fx-cursor: hand;" text="Driver" textFill="#979696">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="65.0" layoutY="228.0" onAction="#btnMoveToVehicleFormAction" style="-fx-cursor: hand;" text="Vehicle" textFill="#1d4e89">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="65.0" layoutY="278.0" onAction="#btnMoveToPackageFormOnAction" style="-fx-cursor: hand;" text="Package" textFill="#979696">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="65.0" layoutY="328.0" onAction="#btnMoveToRouteOnAction" style="-fx-cursor: hand;" text="Route" textFill="#979696">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="65.0" layoutY="378.0" onAction="#btnMoveToServiceOnAction" style="-fx-cursor: hand;" text="Service" textFill="#979696">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="65.0" layoutY="128.0" onAction="#btnMoveToDashboardOnAction" prefWidth="131.0" style="-fx-cursor: hand;" text="Dashboard" textFill="#979696">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="130.0">
-         <image>
-            <Image url="@../gift/icons8-combo-chart.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="230.0">
-         <image>
-            <Image url="@../gift/icons8-truck.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="380.0">
-         <image>
-            <Image url="@../gift/icons8-tools.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="331.0">
-         <image>
-            <Image url="@../gift/icons8-route.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="283.0">
-         <image>
-            <Image url="@../gift/icons8-package.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="47.0" layoutY="176.0">
-         <image>
-            <Image url="@../icon/icons8-driver-48.png" />
-         </image>
-      </ImageView>
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="777.0" layoutY="107.0" prefHeight="595.0" prefWidth="299.0" vbarPolicy="ALWAYS">
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="588.0" layoutY="108.0" prefHeight="595.0" prefWidth="299.0" vbarPolicy="ALWAYS">
          <content>
             <AnchorPane prefHeight="592.0" prefWidth="299.0" style="-fx-background-color: white;">
                <children>
@@ -360,8 +289,14 @@
                      </image>
                   </ImageView>
                </children>
+               <effect>
+                  <DropShadow />
+               </effect>
             </AnchorPane>
          </content>
+         <effect>
+            <DropShadow height="6.0" radius="2.5" width="6.0" />
+         </effect>
       </ScrollPane>
    </children>
 </AnchorPane>
