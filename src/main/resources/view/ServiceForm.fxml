@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="709.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.ServicceFormController">
+   <children>
+      <Pane prefHeight="83.0" prefWidth="881.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow height="10.5" radius="2.125" width="0.0" />
+         </effect>
+         <children>
+            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtSearchBar" layoutX="328.0" layoutY="29.0" onAction="#txtSearchOnAction" prefHeight="27.0" prefWidth="236.0" promptText="Search Package" style="-fx-background-radius: 10; -fx-background-color: lightGray;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0">
+               <image>
+                  <Image url="@../icon/icons8-search-50.png" />
+               </image>
+            </ImageView>
+            <Circle fill="WHITE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="lblUserName" layoutX="758.0" layoutY="33.0" text="user" />
+            <Circle fx:id="userProfile" fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="629.0" layoutY="31.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-alert.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="583.0" layoutY="29.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-mail(1).gif" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ScrollPane layoutX="553.0" layoutY="115.0" prefHeight="303.0" prefWidth="321.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="306.0" prefWidth="290.0" style="-fx-background-color: white;">
+               <children>
+                  <Circle fx:id="vp1" fill="WHITE" layoutX="54.0" layoutY="48.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+                  <Circle fx:id="vp2" fill="WHITE" layoutX="54.0" layoutY="99.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+                  <Circle fx:id="vp3" fill="WHITE" layoutX="54.0" layoutY="151.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+                  <Circle fx:id="vp4" fill="WHITE" layoutX="54.0" layoutY="203.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+                  <Circle fx:id="vp5" fill="WHITE" layoutX="54.0" layoutY="254.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <TableView layoutY="423.0" prefHeight="283.0" prefWidth="881.0">
+        <columns>
+          <TableColumn fx:id="clmVehicleId" prefWidth="131.0" text="Vehicle ID" />
+          <TableColumn fx:id="clmDescription" prefWidth="135.0" text="Description" />
+            <TableColumn fx:id="clmServiceCenter" prefWidth="176.0" text="Service Center" />
+            <TableColumn fx:id="clmServiceCost" prefWidth="141.0" text="Service Cost" />
+            <TableColumn fx:id="clmServiceDate" prefWidth="145.0" text="Service Date" />
+            <TableColumn fx:id="clmEdit" prefWidth="152.0" text="Edit" />
+        </columns>
+         <effect>
+            <DropShadow height="6.0" radius="2.5" width="6.0" />
+         </effect>
+      </TableView>
+      <Text fill="#1d4e89" layoutX="554.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Need Vehicles">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Pane layoutX="8.0" layoutY="97.0" prefHeight="316.0" prefWidth="535.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow height="6.0" radius="2.5" width="6.0" />
+         </effect>
+         <children>
+            <TextField fx:id="txtDescription" layoutX="34.0" layoutY="101.0" onAction="#txtJumpToDateOnAction" prefHeight="26.0" prefWidth="469.0" promptText="description" />
+            <TextField fx:id="taxtDate" layoutX="34.0" layoutY="157.0" onAction="#txtJumpToServiceCenterOnAction" prefHeight="26.0" prefWidth="208.0" promptText="date" />
+            <JFXButton buttonType="RAISED" layoutX="293.0" layoutY="229.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: lightGray;" text="clear" />
+            <JFXButton buttonType="RAISED" layoutX="404.0" layoutY="229.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: lightGreen;" text="save" />
+            <JFXButton buttonType="RAISED" layoutX="183.0" layoutY="229.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: lightGray;" text="update" />
+            <TextField fx:id="txtServiceCenter" layoutX="295.0" layoutY="157.0" prefHeight="26.0" prefWidth="208.0" promptText="service center" />
+            <JFXComboBox fx:id="comboVehicleId" layoutX="34.0" layoutY="41.0" prefHeight="27.0" prefWidth="208.0" promptText="Vehicle ID" />
+            <JFXComboBox fx:id="comboServiceType" layoutX="294.0" layoutY="41.0" prefHeight="27.0" prefWidth="208.0" promptText="service type" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
