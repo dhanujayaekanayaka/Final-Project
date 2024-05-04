@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="709.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.PackageFormController">
+   <children>
+      <ImageView fitHeight="284.0" fitWidth="311.0" layoutX="548.0" layoutY="86.0">
+         <image>
+            <Image url="@../background/istockphoto-1397741462-612x612.jpg" />
+         </image>
+      </ImageView>
+      <TableView layoutY="405.0" prefHeight="303.0" prefWidth="881.0" style="-fx-background-color: white;">
+        <columns>
+          <TableColumn prefWidth="141.0" text="Package ID" />
+          <TableColumn minWidth="6.0" prefWidth="129.0" text="Tracking Number" />
+            <TableColumn minWidth="6.0" prefWidth="143.0" text="Company" />
+            <TableColumn minWidth="6.0" prefWidth="178.0" text="Type Of Good" />
+            <TableColumn minWidth="6.0" prefWidth="149.0" text="Weight" />
+            <TableColumn minWidth="6.0" prefWidth="140.0" text="Price" />
+        </columns>
+         <effect>
+            <DropShadow height="6.0" radius="2.5" width="6.0" />
+         </effect>
+      </TableView>
+      <Pane prefHeight="83.0" prefWidth="881.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow height="10.5" radius="2.125" width="0.0" />
+         </effect>
+         <children>
+            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField layoutX="328.0" layoutY="29.0" prefHeight="27.0" prefWidth="236.0" promptText="Search driver" style="-fx-background-radius: 10;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0">
+               <image>
+                  <Image url="@../icon/icons8-search-50.png" />
+               </image>
+            </ImageView>
+            <Circle fill="WHITE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="758.0" layoutY="33.0" text="user" />
+            <Circle fx:id="userProfile" fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="629.0" layoutY="31.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-alert.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="583.0" layoutY="29.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-mail(1).gif" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField layoutX="34.0" layoutY="155.0" prefHeight="26.0" prefWidth="219.0" promptText="company name">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="294.0" layoutY="155.0" prefHeight="26.0" prefWidth="219.0" promptText="type of good">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="34.0" layoutY="215.0" prefHeight="26.0" prefWidth="219.0" promptText="weight">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="294.0" layoutY="215.0" prefHeight="26.0" prefWidth="219.0" promptText="price">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="294.0" layoutY="275.0" prefHeight="26.0" prefWidth="219.0" promptText="borrow date">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="34.0" layoutY="275.0" prefHeight="26.0" prefWidth="219.0" promptText="transport mode">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <JFXButton buttonType="RAISED" layoutX="274.0" layoutY="331.0" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: lightBlue;" text="clear" />
+      <JFXButton buttonType="RAISED" layoutX="404.0" layoutY="331.0" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: lightgreen;" text="save" />
+   </children>
+</AnchorPane>
