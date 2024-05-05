@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -25,7 +26,7 @@
          </font>
       </Text>
       <JFXComboBox fx:id="comboBox" layoutX="412.0" layoutY="94.0" prefHeight="24.0" prefWidth="164.0" />
-      <JFXButton buttonType="RAISED" layoutX="9.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="List" textFill="#1d4e89">
+      <JFXButton buttonType="RAISED" layoutX="9.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Tips" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -82,101 +83,6 @@
                   <DropShadow height="6.0" radius="2.5" width="6.0" />
                </effect>
             </HBox>
-         </children>
-      </Pane>
-      <Pane layoutX="10.0" layoutY="128.0" prefHeight="575.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-         <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
-         </effect>
-         <children>
-            <TextField fx:id="txtModel" alignment="CENTER" layoutX="36.0" layoutY="183.0" prefHeight="34.0" prefWidth="236.0" promptText="DAF" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtVehicleNumber" alignment="CENTER" layoutX="296.0" layoutY="183.0" prefHeight="34.0" prefWidth="236.0" promptText="LO-XXXX" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtColor" alignment="CENTER" layoutX="36.0" layoutY="344.0" prefHeight="34.0" prefWidth="236.0" promptText="blue" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtYom" alignment="CENTER" layoutX="296.0" layoutY="344.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtRegDate" alignment="CENTER" layoutX="36.0" layoutY="424.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtCurrentMillage" alignment="CENTER" layoutX="296.0" layoutY="424.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXX(km)" style="-fx-background-radius: 10;" />
-            <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="498.0" onAction="#btnConformOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="clear">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="212.0" layoutY="498.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="save">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="498.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="view">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <TextField fx:id="txtChassisNumber" alignment="CENTER" layoutX="36.0" layoutY="263.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtEngineNumber" alignment="CENTER" layoutX="296.0" layoutY="263.0" prefHeight="34.0" prefWidth="236.0" promptText="XXXXXXXXXXXXXXXXX" style="-fx-background-radius: 10;" />
-            <Pane layoutX="58.0" layoutY="171.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Text>
-            <Pane layoutX="318.0" layoutY="172.0" prefHeight="19.0" prefWidth="120.0" style="-fx-background-color: white;">
-               <children>
-                  <Text layoutX="1.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Number">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
-            <Pane layoutX="58.0" layoutY="245.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chassis Number">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Text>
-            <Pane layoutX="318.0" layoutY="252.0" prefHeight="19.0" prefWidth="116.0" style="-fx-background-color: white;">
-               <children>
-                  <Text layoutX="1.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Engine Number">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
-            <Pane layoutX="58.0" layoutY="331.0" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Text>
-            <Pane layoutX="318.0" layoutY="331.0" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: white;" />
-            <Text layoutX="320.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year Of Manufactured">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Text>
-            <Pane layoutX="58.0" layoutY="411.0" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: white;" />
-            <Text layoutX="60.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Date">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Text>
-            <Pane layoutX="318.0" layoutY="411.0" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: white;" />
-            <Text layoutX="320.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Distance">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Text>
-            <Circle fx:id="vehicleProfile" fill="WHITE" layoutX="283.0" layoutY="81.0" radius="67.0" stroke="BLACK" strokeType="INSIDE" />
-            <Pane layoutX="308.0" layoutY="127.0" prefHeight="19.0" prefWidth="25.0" style="-fx-background-color: white;">
-               <children>
-                  <JFXButton layoutX="-1.0" layoutY="-3.0" prefHeight="15.0" prefWidth="28.0" text="." />
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="-1.0" layoutY="-5.0">
-                     <image>
-                        <Image url="@../icon/icons8-camera-50.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
          </children>
       </Pane>
       <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="588.0" layoutY="108.0" prefHeight="595.0" prefWidth="299.0" vbarPolicy="ALWAYS">
@@ -298,5 +204,138 @@
             <DropShadow height="6.0" radius="2.5" width="6.0" />
          </effect>
       </ScrollPane>
+      <Pane fx:id="node" layoutX="11.0" layoutY="128.0" prefHeight="575.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="13.5" radius="4.375" width="6.0" />
+         </effect>
+         <children>
+            <Line endX="260.0" layoutX="283.0" layoutY="193.0" opacity="0.66" startX="-254.0" />
+            <Text fill="#1d4e89" layoutX="49.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tips" wrappingWidth="38.3525390625">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="23.0" layoutY="213.0">
+               <image>
+                  <Image url="@../icon/icons8-tip-30.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="29.0" layoutY="253.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Text layoutX="35.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Tips page provides information about the vehicle form">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text fill="#1d4e89" layoutX="47.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A sentence of the day ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Pane layoutX="26.0" layoutY="58.0" prefHeight="93.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="56.58" offsetX="8.0" offsetY="8.0" radius="30.015" width="65.48">
+                     <color>
+                        <Color red="0.2368421107530594" green="0.23135964572429657" blue="0.23135964572429657" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Text layoutX="6.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Tips page!">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                          Never think that someone else is passing you, always try to pass where you are, one day there will be the secret of your progress." wrappingWidth="489.18896484375">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="23.0" layoutY="26.0">
+               <image>
+                  <Image url="@../icon/icons8-tip-30.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="29.0" layoutY="329.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="38.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use the Ads page to enter vehicles into the system, where you must provide coverage for each vehicle." wrappingWidth="461.6025390625">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="29.0" layoutY="404.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="37.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The &quot;Update&quot; button will update the vehicle's details. Before going to the update page, use the system. An &quot;OTP&quot; code will be issued by email. Enter it and you can go to the &quot;Update&quot; page." wrappingWidth="461.6025390625">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="29.0" layoutY="479.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="38.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All alerts sent to the vehicle can be accessed through the &quot;Alerts&quot; page" wrappingWidth="461.6025390625">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

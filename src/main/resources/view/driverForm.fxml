@@ -161,7 +161,7 @@
                   </Text>
                </children>
             </Pane>
-            <Pane layoutX="29.0" layoutY="480.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+            <Pane layoutX="29.0" layoutY="479.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
                <effect>
                   <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
                      <color>

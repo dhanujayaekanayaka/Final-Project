@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f2dabec-2685-459b-9e48-9371582c313d" name="Changes" comment="git push">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/finalProject/controller/VehicleAddFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleAddForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/alertForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/alertForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/driverForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/driverForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/vehicleForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/vehicleForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714899675124</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="git push">
+      <option name="closed" value="true" />
+      <created>1714900351382</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1714900351382</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
