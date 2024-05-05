@@ -1,5 +1,6 @@
 package lk.ijse.finalProject.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import lk.ijse.finalProject.DB.Dbconnection;
@@ -35,14 +37,18 @@ public class DashboardFormController implements Initializable {
     public Circle profilePicture;
     public Label userName;
     public Circle profilePicture1;
-    public TableView tblRoute;
-    public TableColumn clanRoute;
-    public TableColumn clmnAvailability;
     public Label lblCompanyCount;
     @FXML
     public LineChart<?,?> lineChart;
     public BorderPane parent;
     public Pane rootNode;
+    public JFXButton btnDashboard;
+    public JFXButton btnVehicle;
+    public JFXButton btnDriver;
+    public JFXButton btnPackage;
+    public JFXButton btnService;
+    public JFXButton btnCompany;
+    public JFXButton btnRoute;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -94,30 +100,92 @@ public class DashboardFormController implements Initializable {
 
     public void btnMoveToDriverFormOnAction(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/driverForm.fxml"));
+        btnDashboard.setTextFill(Paint.valueOf("#979696"));
+        btnVehicle.setTextFill(Paint.valueOf("#979696"));
+        btnPackage.setTextFill(Paint.valueOf("#979696"));
+        btnRoute.setTextFill(Paint.valueOf("#979696"));
+        btnService.setTextFill(Paint.valueOf("#979696"));
+        btnCompany.setTextFill(Paint.valueOf("#979696"));
+        btnDriver.setTextFill(Paint.valueOf("#1d4e89"));
         this.rootNode.getChildren().clear();
         this.rootNode.getChildren().add(pane);
     }
 
     public void btnMoveToVehicleFormAction(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/vehicleForm.fxml"));
+        btnDashboard.setTextFill(Paint.valueOf("#979696"));
+        btnPackage.setTextFill(Paint.valueOf("#979696"));
+        btnRoute.setTextFill(Paint.valueOf("#979696"));
+        btnService.setTextFill(Paint.valueOf("#979696"));
+        btnDriver.setTextFill(Paint.valueOf("#979696"));
+        btnCompany.setTextFill(Paint.valueOf("#979696"));
+        btnVehicle.setTextFill(Paint.valueOf("#1d4e89"));
         this.rootNode.getChildren().clear();
         this.rootNode.getChildren().add(pane);
     }
 
-    public void btnMoveToPackageFormOnAction(ActionEvent event) {
+    public void btnMoveToPackageFormOnAction(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/packageForm.fxml"));
+        btnDashboard.setTextFill(Paint.valueOf("#979696"));
+        btnVehicle.setTextFill(Paint.valueOf("#979696"));
+        btnRoute.setTextFill(Paint.valueOf("#979696"));
+        btnService.setTextFill(Paint.valueOf("#979696"));
+        btnDriver.setTextFill(Paint.valueOf("#979696"));
+        btnCompany.setTextFill(Paint.valueOf("#979696"));
+        btnPackage.setTextFill(Paint.valueOf("#1d4e89"));
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
     }
 
-    public void btnMoveToRouteOnAction(ActionEvent event) {
+    public void btnMoveToRouteOnAction(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/routeForm.fxml"));
+        btnDashboard.setTextFill(Paint.valueOf("#979696"));
+        btnVehicle.setTextFill(Paint.valueOf("#979696"));
+        btnPackage.setTextFill(Paint.valueOf("#979696"));
+        btnService.setTextFill(Paint.valueOf("#979696"));
+        btnDriver.setTextFill(Paint.valueOf("#979696"));
+        btnCompany.setTextFill(Paint.valueOf("#979696"));
+        btnRoute.setTextFill(Paint.valueOf("#1d4e89"));
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
     }
 
-    public void btnMoveToServiceOnAction(ActionEvent event) {
+    public void btnMoveToServiceOnAction(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/ServiceForm.fxml"));
+        btnDashboard.setTextFill(Paint.valueOf("#979696"));
+        btnVehicle.setTextFill(Paint.valueOf("#979696"));
+        btnPackage.setTextFill(Paint.valueOf("#979696"));
+        btnRoute.setTextFill(Paint.valueOf("#979696"));
+        btnDriver.setTextFill(Paint.valueOf("#979696"));
+        btnCompany.setTextFill(Paint.valueOf("#979696"));
+        btnService.setTextFill(Paint.valueOf("#1d4e89"));
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
     }
 
     public void btnMyProfileOnAction(ActionEvent event) {
     }
 
-    public void btnMoveToDashboardOnAction(ActionEvent event) {
+    public void btnMoveToDashboardOnAction(ActionEvent event) throws IOException {
+        BorderPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboardForm.fxml"));
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.parent.getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.setTitle("Dashboard Form");
     }
 
+    public void btnMoveToCompantFormOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/companyForm.fxml"));
+        btnDashboard.setTextFill(Paint.valueOf("#979696"));
+        btnVehicle.setTextFill(Paint.valueOf("#979696"));
+        btnPackage.setTextFill(Paint.valueOf("#979696"));
+        btnRoute.setTextFill(Paint.valueOf("#979696"));
+        btnService.setTextFill(Paint.valueOf("#979696"));
+        btnDriver.setTextFill(Paint.valueOf("#979696"));
+        btnCompany.setTextFill(Paint.valueOf("#1d4e89"));
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
 
+    }
 }

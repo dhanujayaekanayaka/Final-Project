@@ -26,6 +26,7 @@ public class DriverViewFormController {
     public TextField txtPhone;
     public TextField txtEmail;
     public AnchorPane rootNode;
+    public Circle employeeProfile;
 
     public void btnPersonelInfoOnAction(ActionEvent actionEvent) {
         try {
@@ -54,5 +55,17 @@ public class DriverViewFormController {
         stage.setScene(scene);
         stage.setTitle("Vehicle Form");
         stage.centerOnScreen();
+    }
+
+    public void btnPersonelOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnFeedBackOnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplEditOnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplDeleteOnAction(ActionEvent actionEvent) {
     }
 }

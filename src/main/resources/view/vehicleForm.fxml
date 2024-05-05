@@ -26,22 +26,22 @@
          </font>
       </Text>
       <JFXComboBox fx:id="comboBox" layoutX="412.0" layoutY="94.0" prefHeight="24.0" prefWidth="164.0" />
-      <JFXButton buttonType="RAISED" layoutX="9.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Tips" textFill="#1d4e89">
+      <JFXButton fx:id="btnTips" buttonType="RAISED" layoutX="9.0" layoutY="90.0" onAction="#btnTipsOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Tips" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="109.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Add" textFill="#1d4e89">
+      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="109.0" layoutY="90.0" onAction="#btnVehicleAddOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Add" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="209.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Update" textFill="#1d4e89">
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="209.0" layoutY="90.0" onAction="#btnVehicleUpdateOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Update" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="309.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Alert" textFill="#1d4e89">
+      <JFXButton fx:id="btnAlert" buttonType="RAISED" layoutX="309.0" layoutY="90.0" onAction="#btnAlertOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Alert" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -59,7 +59,7 @@
             <Circle fill="WHITE" layoutX="609.0" layoutY="42.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fill="WHITE" layoutX="655.0" layoutY="42.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
             <Label fx:id="username" layoutX="763.0" layoutY="33.0" text="user" />
-            <Circle fx:id="profilePicture1" fill="WHITE" layoutX="844.0" layoutY="42.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="profilePicture" fill="WHITE" layoutX="844.0" layoutY="42.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="643.0" layoutY="30.0">
                <image>
                   <Image url="@../gift/icons8-alert.gif" />
@@ -154,7 +154,7 @@
                      </font>
                   </Label>
                   <Label fx:id="vnp8" layoutX="71.0" layoutY="525.0" text="Name" />
-                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="34.0" onSwipeLeft="#goToDetailOnSwipeLeft" rotate="180.0">
+                  <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="34.0" rotate="180.0">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>

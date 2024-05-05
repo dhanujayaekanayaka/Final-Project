@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="575.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.TipsForm">
+   <children>
+      <Pane fx:id="node" prefHeight="575.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow height="13.5" radius="4.375" width="6.0" />
+         </effect>
+         <children>
+            <Line endX="260.0" layoutX="283.0" layoutY="193.0" opacity="0.66" startX="-254.0" />
+            <Text fill="#1d4e89" layoutX="49.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tips" wrappingWidth="38.3525390625">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="23.0" layoutY="213.0">
+               <image>
+                  <Image url="@../icon/icons8-tip-30.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="29.0" layoutY="253.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Text layoutX="35.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Tips page provides information about the vehicle form">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text fill="#1d4e89" layoutX="47.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A sentence of the day ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Pane layoutX="26.0" layoutY="58.0" prefHeight="93.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="56.58" offsetX="8.0" offsetY="8.0" radius="30.015" width="65.48">
+                     <color>
+                        <Color red="0.2368421107530594" green="0.23135964572429657" blue="0.23135964572429657" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Text layoutX="6.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Tips page!">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                          Never think that someone else is passing you, always try to pass where you are, one day there will be the secret of your progress." wrappingWidth="489.18896484375">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="23.0" layoutY="26.0">
+               <image>
+                  <Image url="@../icon/icons8-tip-30.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="29.0" layoutY="329.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="38.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use the Ads page to enter vehicles into the system, where you must provide coverage for each vehicle." wrappingWidth="461.6025390625">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="29.0" layoutY="404.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="37.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The &quot;Update&quot; button will update the vehicle's details. Before going to the update page, use the system. An &quot;OTP&quot; code will be issued by email. Enter it and you can go to the &quot;Update&quot; page." wrappingWidth="461.6025390625">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="29.0" layoutY="479.0" prefHeight="60.0" prefWidth="515.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+               <effect>
+                  <DropShadow height="63.26" offsetX="8.0" offsetY="8.0" radius="31.685000000000002" width="65.48">
+                     <color>
+                        <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../icon/icons8-tip-30(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="38.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All alerts sent to the vehicle can be accessed through the &quot;Alerts&quot; page" wrappingWidth="461.6025390625">
+                     <font>
+                        <Font name="FreeSerif" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

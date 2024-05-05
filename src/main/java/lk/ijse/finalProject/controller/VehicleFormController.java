@@ -1,11 +1,14 @@
 package lk.ijse.finalProject.controller;
 
 import com.jfoenix.controls.JFXAlert;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -14,8 +17,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.SwipeEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import lk.ijse.finalProject.model.Vehicle;
@@ -29,17 +34,8 @@ import java.util.List;
 import static lk.ijse.finalProject.repository.VehicleRepo.getVehicleId;
 
 public class VehicleFormController {
-    public TextField txtModel;
-    public TextField txtVehicleNumber;
-    public TextField txtColor;
-    public TextField txtYom;
-    public TextField txtRegDate;
-    public TextField txtCurrentMillage;
-    public TextField txtChassisNumber;
-    public TextField txtEngineNumber;
     public AnchorPane rootNode;
     public ScrollPane scrollPane;
-    public VBox vBox;
     public Circle vp1;
     public Circle vp2;
     public Circle vp3;
@@ -64,10 +60,14 @@ public class VehicleFormController {
     public Label vnp7;
     public Label vn8;
     public Label vnp8;
-    public Circle vehicleProfile;
-    public Circle profilePicture1;
     public Label username;
-    public JFXComboBox comboBox;
+    public JFXComboBox<String> comboBox;
+    public Circle profilePicture;
+    public Pane node;
+    public JFXButton btnAdd;
+    public JFXButton btnUpdate;
+    public JFXButton btnAlert;
+    public JFXButton btnTips;
 
     public void initialize(){
         setProfile();
@@ -89,7 +89,7 @@ public class VehicleFormController {
 
     private void setProfile() {
         Image image = new Image(String.valueOf(this.getClass().getResource("/image/humen1.jpeg")));
-        profilePicture1.setFill(new ImagePattern(image));
+        profilePicture.setFill(new ImagePattern(image));
 
         Image image1 = new Image(String.valueOf(this.getClass().getResource("/truck/daf.jpeg")));
         Image image2 = new Image(String.valueOf(this.getClass().getResource("/truck/Scania3.jpg")));
@@ -108,78 +108,31 @@ public class VehicleFormController {
         vp6.setFill(new ImagePattern(image6));
         vp7.setFill(new ImagePattern(image7));
         vp8.setFill(new ImagePattern(image8));
+    }
+    public void btnTipsOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/tipsForm.fxml"));
+        this.node.getChildren().clear();
+        this.node.getChildren().add(pane);
+        btnTips.setCursor(Cursor.cursor("hand"));
 
-        Image blank = new Image(String.valueOf(this.getClass().getResource("/blankProfile/images.png")));
-        vehicleProfile.setFill(new ImagePattern(blank));
     }
 
-    public void btnConformOnAction(ActionEvent event) {
+    public void btnVehicleAddOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/vehicleAddForm.fxml"));
+        this.node.getChildren().clear();
+        this.node.getChildren().add(pane);
+
     }
 
-    public void btnClearOnAction(ActionEvent event) {
+    public void btnVehicleUpdateOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/vehicleAddForm.fxml"));
+        this.node.getChildren().clear();;
+        this.node.getChildren().add(pane);
     }
 
-    public void btnSaveOnAction(ActionEvent event) {
-        String model = txtModel.getText();
-        String vehicleNumber = txtVehicleNumber.getText();
-        String chassisNumber = txtChassisNumber.getText();
-        String engineNumber = txtEngineNumber.getText();
-        String color = txtColor.getText();
-        String  yom = txtYom.getText();
-        String registerDate = txtRegDate.getText();
-        String currentDistance = txtCurrentMillage.getText();
-
-        try {
-            String currentId = getVehicleId();
-            String availableId = getVehicleId(currentId);
-            Vehicle vehicle = new Vehicle(availableId,model,vehicleNumber,chassisNumber,engineNumber,color,yom,registerDate,currentDistance);
-            boolean isSaved = VehicleRepo.registerVehicle(vehicle);
-            if (isSaved){
-                new Alert(Alert.AlertType.CONFIRMATION,"Vehicle saved successfully").show();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Vehicle not saved!").show();
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-        }
-    }
-
-    public void btnBackToLoginOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/loginForm.fxml"));
-        Scene scene = new Scene(rootNode);
-        Stage stage = (Stage) this.rootNode.getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Login Form");
-        stage.centerOnScreen();
-    }
-
-    public void btnMovetoDriverFormOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToVehicleFormAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToPackageFormOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToRouteOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMyProfileOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToDashboardOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnMoveToServiceOnAction(ActionEvent actionEvent) {
-    }
-
-    public void goToDetailOnSwipeLeft(SwipeEvent swipeEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(this.getClass().getResource("/view/vehicleViewForm.fxml"));
-        Scene scene = new Scene(anchorPane);
-        Stage stage = (Stage) this.rootNode.getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Vehicle View");
-        stage.centerOnScreen();
+    public void btnAlertOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/alertForm.fxml"));
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
     }
 }

@@ -23,7 +23,7 @@
             <Image url="@../background/istockphoto-1397741462-612x612.jpg" />
          </image>
       </ImageView>
-      <TableView layoutY="405.0" prefHeight="303.0" prefWidth="881.0" style="-fx-background-color: white;">
+      <TableView fx:id="tblPackage" layoutY="405.0" prefHeight="303.0" prefWidth="881.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn fx:id="colmTrackingNumber" minWidth="6.0" prefWidth="178.0" text="Tracking Number" />
             <TableColumn fx:id="columnCompany" minWidth="6.0" prefWidth="164.0" text="Company" />
@@ -68,27 +68,27 @@
             </ImageView>
          </children>
       </Pane>
-      <TextField fx:id="txtCompanyName" layoutX="34.0" layoutY="155.0" onAction="#txtJumptoTypeOfGoodOnAction" prefHeight="26.0" prefWidth="219.0" promptText="company name">
+      <TextField fx:id="txtCompanyName" layoutX="34.0" layoutY="155.0" onAction="#txtJumptoTypeOfGoodOnAction" prefHeight="26.0" prefWidth="219.0" promptText="company name" style="-fx-background-color: lightG; -fx-background-radius: 10;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <TextField fx:id="txtTypeOfGood" layoutX="294.0" layoutY="155.0" onAction="#txtJumpToWeihtOnAction" prefHeight="26.0" prefWidth="219.0" promptText="type of good" style="-fx-background-color: white;">
+      <TextField fx:id="txtTypeOfGood" layoutX="294.0" layoutY="155.0" onAction="#txtJumpToWeihtOnAction" prefHeight="26.0" prefWidth="219.0" promptText="type of good" style="-fx-background-color: lightG; -fx-background-radius: 10;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <TextField fx:id="txtWeight" layoutX="34.0" layoutY="215.0" onAction="#txtJumpToPriceOnAction" prefHeight="26.0" prefWidth="219.0" promptText="weight">
+      <TextField fx:id="txtWeight" layoutX="34.0" layoutY="215.0" onAction="#txtJumpToPriceOnAction" prefHeight="26.0" prefWidth="219.0" promptText="weight" style="-fx-background-color: lightG; -fx-background-radius: 10;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <TextField fx:id="txtPrice" layoutX="294.0" layoutY="215.0" onAction="#txtJumpToBorrowdateOnaction" prefHeight="26.0" prefWidth="219.0" promptText="price">
+      <TextField fx:id="txtPrice" layoutX="294.0" layoutY="215.0" onAction="#txtJumpToBorrowdateOnaction" prefHeight="26.0" prefWidth="219.0" promptText="price" style="-fx-background-color: lightG; -fx-background-radius: 10;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <TextField fx:id="txtborrowDate" layoutX="294.0" layoutY="275.0" prefHeight="26.0" prefWidth="219.0" promptText="borrow date">
+      <TextField fx:id="borrowerDate" layoutX="294.0" layoutY="275.0" prefHeight="26.0" prefWidth="219.0" promptText="borrow date" style="-fx-background-color: lightG; -fx-background-radius: 10;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
