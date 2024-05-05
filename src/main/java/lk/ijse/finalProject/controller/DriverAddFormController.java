@@ -32,4 +32,22 @@ public class DriverAddFormController {
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
     }
+
+    public void txtJumpToLastNameOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtJumpNicOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtJumpToPhoneOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtJumpTOEmailOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtJumpToDobOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtJumpToAddrsOnAction(ActionEvent actionEvent) {
+    }
 }

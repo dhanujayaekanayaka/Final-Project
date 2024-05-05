@@ -309,22 +309,22 @@
          </effect>
       </ScrollPane>
       <JFXComboBox fx:id="comboBox" layoutX="410.0" layoutY="94.0" prefHeight="24.0" prefWidth="164.0" />
-      <JFXButton buttonType="RAISED" layoutX="7.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Tips" textFill="#1d4e89">
+      <JFXButton fx:id="txtTips" buttonType="RAISED" layoutX="7.0" layoutY="90.0" onAction="#btnTipsOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Tips" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="107.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Add" textFill="#1d4e89">
+      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="107.0" layoutY="90.0" onAction="#btnAddOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Add" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="207.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Update" textFill="#1d4e89">
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="207.0" layoutY="90.0" onAction="#btnUpdateOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Update" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="307.0" layoutY="90.0" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Alert" textFill="#1d4e89">
+      <JFXButton fx:id="btnAlert" buttonType="RAISED" layoutX="307.0" layoutY="90.0" onAction="#btnAlertOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Alert" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

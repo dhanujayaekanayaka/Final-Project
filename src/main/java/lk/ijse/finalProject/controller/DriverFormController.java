@@ -1,5 +1,6 @@
 package lk.ijse.finalProject.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -60,6 +61,10 @@ public class DriverFormController {
     public ComboBox<String > comboBox;
     public Label dn1;
     public Pane node;
+    public JFXButton txtTips;
+    public JFXButton btnAdd;
+    public JFXButton btnUpdate;
+    public JFXButton btnAlert;
 
     public void initialize(){
         setCombo();
@@ -129,5 +134,17 @@ public class DriverFormController {
         this.node.getChildren().clear();
         this.node.getChildren().add(rootNode);
 
+    }
+
+    public void btnTipsOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnAddOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnAlertOnAction(ActionEvent actionEvent) {
     }
 }

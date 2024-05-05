@@ -29,13 +29,13 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="txtFirstName" alignment="CENTER" layoutX="36.0" layoutY="183.0" prefHeight="34.0" prefWidth="236.0" promptText="sahan" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtLastName" alignment="CENTER" layoutX="296.0" layoutY="183.0" prefHeight="34.0" prefWidth="236.0" promptText="dhanujaya" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtDob" alignment="CENTER" layoutX="36.0" layoutY="344.0" prefHeight="34.0" prefWidth="236.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtNic" alignment="CENTER" layoutX="296.0" layoutY="344.0" prefHeight="34.0" prefWidth="236.0" promptText="2003XXXXXXXX" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtPhone" alignment="CENTER" layoutX="36.0" layoutY="424.0" prefHeight="34.0" prefWidth="236.0" promptText="07XXXXXXXX" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtFirstName" alignment="CENTER" layoutX="36.0" layoutY="183.0" onAction="#txtJumpToLastNameOnAction" prefHeight="34.0" prefWidth="236.0" promptText="sahan" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtLastName" alignment="CENTER" layoutX="296.0" layoutY="183.0" onAction="#txtJumpToAddrsOnAction" prefHeight="34.0" prefWidth="236.0" promptText="dhanujaya" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtDob" alignment="CENTER" layoutX="36.0" layoutY="344.0" onAction="#txtJumpNicOnAction" prefHeight="34.0" prefWidth="236.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtNic" alignment="CENTER" layoutX="296.0" layoutY="344.0" onAction="#txtJumpToPhoneOnAction" prefHeight="34.0" prefWidth="236.0" promptText="2003XXXXXXXX" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtPhone" alignment="CENTER" layoutX="36.0" layoutY="424.0" onAction="#txtJumpTOEmailOnAction" prefHeight="34.0" prefWidth="236.0" promptText="07XXXXXXXX" style="-fx-background-radius: 10;" />
             <TextField fx:id="txtEmail" alignment="CENTER" layoutX="296.0" layoutY="424.0" prefHeight="34.0" prefWidth="236.0" promptText="abc@gmail.com" style="-fx-background-radius: 10;" />
-            <TextField fx:id="txtAddress" alignment="CENTER" layoutX="36.0" layoutY="263.0" prefHeight="34.0" prefWidth="496.0" promptText="116/1,Grace Peris Road,Panadura" style="-fx-background-radius: 10;" />
+            <TextField fx:id="txtAddress" alignment="CENTER" layoutX="36.0" layoutY="263.0" onAction="#txtJumpToDobOnAction" prefHeight="34.0" prefWidth="496.0" promptText="116/1,Grace Peris Road,Panadura" style="-fx-background-radius: 10;" />
             <Pane layoutX="58.0" layoutY="171.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: white;" />
             <Text layoutX="60.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
                <font>
