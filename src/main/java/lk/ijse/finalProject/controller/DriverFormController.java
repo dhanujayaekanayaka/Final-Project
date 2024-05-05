@@ -102,23 +102,6 @@ public class DriverFormController {
     public void btnClearOnAction(ActionEvent event) {
     }
 
-    public void btnSaveOnAction(ActionEvent event) {
-        String firstName = txtFirstName.getText();
-        String lastName = txtLastName.getText();
-        String address = txtAddress.getText();
-        String dob = txtDob.getText();
-        String nic = txtNic.getText();
-        String phone = txtPhone.getText();
-        String email = txtEmail.getText();
-
-        try {
-            String currentDriverId = DriverRepo.getCurrentDriverId();
-            String driverId = DriverRepo.generateDriverId(currentDriverId);
-            DriverRepo.saveDriver(driverId,firstName,lastName,address,dob,nic,phone,email);
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-        }
-    }
 
     public void hplViewDriverOnAction(ActionEvent actionEvent) throws IOException {
         AnchorPane node = FXMLLoader.load(this.getClass().getResource("/view/driverViewForm.fxml"));
@@ -133,18 +116,26 @@ public class DriverFormController {
         AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/vehicleSelection.fxml"));
         this.node.getChildren().clear();
         this.node.getChildren().add(rootNode);
-
+    }
+    public void btnTipsOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/driverTipsForm.fxml"));
+        this.node.getChildren().clear();
+        this.node.getChildren().add(pane);
+    }
+    public void btnAddOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/driverAddForm.fxml"));
+        this.node.getChildren().clear();
+        this.node.getChildren().add(pane);
+    }
+    public void btnUpdateOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/driverAddForm.fxml"));
+        this.node.getChildren().clear();;
+        this.node.getChildren().add(pane);
     }
 
-    public void btnTipsOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnAddOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnAlertOnAction(ActionEvent actionEvent) {
+    public void btnAlertOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/alertForm.fxml"));
+        this.rootNode.getChildren().clear();
+        this.rootNode.getChildren().add(pane);
     }
 }

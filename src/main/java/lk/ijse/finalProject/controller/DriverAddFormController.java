@@ -2,12 +2,15 @@ package lk.ijse.finalProject.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import lk.ijse.finalProject.repository.DriverRepo;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class DriverAddFormController {
     public Pane node;
@@ -31,6 +34,21 @@ public class DriverAddFormController {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+            String firstName = txtFirstName.getText();
+            String lastName = txtLastName.getText();
+            String address = txtAddress.getText();
+            String dob = txtDob.getText();
+            String nic = txtNic.getText();
+            String phone = txtPhone.getText();
+            String email = txtEmail.getText();
+
+            try {
+                String currentDriverId = DriverRepo.getCurrentDriverId();
+                String driverId = DriverRepo.generateDriverId(currentDriverId);
+                DriverRepo.saveDriver(driverId,firstName,lastName,address,dob,nic,phone,email);
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            }
     }
 
     public void txtJumpToLastNameOnAction(ActionEvent actionEvent) {
