@@ -43,7 +43,7 @@ public class VehicleAddFormController {
         txtChassisNumber.clear();
         txtRegDate.clear();
         txtCurrentMillage.clear();
-        vehicleProfile.setFill(new ImagePattern(null));
+        vehicleProfile.setFill(null);
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {

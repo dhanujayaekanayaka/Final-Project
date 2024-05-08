@@ -16,6 +16,7 @@ import lk.ijse.finalProject.repository.VehicleRepo;
 
 import java.io.File;
 import java.net.URL;
+import java.sql.Blob;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
@@ -32,7 +33,7 @@ public class VehicleUpdateFormController implements Initializable {
     public TextField txtEngineNumber;
     public Circle vehicleProfile;
     public static String vehiId;
-    public String absolutePath;
+    public String rest;
     public JFXComboBox<String> comboId;
 
     @Override
@@ -86,9 +87,9 @@ public class VehicleUpdateFormController implements Initializable {
         fileChooser.setTitle("Open My Files");
         fileChooser.setInitialDirectory(new File("/home/dhanujaya/Desktop/FinalProject/Final-Project/src/main/resources"));
         File selectedFile = fileChooser.showOpenDialog(null);
-        absolutePath = selectedFile.getAbsolutePath();
+        String absolutePath = selectedFile.getAbsolutePath();
         String[] split =absolutePath.split("/home/dhanujaya/Desktop/FinalProject/Final-Project/src/main/resources");
-        String rest = split[1];
+        rest = split[1];
         Image image = new Image(String.valueOf(this.getClass().getResource(rest)));
         vehicleProfile.setFill(new ImagePattern(image));
     }
@@ -109,7 +110,8 @@ public class VehicleUpdateFormController implements Initializable {
         String yom = txtYom.getText();
         Date date = Date.valueOf(txtRegDate.getText());
         String distance = txtCurrentMillage.getText();
-        Vehicle vehicle = new Vehicle(vehiId,model,vehicleNumber,chassis,engineNumber,color,yom,date,distance,absolutePath);
+
+        Vehicle vehicle = new Vehicle(vehiId,model,vehicleNumber,chassis,engineNumber,color,yom,date,distance,rest);
         try {
             boolean isUpdated = VehicleRepo.updateVehicle(vehicle);
             if (isUpdated) {

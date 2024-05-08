@@ -2,11 +2,7 @@ package lk.ijse.finalProject.repository;
 
 import lk.ijse.finalProject.DB.Dbconnection;
 import lk.ijse.finalProject.model.Vehicle;
-
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,8 +85,8 @@ public class VehicleRepo {
             String yom = resultSet.getString(7);
             Date reg = Date.valueOf(resultSet.getString(8));
             String distance = resultSet.getString(9);
-            String profile = resultSet.getString(10);
-            Vehicle vehicle = new Vehicle(id, name, number, chassis, engine, color, yom, reg, distance, profile);
+            Blob profile = resultSet.getBlob(10);
+            Vehicle vehicle = new Vehicle(id, name, number, chassis, engine, color, yom, reg, distance, profile.toString());
             return vehicle;
         }
         return null;
@@ -110,6 +106,59 @@ public class VehicleRepo {
         pstm.setObject(9,vehicle.getCurrentDistance());
         pstm.setObject(10, vehicle.getProfile_picture());
         pstm.setObject(11,vehicle.getId());
+        return pstm.executeUpdate() > 0;
+    }
+
+    public static Vehicle getDetail(String id) throws SQLException {
+        String sql = "SELECT * FROM Vehicle WHERE vehicle_number = ?";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setObject(1,id);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()){
+            String vehiId = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String number = resultSet.getString(3);
+            String chassis = resultSet.getString(4);
+            String engine = resultSet.getString(5);
+            String color = resultSet.getString(6);
+            String yom = resultSet.getString(7);
+            Date regDate = Date.valueOf(resultSet.getString(8));
+            String distance = resultSet.getString(9);
+            String img = resultSet.getString(10);
+            Vehicle vehicle = new Vehicle(vehiId,name,number,chassis,engine,color,yom,regDate,distance,img);
+            return vehicle;
+        }
+        return null;
+    }
+
+    public static List<String > getVehicleNumber() throws SQLException {
+        String sql = "SELECT vehicle_number FROM Vehicle ORDER BY vehicle_id DESC LIMIT 8";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> numList = new ArrayList<>();
+        while (resultSet.next()){
+            String number = resultSet.getString("vehicle_number");
+            numList.add(number);
+        }
+        return numList;
+    }
+
+    public static List<String> getVehicleName() throws SQLException {
+        String sql = "SELECT brand_name FROM Vehicle ORDER BY vehicle_id DESC LIMIT 8";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> nameList = new ArrayList<>();
+        while (resultSet.next()){
+            String number = resultSet.getString("brand_name");
+            nameList.add(number);
+        }
+        return nameList;
+    }
+
+    public static boolean deleteVehicle(String numberPlate) throws SQLException {
+        String sql = "DELETE FROM Vehicle WHERE vehicle_number = ?";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setObject(1,numberPlate);
         return pstm.executeUpdate() > 0;
     }
 }

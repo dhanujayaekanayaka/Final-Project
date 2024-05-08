@@ -15,12 +15,24 @@ public class Driver {
     private String vehicle_id;
     private String contact;
     private String email;
-    private Blob pic;
+    private String pic;
 
-    public Driver(String firstName, String lastName, Blob pic) {
+    public Driver(String firstName, String lastName, String pic) {
         this.firstName = firstName;
         this.lastname = lastName;
         this.pic = pic;
+    }
+
+    public Driver(String id, String firstName, String lastName, String address, String dob, String nic, String tel, String email, String absolutePath) {
+        this.driver_id = id;
+        this.firstName = firstName;
+        this.lastname = lastName;
+        this.address = address;
+        this.nic = nic;
+        this.dob = dob;
+        this.contact = tel;
+        this.email = email;
+        this.pic = absolutePath;
     }
 }
 

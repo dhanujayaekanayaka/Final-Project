@@ -254,50 +254,90 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="hplName2" layoutX="70.0" layoutY="85.0" onAction="#hplNameOnAction" text="Name">
+                  <Hyperlink fx:id="hplName2" layoutX="70.0" layoutY="85.0" onAction="#hpl1NameOnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="hplName3" layoutX="70.0" layoutY="155.0" onAction="#hplNameOnAction" text="Name">
+                  <Hyperlink fx:id="hplName3" layoutX="70.0" layoutY="155.0" onAction="#hpl2NameOnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="hplName4" layoutX="70.0" layoutY="225.0" onAction="#hplNameOnAction" text="Name">
+                  <Hyperlink fx:id="hplName4" layoutX="70.0" layoutY="225.0" onAction="#hpl3NameOnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="hplName5" layoutX="70.0" layoutY="295.0" onAction="#hplNameOnAction" text="Name">
+                  <Hyperlink fx:id="hplName5" layoutX="70.0" layoutY="295.0" onAction="#hpl4NameOnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="hplName6" layoutX="70.0" layoutY="365.0" onAction="#hplNameOnAction" text="Name">
+                  <Hyperlink fx:id="hplName6" layoutX="70.0" layoutY="365.0" onAction="#hpl5NameOnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="hplName7" layoutX="70.0" layoutY="435.0" onAction="#hplNameOnAction" text="Name">
+                  <Hyperlink fx:id="hplName7" layoutX="70.0" layoutY="435.0" onAction="#hpl6NameOnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="hplName8" layoutX="70.0" layoutY="505.0" onAction="#hplNameOnAction" text="Name">
+                  <Hyperlink fx:id="hplName8" layoutX="70.0" layoutY="505.0" onAction="#hpl7NameOnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Hyperlink>
-                  <Label fx:id="lblid1" layoutX="75.0" layoutY="31.0" text="ID" />
-                  <Label fx:id="lblId2" layoutX="75.0" layoutY="101.0" text="ID" />
-                  <Label fx:id="lblId3" layoutX="75.0" layoutY="171.0" text="ID" />
-                  <Label fx:id="lblId4" layoutX="75.0" layoutY="241.0" text="ID" />
-                  <Label fx:id="lblId5" layoutX="75.0" layoutY="311.0" text="ID" />
-                  <Label fx:id="lblId6" layoutX="75.0" layoutY="381.0" text="ID" />
-                  <Label fx:id="lblId7" layoutX="75.0" layoutY="451.0" text="ID" />
-                  <Label fx:id="lblId8" layoutX="75.0" layoutY="521.0" text="ID" />
-                  <Label fx:id="label" layoutX="15.0" layoutY="11.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 40; -fx-background-color: white; -fx-border-radius: 39; -fx-border-color: black;" text="Label" />
+                  <Label fx:id="lblid1" layoutX="97.0" layoutY="32.0" text="ID" />
+                  <Label fx:id="lblId2" layoutX="97.0" layoutY="103.0" text="ID" />
+                  <Label fx:id="lblId3" layoutX="97.0" layoutY="173.0" text="ID" />
+                  <Label fx:id="lblId4" layoutX="97.0" layoutY="243.0" text="ID" />
+                  <Label fx:id="lblId5" layoutX="97.0" layoutY="313.0" text="ID" />
+                  <Label fx:id="lblId6" layoutX="97.0" layoutY="383.0" text="ID" />
+                  <Label fx:id="lblId7" layoutX="97.0" layoutY="453.0" text="ID" />
+                  <Label fx:id="lblId8" layoutX="97.0" layoutY="523.0" text="ID" />
+                  <Circle fx:id="dp1" fill="WHITE" layoutX="42.0" layoutY="36.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="75.0" layoutY="32.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="103.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="173.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="243.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="313.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="383.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="453.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="523.0" text="ID-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
                <effect>
                   <DropShadow />

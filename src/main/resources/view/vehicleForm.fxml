@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -25,7 +24,6 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <JFXComboBox fx:id="comboBox" layoutX="412.0" layoutY="94.0" onAction="#comboIdOnAction" prefHeight="24.0" prefWidth="164.0" />
       <JFXButton fx:id="btnTips" buttonType="RAISED" layoutX="9.0" layoutY="90.0" onAction="#btnTipsOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Tips" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -98,11 +96,6 @@
                   <Circle fx:id="vp7" fill="WHITE" layoutX="39.0" layoutY="459.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fx:id="vp8" fill="WHITE" layoutX="39.0" layoutY="529.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
                   <Hyperlink layoutX="114.0" layoutY="561.0" text="see all" />
-                  <Label fx:id="vn1" layoutX="71.0" layoutY="23.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="150.0" layoutY="69.0" startX="-100.0" stroke="#9a9a9a" />
                   <Line endX="100.0" layoutX="150.0" layoutY="139.0" startX="-100.0" stroke="#9a9a9a" />
                   <Line endX="100.0" layoutX="150.0" layoutY="209.0" startX="-100.0" stroke="#9a9a9a" />
@@ -112,47 +105,12 @@
                   <Line endX="100.0" layoutX="150.0" layoutY="489.0" startX="-100.0" stroke="#9a9a9a" />
                   <Line endX="100.0" layoutX="150.0" layoutY="559.0" startX="-100.0" stroke="#9a9a9a" />
                   <Label fx:id="vnp1" layoutX="71.0" layoutY="35.0" text="Name" />
-                  <Label fx:id="vn2" layoutX="71.0" layoutY="93.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="vnp2" layoutX="71.0" layoutY="105.0" text="Name" />
-                  <Label fx:id="vn3" layoutX="71.0" layoutY="163.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="vnp3" layoutX="71.0" layoutY="175.0" text="Name" />
-                  <Label fx:id="vn4" layoutX="71.0" layoutY="233.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="vnp4" layoutX="71.0" layoutY="245.0" text="Name" />
-                  <Label fx:id="vn5" layoutX="71.0" layoutY="303.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="vnp5" layoutX="71.0" layoutY="315.0" text="Name" />
-                  <Label fx:id="vn6" layoutX="71.0" layoutY="373.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="vnp6" layoutX="71.0" layoutY="385.0" text="Name" />
-                  <Label fx:id="vn7" layoutX="71.0" layoutY="443.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="vnp7" layoutX="71.0" layoutY="455.0" text="Name" />
-                  <Label fx:id="vn8" layoutX="71.0" layoutY="513.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="vnp8" layoutX="71.0" layoutY="525.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="236.0" layoutY="34.0" rotate="180.0">
                      <image>
@@ -194,6 +152,46 @@
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
+                  <Hyperlink fx:id="hplName1" layoutX="67.0" layoutY="19.0" onAction="#hpl1OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName2" layoutX="67.0" layoutY="89.0" onAction="#hpl2OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName3" layoutX="67.0" layoutY="159.0" onAction="#hpl3OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName4" layoutX="67.0" layoutY="229.0" onAction="#hpl4OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName5" layoutX="67.0" layoutY="299.0" onAction="#hpl5OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName6" layoutX="67.0" layoutY="369.0" onAction="#hpl6OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName7" layoutX="67.0" layoutY="439.0" onAction="#hpl7OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName8" layoutX="67.0" layoutY="509.0" onAction="#hpl8OnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
                </children>
                <effect>
                   <DropShadow />

@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Circle?>
@@ -66,26 +67,16 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Text>
-                  <JFXButton layoutX="14.0" layoutY="104.0" onAction="#btnDetailOnAction" text="Detail">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton layoutX="105.0" layoutY="104.0" onAction="#btnCareerOnAction" text="Career">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton layoutX="204.0" layoutY="104.0" onAction="#btnServiceOnAction" text="Services">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton layoutX="307.0" layoutY="104.0" onAction="#txtServiceOnAction" text="Incident">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </JFXButton>
+                  <HBox layoutX="799.0" layoutY="51.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 12;">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../icon/icons8-search-50(1).png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="24.0" prefWidth="226.0" promptText="search driver" style="-fx-background-color: white; -fx-background-radius: 12;" />
+                     </children>
+                  </HBox>
                </children>
             </Pane>
          </children>
@@ -148,7 +139,7 @@
                   <TextField fx:id="txtYom" layoutX="272.0" layoutY="204.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
                   <TextField fx:id="txtCurrentMileage" layoutX="272.0" layoutY="254.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
                   <TextField fx:id="txtVehicleNumber" layoutX="272.0" layoutY="304.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
-                  <TextField fx:id="txtXhassisNumber" layoutX="272.0" layoutY="354.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
+                  <TextField fx:id="txtChassisNumber" layoutX="272.0" layoutY="354.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
                   <TextField fx:id="txtEngineNumber" layoutX="272.0" layoutY="404.0" prefHeight="30.0" prefWidth="410.0" style="-fx-background-radius: 12;" />
                   <Hyperlink layoutX="758.0" layoutY="12.0" onAction="#hplEditOnAction" text="Edit">
                      <font>
