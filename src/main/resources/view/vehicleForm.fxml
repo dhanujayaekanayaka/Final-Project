@@ -25,7 +25,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <JFXComboBox fx:id="comboBox" layoutX="412.0" layoutY="94.0" prefHeight="24.0" prefWidth="164.0" />
+      <JFXComboBox fx:id="comboBox" layoutX="412.0" layoutY="94.0" onAction="#comboIdOnAction" prefHeight="24.0" prefWidth="164.0" />
       <JFXButton fx:id="btnTips" buttonType="RAISED" layoutX="9.0" layoutY="90.0" onAction="#btnTipsOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: white;" text="Tips" textFill="#1d4e89">
          <font>
             <Font name="System Bold" size="13.0" />

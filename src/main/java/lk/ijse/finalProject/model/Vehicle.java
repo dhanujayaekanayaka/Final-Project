@@ -1,5 +1,7 @@
 package lk.ijse.finalProject.model;
 
+import java.sql.Date;
+
 public class Vehicle {
     private String id;
     private String name;
@@ -8,10 +10,32 @@ public class Vehicle {
     private String engineNum;
     private String color;
     private String yom;
-    private String regDate;
+    private Date regDate;
     private String currentDistance;
+    private String profile_picture;
 
-    public Vehicle(String id, String name, String vehicle_number, String chassis, String engineNum, String color, String yom, String regDate, String currentDistance) {
+    public Vehicle(String vehiId,String model, String vehicleNumber, String chassis, String engineNumber, String color, String yom, Date date, String distance) {
+        this.id=vehiId;
+        this.name=model;
+        this.vehicle_number=vehicleNumber;
+        this.chassis=chassis;
+        this.engineNum=engineNumber;
+        this.color=color;
+        this.yom=yom;
+        this.regDate=date;
+        this.currentDistance=distance;
+    }
+
+    public String getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(String profile_picture) {
+        this.profile_picture = profile_picture;
+    }
+
+
+    public Vehicle(String id, String name, String vehicle_number, String chassis, String engineNum, String color, String yom, Date regDate, String currentDistance, String profile_picture) {
         this.id = id;
         this.name = name;
         this.vehicle_number = vehicle_number;
@@ -21,6 +45,7 @@ public class Vehicle {
         this.yom = yom;
         this.regDate = regDate;
         this.currentDistance = currentDistance;
+        this.profile_picture = profile_picture;
     }
 
     public String getVehicle_number() {
@@ -82,11 +107,11 @@ public class Vehicle {
         this.yom = yom;
     }
 
-    public String getRegDate() {
+    public Date getRegDate() {
         return regDate;
     }
 
-    public void setRegDate(String regDate) {
+    public void setRegDate(Date regDate) {
         this.regDate = regDate;
     }
 
@@ -110,6 +135,7 @@ public class Vehicle {
                 ", yom='" + yom + '\'' +
                 ", regDate='" + regDate + '\'' +
                 ", currentDistance='" + currentDistance + '\'' +
+                ", profile_picture=" + profile_picture +
                 '}';
     }
 

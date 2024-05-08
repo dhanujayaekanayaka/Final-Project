@@ -184,7 +184,7 @@
             </Pane>
          </children>
       </Pane>
-      <Text fill="#979696" layoutX="586.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Drivers">
+      <Text fill="#979696" layoutX="586.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="recent drivers">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -193,111 +193,111 @@
         <content>
           <AnchorPane fx:id="scrollPane" minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="292.0" style="-fx-background-color: white;">
                <children>
-                  <Circle fx:id="dp1" fill="WHITE" layoutX="42.0" layoutY="36.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn1" layoutX="74.0" layoutY="20.0" style="-fx-cursor: hand;" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="66.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp1" layoutX="74.0" layoutY="32.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="31.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Circle fx:id="dp2" fill="WHITE" layoutX="42.0" layoutY="106.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn2" layoutX="74.0" layoutY="90.0" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="136.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp2" layoutX="74.0" layoutY="102.0" style="-fx-cursor: hand;" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="101.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Circle fx:id="dp3" fill="WHITE" layoutX="42.0" layoutY="176.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn3" layoutX="74.0" layoutY="160.0" style="-fx-cursor: hand;" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="206.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp3" layoutX="74.0" layoutY="172.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="171.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Circle fx:id="dp4" fill="WHITE" layoutX="42.0" layoutY="246.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn4" layoutX="74.0" layoutY="230.0" style="-fx-cursor: hand;" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="276.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp4" layoutX="74.0" layoutY="242.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="241.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Circle fx:id="dp5" fill="WHITE" layoutX="42.0" layoutY="316.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn5" layoutX="74.0" layoutY="300.0" style="-fx-cursor: hand;" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="346.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp5" layoutX="74.0" layoutY="312.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="311.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Circle fx:id="dp6" fill="WHITE" layoutX="42.0" layoutY="386.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn6" layoutX="74.0" layoutY="370.0" style="-fx-cursor: hand;" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="416.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp6" layoutX="74.0" layoutY="382.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="381.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Circle fx:id="dp7" fill="WHITE" layoutX="42.0" layoutY="456.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn7" layoutX="74.0" layoutY="440.0" style="-fx-cursor: hand;" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="486.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp7" layoutX="74.0" layoutY="452.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="451.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Circle fx:id="dp8" fill="WHITE" layoutX="42.0" layoutY="526.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label fx:id="dn8" layoutX="74.0" layoutY="510.0" style="-fx-cursor: hand;" text="Name">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
                   <Line endX="100.0" layoutX="153.0" layoutY="556.0" startX="-100.0" stroke="#9a9a9a" />
-                  <Label fx:id="dnp8" layoutX="74.0" layoutY="522.0" text="Name" />
                   <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="239.0" layoutY="521.0" rotate="180.0" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
                   <Hyperlink layoutX="124.0" layoutY="560.0" onAction="#hplViewDriverOnAction" style="-fx-cursor: hand;" text="see all" />
+                  <Hyperlink fx:id="hplName1" layoutX="70.0" layoutY="15.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName2" layoutX="70.0" layoutY="85.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName3" layoutX="70.0" layoutY="155.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName4" layoutX="70.0" layoutY="225.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName5" layoutX="70.0" layoutY="295.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName6" layoutX="70.0" layoutY="365.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName7" layoutX="70.0" layoutY="435.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="hplName8" layoutX="70.0" layoutY="505.0" onAction="#hplNameOnAction" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label fx:id="lblid1" layoutX="75.0" layoutY="31.0" text="ID" />
+                  <Label fx:id="lblId2" layoutX="75.0" layoutY="101.0" text="ID" />
+                  <Label fx:id="lblId3" layoutX="75.0" layoutY="171.0" text="ID" />
+                  <Label fx:id="lblId4" layoutX="75.0" layoutY="241.0" text="ID" />
+                  <Label fx:id="lblId5" layoutX="75.0" layoutY="311.0" text="ID" />
+                  <Label fx:id="lblId6" layoutX="75.0" layoutY="381.0" text="ID" />
+                  <Label fx:id="lblId7" layoutX="75.0" layoutY="451.0" text="ID" />
+                  <Label fx:id="lblId8" layoutX="75.0" layoutY="521.0" text="ID" />
+                  <Label fx:id="label" layoutX="15.0" layoutY="11.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 40; -fx-background-color: white; -fx-border-radius: 39; -fx-border-color: black;" text="Label" />
                </children>
                <effect>
                   <DropShadow />

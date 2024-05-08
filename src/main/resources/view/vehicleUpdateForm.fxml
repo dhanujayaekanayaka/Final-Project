@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -11,7 +12,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootNode" prefHeight="575.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.VehicleAddFormController">
+
+<AnchorPane prefHeight="575.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.VehicleUpdateFormController">
    <children>
       <Pane prefHeight="575.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
          <effect>
@@ -34,7 +36,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="498.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="save">
+            <JFXButton buttonType="RAISED" layoutX="384.0" layoutY="498.0" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: lightblue;" text="Update">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -106,6 +108,7 @@
                   </ImageView>
                </children>
             </Pane>
+            <JFXComboBox fx:id="comboId" focusColor="#2bf861" layoutX="414.0" layoutY="14.0" onAction="#comboIdOnAction" prefHeight="24.0" prefWidth="123.0" promptText="Vehicle ID" unFocusColor="#2686b2" />
          </children>
       </Pane>
    </children>

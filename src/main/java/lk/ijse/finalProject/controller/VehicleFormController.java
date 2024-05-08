@@ -72,14 +72,14 @@ public class VehicleFormController {
     public void initialize(){
         setProfile();
         getVehiclesId();
+        VehicleUpdateFormController.sendComboVAlues(comboBox.getValue());
     }
-
     private void getVehiclesId() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
-            List<Vehicle> idList = VehicleRepo.getId();
-            for (Vehicle vehicle : idList){
-                obList.add(vehicle.getId());
+            List<String> idList = VehicleRepo.getId();
+            for (String id : idList){
+                obList.add(id);
                 comboBox.setItems(obList);
             }
         } catch (SQLException e) {
@@ -113,7 +113,7 @@ public class VehicleFormController {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/tipsForm.fxml"));
         this.node.getChildren().clear();
         this.node.getChildren().add(pane);
-        btnTips.setCursor(Cursor.cursor("hand"));
+        btnTips.setCursor(Cursor.HAND);
 
     }
 
@@ -125,14 +125,20 @@ public class VehicleFormController {
     }
 
     public void btnVehicleUpdateOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/vehicleAddForm.fxml"));
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/vehicleUpdateForm.fxml"));
         this.node.getChildren().clear();;
         this.node.getChildren().add(pane);
+
     }
 
     public void btnAlertOnAction(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/alertForm.fxml"));
         this.rootNode.getChildren().clear();
         this.rootNode.getChildren().add(pane);
+    }
+
+    public void comboIdOnAction(ActionEvent actionEvent) {
+        VehicleUpdateFormController.sendComboVAlues(comboBox.getValue());
+
     }
 }

@@ -35,7 +35,7 @@
                </font>
             </Text>
             <Text fill="#1e2679" layoutX="102.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle ID" />
-            <JFXComboBox fx:id="comboId" layoutX="210.0" layoutY="108.0" prefHeight="24.0" prefWidth="151.0" />
+            <JFXComboBox fx:id="comboId" layoutX="210.0" layoutY="108.0" onAction="#comboIdOnAction" prefHeight="24.0" prefWidth="151.0" />
             <JFXButton buttonType="RAISED" layoutX="69.0" layoutY="183.0" onAction="#btnConformOnAction" prefHeight="34.0" prefWidth="139.0" style="-fx-background-color: lightgreen;" text="confirm">
                <font>
                   <Font name="System Bold" size="13.0" />

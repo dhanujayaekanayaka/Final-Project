@@ -3,6 +3,7 @@ package lk.ijse.finalProject.repository;
 import lk.ijse.finalProject.DB.Dbconnection;
 import lk.ijse.finalProject.model.Vehicle;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,17 +12,18 @@ import java.util.List;
 
 public class VehicleRepo {
     public static boolean registerVehicle(Vehicle vehicle) throws SQLException {
-        String sql = "INSERT INTO Vehicle VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Vehicle VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        pstm.setObject(1,vehicle.getId());
-        pstm.setObject(2,vehicle.getName());
-        pstm.setObject(3,vehicle.getVehicle_number());
-        pstm.setObject(4,vehicle.getChassis());
-        pstm.setObject(5,vehicle.getEngineNum());
-        pstm.setObject(6,vehicle.getColor());
+        pstm.setObject(1, vehicle.getId());
+        pstm.setObject(2, vehicle.getName());
+        pstm.setObject(3, vehicle.getVehicle_number());
+        pstm.setObject(4, vehicle.getChassis());
+        pstm.setObject(5, vehicle.getEngineNum());
+        pstm.setObject(6, vehicle.getColor());
         pstm.setObject(7, vehicle.getYom());
-        pstm.setObject(8,vehicle.getRegDate());
-        pstm.setObject(9,vehicle.getCurrentDistance());
+        pstm.setObject(8, vehicle.getRegDate());
+        pstm.setObject(9, vehicle.getCurrentDistance());
+        pstm.setObject(10, vehicle.getProfile_picture());
         return pstm.executeUpdate() > 0;
     }
 
@@ -29,7 +31,7 @@ public class VehicleRepo {
         String sql = "SELECT vehicle_id FROM Vehicle ORDER BY vehicle_id DESC LIMIT 1";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
-        if (resultSet.next()){
+        if (resultSet.next()) {
             String dbId = resultSet.getString("vehicle_id");
             return dbId;
         }
@@ -46,17 +48,68 @@ public class VehicleRepo {
         }
     }
 
-    public static List<Vehicle> getId() throws SQLException {
+    public static List<String> getAllVehicleId() throws SQLException {
+        String sql = "SELECT v.vehicle_id\n" +
+                "FROM Vehicle v\n" +
+                "LEFT JOIN Driver d ON v.vehicle_id = d.vehicle_id\n" +
+                "WHERE d.vehicle_id IS NULL;\n";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> idList = new ArrayList<>();
+        while (resultSet.next()) {
+            String id = resultSet.getString(1);
+            idList.add(id);
+        }
+        return idList;
+    }
+
+    public static List<String> getId() throws SQLException {
         String sql = "SELECT vehicle_id FROM Vehicle";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
-        List<Vehicle> idList = new ArrayList<>();
-        while (resultSet.next()){
-            String dbId = resultSet.getString("vehicle_id");
-            Vehicle vehicle = new Vehicle();
-            vehicle.setId(dbId);
-            idList.add(vehicle);
+        List<String> idList = new ArrayList<>();
+        while (resultSet.next()) {
+            idList.add(resultSet.getString(1));
         }
         return idList;
+    }
+
+    public static Vehicle getValues(String vehiId) throws SQLException {
+        String sql = "SELECT * FROM Vehicle WHERE vehicle_id = ?";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setObject(1, vehiId);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            String id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String number = resultSet.getString(3);
+            String chassis = resultSet.getString(4);
+            String engine = resultSet.getString(5);
+            String color = resultSet.getString(6);
+            String yom = resultSet.getString(7);
+            Date reg = Date.valueOf(resultSet.getString(8));
+            String distance = resultSet.getString(9);
+            String profile = resultSet.getString(10);
+            Vehicle vehicle = new Vehicle(id, name, number, chassis, engine, color, yom, reg, distance, profile);
+            return vehicle;
+        }
+        return null;
+    }
+
+    public static boolean updateVehicle(Vehicle vehicle) throws SQLException {
+        String sql = "UPDATE Vehicle SET vehicle_id = ?,brand_name = ?,vehicle_number = ?,chassis_number = ?,engine_number = ?,color = ?,yom = ?,registration_date = ?,current_distance = ?,profile_picture = ? WHERE vehicle_id = ?";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setObject(1,vehicle.getId());
+        pstm.setObject(2,vehicle.getName());
+        pstm.setObject(3,vehicle.getVehicle_number());
+        pstm.setObject(4,vehicle.getChassis());
+        pstm.setObject(5,vehicle.getEngineNum());
+        pstm.setObject(6,vehicle.getColor());
+        pstm.setObject(7,vehicle.getYom());
+        pstm.setObject(8,vehicle.getRegDate());
+        pstm.setObject(9,vehicle.getCurrentDistance());
+        pstm.setObject(10, vehicle.getProfile_picture());
+        pstm.setObject(11,vehicle.getId());
+        return pstm.executeUpdate() > 0;
     }
 }
