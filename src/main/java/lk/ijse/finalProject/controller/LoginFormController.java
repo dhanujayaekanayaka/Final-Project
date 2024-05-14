@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -24,10 +25,14 @@ public class LoginFormController {
     @FXML
     public TextField txtPassword;
     public AnchorPane rootNode;
+    public TextField txtVisiblePassword;
+    public Button btnInvisible;
+    public ImageView imvBlind;
+    public ImageView imvEye;
 
 
     public void txtUsernameOnAction(ActionEvent actionEvent) {
-        txtPasswordOnAction(actionEvent);
+        txtPassword.requestFocus();
     }
 
     public void txtPasswordOnAction(ActionEvent event) {
@@ -73,7 +78,7 @@ public class LoginFormController {
         Scene scene = new Scene(rootNode);
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setScene(scene);
-        stage.setTitle("Dashboard Form");
+        stage.setTitle("US CARGO FREIGHT SERVICE");
         stage.centerOnScreen();
 
     }
@@ -89,6 +94,23 @@ public class LoginFormController {
         stage.setTitle("Registration Form");
         stage.centerOnScreen();
         stage.show();
+
+    }
+
+    public void btnVisibleTxtOnAction(ActionEvent actionEvent) {
+        txtVisiblePassword.setText(txtPassword.getText());
+        txtVisiblePassword.setVisible(true);
+        txtVisiblePassword.insertText(0,"");
+        btnInvisible.setVisible(true);
+        imvBlind.setVisible(true);
+
+    }
+
+    public void btnVisiblePasswordTxtOnAction(ActionEvent actionEvent) {
+        txtVisiblePassword.setVisible(false);
+        btnInvisible.setVisible(false);
+        imvBlind.setVisible(false);
+        imvEye.setVisible(true);
 
     }
 }

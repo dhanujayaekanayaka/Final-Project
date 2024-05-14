@@ -27,7 +27,6 @@ public class DriverViewFormController {
     public BorderPane rootNode;
     public Circle employeeProfile;
     public TextField txtSearch;
-
     public void btnPersonelInfoOnAction(ActionEvent actionEvent) {
         try {
             DriverRepo.setValues();

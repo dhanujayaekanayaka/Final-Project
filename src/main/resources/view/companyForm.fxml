@@ -1,8 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="709.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.CompanyFormController">
-
+<AnchorPane prefHeight="709.0" prefWidth="881.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.CompanyFormController">
+   <children>
+      <TextField fx:id="txtName" alignment="CENTER" layoutX="40.0" layoutY="150.0" onAction="#txtNAmeOnAction" prefHeight="34.0" prefWidth="236.0" promptText="MAS-Holdings" style="-fx-background-radius: 10;" />
+      <Pane layoutX="50.0" layoutY="138.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
+      <Text layoutX="51.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtAddress" alignment="CENTER" layoutX="330.0" layoutY="150.0" onAction="#txtAddresOnAction" prefHeight="34.0" prefWidth="236.0" promptText="Panadura" style="-fx-background-radius: 10;" />
+      <Pane layoutX="350.0" layoutY="138.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
+      <Text layoutX="351.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPhone" alignment="CENTER" layoutX="40.0" layoutY="220.0" onAction="#txtPhoneOnAction" prefHeight="34.0" prefWidth="236.0" promptText="07XXXXXXXX" style="-fx-background-radius: 10;" />
+      <Pane layoutX="60.0" layoutY="208.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
+      <Text layoutX="61.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtEmail" alignment="CENTER" layoutX="330.0" layoutY="220.0" onAction="#txtEmailOnAction" prefHeight="34.0" prefWidth="236.0" promptText="abc@gmail.com" style="-fx-background-radius: 10;" />
+      <Pane layoutX="350.0" layoutY="208.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: white;" />
+      <Text layoutX="351.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Pane layoutY="1.0" prefHeight="83.0" prefWidth="881.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow height="10.5" radius="2.125" width="0.0" />
+         </effect>
+         <children>
+            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtSearch" layoutX="328.0" layoutY="29.0" onAction="#txtSearchOnAction" prefHeight="27.0" prefWidth="236.0" promptText="Search Company" style="-fx-background-radius: 10; -fx-background-color: lightGray;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0">
+               <image>
+                  <Image url="@../icon/icons8-search-50.png" />
+               </image>
+            </ImageView>
+            <Circle fill="WHITE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="758.0" layoutY="33.0" text="user" />
+            <Circle fx:id="userProfile" fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="629.0" layoutY="31.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-alert.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="583.0" layoutY="29.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../gift/icons8-mail(1).gif" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <JFXButton buttonType="RAISED" layoutX="467.0" layoutY="293.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-color: lightGreen;" text="save" />
+      <JFXButton buttonType="RAISED" layoutX="347.0" layoutY="293.0" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-color: lightGray;" text="update" />
+      <JFXButton buttonType="RAISED" layoutX="227.0" layoutY="293.0" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-color: lightGray;" text="delete" />
+      <JFXButton buttonType="RAISED" layoutX="107.0" layoutY="293.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-color: lightGray;" text="clear" />
+      <TableView fx:id="tblCompany" layoutY="382.0" prefHeight="327.0" prefWidth="881.0">
+        <columns>
+          <TableColumn fx:id="clmCompany" prefWidth="205.0" text="Company" />
+            <TableColumn fx:id="clmAddress" prefWidth="198.0" text="Address" />
+            <TableColumn fx:id="clmPhone" prefWidth="210.0" text="Phone" />
+            <TableColumn fx:id="clmEmail" prefWidth="267.0" text="Email" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

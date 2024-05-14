@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -23,6 +24,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import lk.ijse.finalProject.DB.Dbconnection;
 
+import javax.swing.text.StyledEditorKit;
 import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.net.URL;
@@ -40,6 +42,7 @@ public class DashboardFormController implements Initializable {
     public Label lblCompanyCount;
     @FXML
     public LineChart<?,?> lineChart;
+    @FXML
     public BorderPane parent;
     public Pane rootNode;
     public JFXButton btnDashboard;
@@ -71,6 +74,8 @@ public class DashboardFormController implements Initializable {
         series1.getData().add(new XYChart.Data("4",7));
 
         lineChart.getData().add(series1);
+
+
     }
 
     private void setUserName() {
@@ -100,6 +105,8 @@ public class DashboardFormController implements Initializable {
 
     public void btnMoveToDriverFormOnAction(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/driverForm.fxml"));
+        DriverFormController driverFormController = new DriverFormController();
+        driverFormController.sendParent(this.parent);
         btnDashboard.setTextFill(Paint.valueOf("#979696"));
         btnVehicle.setTextFill(Paint.valueOf("#979696"));
         btnPackage.setTextFill(Paint.valueOf("#979696"));
@@ -175,7 +182,7 @@ public class DashboardFormController implements Initializable {
         stage.setTitle("Dashboard Form");
     }
 
-    public void btnMoveToCompantFormOnAction(ActionEvent actionEvent) throws IOException {
+    public void btnMoveToCompanyFormOnAction(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/companyForm.fxml"));
         btnDashboard.setTextFill(Paint.valueOf("#979696"));
         btnVehicle.setTextFill(Paint.valueOf("#979696"));
@@ -186,6 +193,61 @@ public class DashboardFormController implements Initializable {
         btnCompany.setTextFill(Paint.valueOf("#1d4e89"));
         this.rootNode.getChildren().clear();
         this.rootNode.getChildren().add(pane);
+    }
+
+
+    public void txtSearchOnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplSeeAllPackageOnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplTrackNum1OnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplTrackNum2OnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplTrackNum3OnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplSeeAllCompanyOnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplCompany1OnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplCompany2OnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplCompany3OnAction(ActionEvent actionEvent) {
+    }
+
+    public void hplTrackNum4OnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMouseClickOnAction(MouseEvent mouseEvent) {
+        btnDashboard.setStyle("-fx-background-color: #BDE0FE;\n" +
+                "    -fx-border-color: #0F4D87;\n" +
+                "    -fx-border-width: 0px 0px 0px 5px;");
+        btnDriver.setStyle("-fx-background-color: #BDE0FE;\n" +
+                "    -fx-border-color: #0F4D87;\n" +
+                "    -fx-border-width: 0px 0px 0px 5px;");
+        btnVehicle.setStyle("-fx-background-color: #BDE0FE;\n" +
+                "    -fx-border-color: #0F4D87;\n" +
+                "    -fx-border-width: 0px 0px 0px 5px;");
+        btnCompany.setStyle("-fx-background-color: #BDE0FE;\n" +
+                "    -fx-border-color: #0F4D87;\n" +
+                "    -fx-border-width: 0px 0px 0px 5px;");
+        btnPackage.setStyle("-fx-background-color: #BDE0FE;\n" +
+                "    -fx-border-color: #0F4D87;\n" +
+                "    -fx-border-width: 0px 0px 0px 5px;");
+        btnService.setStyle("-fx-background-color: #BDE0FE;\n" +
+                "    -fx-border-color: #0F4D87;\n" +
+                "    -fx-border-width: 0px 0px 0px 5px;");
+        btnRoute.setStyle("-fx-background-color: #BDE0FE;\n" +
+                "    -fx-border-color: #0F4D87;\n" +
+                "    -fx-border-width: 0px 0px 0px 5px;");
 
     }
 }
