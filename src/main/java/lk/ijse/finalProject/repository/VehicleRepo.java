@@ -161,4 +161,12 @@ public class VehicleRepo {
         pstm.setObject(1,numberPlate);
         return pstm.executeUpdate() > 0;
     }
+
+    public static boolean updateCurrentDistance(double destination, String vehicleId) throws SQLException {
+        String sql = "UPDATE Vehicle SET current_distance = current_distance + ? WHERE vehicle_id = ?";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setObject(1,destination);
+        pstm.setObject(2,vehicleId);
+        return pstm.executeUpdate() > 0;
+    }
 }

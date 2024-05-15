@@ -1,7 +1,9 @@
 package lk.ijse.finalProject.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -14,9 +16,11 @@ import lk.ijse.finalProject.model.Driver;
 import lk.ijse.finalProject.repository.DriverRepo;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class DriverViewFormController {
+public class DriverViewFormController implements Initializable {
     public TextField txtFirstName;
     public TextField txtLastName;
     public TextField txtAddress;
@@ -27,6 +31,13 @@ public class DriverViewFormController {
     public BorderPane rootNode;
     public Circle employeeProfile;
     public TextField txtSearch;
+    public JFXButton btnBack;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
     public void btnPersonelInfoOnAction(ActionEvent actionEvent) {
         try {
             DriverRepo.setValues();
@@ -34,10 +45,11 @@ public class DriverViewFormController {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
     }
-
     public void btnBackOnAction(ActionEvent actionEvent) {
-        this.rootNode.getChildren().stream().distinct();
+
+
     }
+
     public void hplEditOnAction(ActionEvent actionEvent) {
     }
 

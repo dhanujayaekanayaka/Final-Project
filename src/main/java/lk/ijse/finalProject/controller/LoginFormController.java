@@ -9,10 +9,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import lk.ijse.finalProject.DB.Dbconnection;
+import lk.ijse.finalProject.util.Regex;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
@@ -42,12 +44,19 @@ public class LoginFormController {
     public void btnLoginOnAction(ActionEvent actionEvent) {
         String username = txtUsername.getText();
         String password = txtPassword.getText();
+      //  if (isValided()) {
+            try {
+                checkCredintial(username, password);
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }
+       // }
+    }
 
-        try {
-            checkCredintial(username,password);
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-        }
+    private boolean isValided() {
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NAME, txtUsername)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PASSWORD, txtPassword)) return false;
+        return true;
     }
 
     private void checkCredintial(String username, String password) throws SQLException {
@@ -112,5 +121,13 @@ public class LoginFormController {
         imvBlind.setVisible(false);
         imvEye.setVisible(true);
 
+    }
+
+    public void txtPasswordKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PASSWORD,txtPassword);
+    }
+
+    public void txtUserNameKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NAME,txtUsername);
     }
 }

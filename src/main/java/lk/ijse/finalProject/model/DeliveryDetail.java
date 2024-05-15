@@ -9,8 +9,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 @ToString
-public class Shipment {
-    private String shipment_id;
-    private double cost;
-    private String routId;
+
+public class DeliveryDetail {
+    private String shipmentId;
+    private String vehicleId;
+    private String destination;
 }

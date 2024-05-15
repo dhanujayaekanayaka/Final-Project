@@ -3,10 +3,12 @@ package lk.ijse.finalProject.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 public class Client {
     private String company_id;
     private String name;

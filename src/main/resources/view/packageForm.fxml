@@ -2,7 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,154 +12,298 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="709.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.PackageFormController">
+<AnchorPane prefHeight="1015.0" prefWidth="1671.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.PackageFormController">
    <children>
-      <AnchorPane fx:id="oldPane" layoutX="-2.0" layoutY="-2.0" opacity="0.32" prefHeight="709.0" prefWidth="881.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="oldPane" layoutX="-2.0" layoutY="-2.0" prefHeight="1015.0" prefWidth="1677.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fitHeight="284.0" fitWidth="311.0" layoutX="560.0" layoutY="97.0">
-               <image>
-                  <Image url="@../background/istockphoto-1397741462-612x612.jpg" />
-               </image>
-            </ImageView>
-            <TableView fx:id="tblPackage" layoutX="2.0" layoutY="406.0" prefHeight="303.0" prefWidth="883.0" style="-fx-background-color: white;">
+            <AnchorPane layoutX="10.0" layoutY="112.0" prefHeight="438.0" prefWidth="1162.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: lightgray;">
+               <children>
+                  <ImageView fitHeight="417.0" fitWidth="371.0" layoutX="782.0" layoutY="15.0">
+                     <image>
+                        <Image url="@../background/moving-truck-with-boxes-back-side-of-the-loading-truck-man-with-carton-box-packing-free-vector.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="292.0" layoutY="360.0" onAction="#btnClearOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="clear">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="701.0" layoutY="360.0" onAction="#btnSaveOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: LIGHTBLUE;" text="save">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="496.0" layoutY="360.0" onAction="#btnUpdateOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="update">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="txtType" alignment="CENTER" layoutX="50.0" layoutY="76.0" onAction="#txtTypeOnAction" onKeyReleased="#txtTypesKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="clothes" style="-fx-border-color: lightgray;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="73.0" layoutY="64.0" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: white;" />
+                  <Text layoutX="73.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type Of Good">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtWeight" alignment="CENTER" layoutX="490.0" layoutY="76.0" onAction="#txtWeightOnAction" onKeyReleased="#txtWeightKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="20.0" style="-fx-border-color: lightgray;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="512.0" layoutY="64.0" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: white;" />
+                  <Text layoutX="512.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight(kg)">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtDate" alignment="CENTER" layoutX="490.0" layoutY="180.0" onAction="#txtDateOnAction" onKeyReleased="#txtDateKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-border-color: lightgray;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="510.0" layoutY="170.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: white;" />
+                  <Text layoutX="509.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrow Date">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <JFXComboBox fx:id="comboRoute" layoutX="51.0" layoutY="273.0" prefHeight="45.0" prefWidth="395.0" promptText="Choose The Route" />
+                  <JFXComboBox fx:id="comboTransportMode" layoutX="487.0" layoutY="275.0" prefHeight="45.0" prefWidth="395.0" promptText="Choose The Transport Mode" />
+                  <JFXComboBox fx:id="comboId" layoutX="50.0" layoutY="180.0" onAction="#comboIdOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Choose Company" />
+                  <JFXButton buttonType="RAISED" layoutX="50.0" layoutY="321.0" onAction="#btnRouteAddOnAction" style="-fx-background-color: white;" text="Add">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-add-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <AnchorPane fx:id="newPane" layoutX="2.0" layoutY="1.0" prefHeight="443.0" prefWidth="1167.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray; visibility: false;">
+                     <children>
+                        <ImageView fitHeight="280.0" fitWidth="477.0" layoutX="683.0" layoutY="54.0">
+                           <image>
+                              <Image url="@../background/How-to-Make-an-App-like-Google-Maps-Google-Map-App-Developmen-feature-image-1024x454.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton buttonType="RAISED" layoutX="292.0" layoutY="360.0" onAction="#btnRouteClearOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="clear">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="701.0" layoutY="360.0" onAction="#btnRouteSaveOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: LIGHTBLUE;" text="save">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="496.0" layoutY="360.0" onAction="#btnRouteUpdateOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="update">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <TextField fx:id="txtLocation" alignment="CENTER" layoutX="50.0" layoutY="116.0" onAction="#txtLocationOnAction" onKeyReleased="#txtLocationKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Panadura" style="-fx-border-color: lightgray;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Pane layoutX="73.0" layoutY="104.0" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: white;" />
+                        <Text layoutX="73.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Origin Location">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="txtDestination" alignment="CENTER" layoutX="490.0" layoutY="116.0" onAction="#txtDestinationOnAction" onKeyReleased="#txtDestinationKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Colombo" style="-fx-border-color: lightgray;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Pane layoutX="512.0" layoutY="104.0" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: white;" />
+                        <Text layoutX="512.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Location">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="txtDistance" alignment="CENTER" layoutX="489.0" layoutY="220.0" onAction="#txtDistanceOnAction" onKeyReleased="#txtDistanceKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="100.0" style="-fx-border-color: lightgray;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Pane layoutX="506.0" layoutY="208.0" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: white;" />
+                        <Text layoutX="509.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distance(KM)">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="1117.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: white;">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-close-48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <JFXComboBox fx:id="comboDescription" layoutX="50.0" layoutY="220.0" onAction="#comboDescriptionOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Description" unFocusColor="BLACK" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tblPackage" layoutX="2.0" layoutY="566.0" prefHeight="438.0" prefWidth="1172.0" style="-fx-background-color: white;">
               <columns>
-                <TableColumn fx:id="colmTrackingNumber" minWidth="6.0" prefWidth="178.0" text="Tracking Number" />
-                  <TableColumn fx:id="columnCompany" minWidth="6.0" prefWidth="164.0" text="Company" />
-                  <TableColumn fx:id="columnTypeOfGood" minWidth="6.0" prefWidth="149.0" text="Type Of Good" />
-                  <TableColumn fx:id="columnWeight" minWidth="6.0" prefWidth="154.0" text="Weight" />
-                  <TableColumn fx:id="columnPrice" minWidth="6.0" prefWidth="122.0" text="Price" />
-                  <TableColumn fx:id="columnEdit" minWidth="6.0" prefWidth="122.0" text="Edit" />
+                <TableColumn fx:id="colmTrackingNumber" minWidth="6.0" prefWidth="210.0" text="Tracking Number" />
+                  <TableColumn fx:id="columnCompany" minWidth="6.0" prefWidth="193.0" text="Company" />
+                  <TableColumn fx:id="columnTypeOfGood" minWidth="6.0" prefWidth="244.0" text="Type Of Good" />
+                  <TableColumn fx:id="columnWeight" minWidth="6.0" prefWidth="184.0" text="Weight" />
+                  <TableColumn fx:id="columnPrice" minWidth="6.0" prefWidth="155.0" text="Price" />
+                  <TableColumn fx:id="columnDelete" minWidth="0.0" prefWidth="185.0" text="Delete" />
               </columns>
                <effect>
                   <DropShadow height="6.0" radius="2.5" width="6.0" />
                </effect>
             </TableView>
-            <Pane layoutX="4.0" prefHeight="83.0" prefWidth="881.0" style="-fx-background-color: white;">
-               <effect>
-                  <DropShadow height="10.5" radius="2.125" width="0.0" />
-               </effect>
+            <Pane layoutX="1188.0" layoutY="144.0" prefHeight="485.0" prefWidth="483.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: lightgray; -fx-border-radius: 10;">
                <children>
-                  <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package">
+                  <Circle fx:id="picture1" fill="#ffffff00" layoutX="79.0" layoutY="82.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="picture2" fill="#ffffff00" layoutX="79.0" layoutY="162.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="picture3" fill="#ffffff00" layoutX="79.0" layoutY="243.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="picture4" fill="#ffffff00" layoutX="79.0" layoutY="323.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="picture5" fill="#ffffff00" layoutX="79.0" layoutY="403.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label fx:id="packageType1" layoutX="117.0" layoutY="66.0" text="Label" textFill="#1d4e89">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
-                  </Text>
-                  <TextField layoutX="328.0" layoutY="29.0" prefHeight="27.0" prefWidth="236.0" promptText="Search Package" style="-fx-background-radius: 10; -fx-background-color: lightGray;" />
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0">
-                     <image>
-                        <Image url="@../icon/icons8-search-50.png" />
-                     </image>
-                  </ImageView>
-                  <Circle fill="WHITE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fill="WHITE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label layoutX="758.0" layoutY="33.0" text="user" />
-                  <Circle fx:id="userProfile" fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="629.0" layoutY="31.0" style="-fx-cursor: hand;">
-                     <image>
-                        <Image url="@../gift/icons8-alert.gif" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="583.0" layoutY="29.0" style="-fx-cursor: hand;">
-                     <image>
-                        <Image url="@../gift/icons8-mail(1).gif" />
-                     </image>
-                  </ImageView>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="86.0" text="Tracking-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="86.0" text="fill">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="packageType2" layoutX="117.0" layoutY="146.0" text="Label" textFill="#1d4e89">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="166.0" text="Tracking-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="166.0" text="fill">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="packageType3" layoutX="117.0" layoutY="226.0" text="Label" textFill="#1d4e89">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="246.0" text="Tracking-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="246.0" text="fill">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="packageType4" layoutX="117.0" layoutY="306.0" text="Label" textFill="#1d4e89">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="326.0" text="Tracking-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="326.0" text="fill">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="packageType5" layoutX="117.0" layoutY="386.0" text="Label" textFill="#1d4e89">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="118.0" layoutY="406.0" text="Tracking-">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="406.0" text="fill">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <TextField fx:id="txtCompanyName" layoutX="38.0" layoutY="124.0" onAction="#txtCompanyOnAction" prefHeight="26.0" prefWidth="219.0" promptText="rout" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black;">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="6.0" offsetX="6.0" offsetY="6.0" radius="2.5" width="6.0">
-                     <color>
-                        <Color red="0.6490862369537354" green="0.6469298005104065" blue="0.7763158082962036" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TextField>
-            <TextField fx:id="txtTypeOfGood" layoutX="318.0" layoutY="130.0" onAction="#txtTypeOfGoodOnAction" prefHeight="26.0" prefWidth="219.0" promptText="type of good" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black;">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="6.0" offsetX="6.0" offsetY="6.0" radius="2.5" width="6.0">
-                     <color>
-                        <Color red="0.6490862369537354" green="0.6469298005104065" blue="0.7763158082962036" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TextField>
-            <TextField fx:id="txtWeight" layoutX="38.0" layoutY="198.0" onAction="#txtWeightOnAction" prefHeight="26.0" prefWidth="219.0" promptText="weight" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black;">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="6.0" offsetX="6.0" offsetY="6.0" radius="2.5" width="6.0">
-                     <color>
-                        <Color red="0.6490862369537354" green="0.6469298005104065" blue="0.7763158082962036" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TextField>
-            <TextField fx:id="txtPrice" layoutX="318.0" layoutY="198.0" onAction="#txtPriceOnAction" prefHeight="26.0" prefWidth="219.0" promptText="price" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black;">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="6.0" offsetX="6.0" offsetY="6.0" radius="2.5" width="6.0">
-                     <color>
-                        <Color red="0.6490862369537354" green="0.6469298005104065" blue="0.7763158082962036" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TextField>
-            <TextField fx:id="borrowerDate" layoutX="318.0" layoutY="260.0" prefHeight="26.0" prefWidth="219.0" promptText="borrow date" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: black;">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="6.0" offsetX="6.0" offsetY="6.0" radius="2.5" width="6.0">
-                     <color>
-                        <Color red="0.6490862369537354" green="0.6469298005104065" blue="0.7763158082962036" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TextField>
-            <JFXButton buttonType="RAISED" layoutX="155.0" layoutY="340.0" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: gray;" text="clear" />
-            <JFXButton buttonType="RAISED" layoutX="428.0" layoutY="340.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: lightgreen;" text="save" />
-            <JFXButton buttonType="RAISED" layoutX="291.0" layoutY="340.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: gray;" text="update" />
-            <JFXComboBox fx:id="comboTransportMode" layoutX="38.0" layoutY="260.0" prefHeight="27.0" prefWidth="219.0" promptText="transport mode" />
+            <Text fill="#1d4e89" layoutX="1188.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="recent package">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <PieChart fx:id="pieChart" layoutX="1188.0" layoutY="636.0" prefHeight="368.0" prefWidth="483.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;" />
          </children>
       </AnchorPane>
-      <Pane fx:id="newPane" layoutX="224.0" layoutY="240.0" prefHeight="250.0" prefWidth="450.0" style="-fx-background-color: white;">
-         <effect>
-            <DropShadow height="44.72" offsetX="7.0" offsetY="7.0" radius="30.015" width="77.34">
-               <color>
-                  <Color red="0.46052631735801697" green="0.46052631735801697" blue="0.46052631735801697" />
-               </color>
-            </DropShadow>
-         </effect>
+      <Pane prefHeight="96.0" prefWidth="1677.0" style="-fx-background-color: white; -fx-border-color: lightgray;">
          <children>
-            <Text layoutX="10.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Select the own company to save package&quot;">
+            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <JFXComboBox fx:id="comboId" layoutX="200.0" layoutY="89.0" onAction="#comboIdOnAction" prefHeight="26.0" prefWidth="137.0" promptText="Company ID" />
-            <Text fill="#1d4e89" layoutX="60.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose company">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <JFXButton buttonType="RAISED" layoutX="165.0" layoutY="165.0" onAction="#btnConformOnAction" prefHeight="36.0" prefWidth="121.0" style="-fx-background-color: lightgreen;" text="Conform" />
          </children>
       </Pane>
+      <Circle fill="#ffffff00" layoutX="1391.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ffffff00" layoutX="1319.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="userName" layoutX="1531.0" layoutY="44.0" text="user">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1302.0" layoutY="36.0" style="-fx-cursor: hand;">
+         <image>
+            <Image url="@../gift/icons8-mail(1).gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1374.0" layoutY="36.0" style="-fx-cursor: hand;">
+         <image>
+            <Image url="@../gift/icons8-alert.gif" />
+         </image>
+      </ImageView>
+      <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="1639.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <HBox layoutX="809.0" layoutY="31.0" prefHeight="35.0" prefWidth="315.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-search-50(1).png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtSearchBar" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="285.0" promptText="search package" style="-fx-background-color: white; -fx-background-radius: 15;" />
+         </children>
+      </HBox>
+      <Label fx:id="lblDatePicker" layoutX="1169.0" layoutY="42.0" text="2024-01-01">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

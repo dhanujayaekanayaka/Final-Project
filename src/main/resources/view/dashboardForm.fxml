@@ -30,13 +30,13 @@
                   <Image url="@../icon/icons8-logo-50.png" />
                </image>
             </ImageView>
-            <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="118.0" layoutY="727.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-            <JFXButton layoutX="65.0" layoutY="759.0" onAction="#btnMyProfileOnAction" prefHeight="40.0" style="-fx-cursor: hand;" text="My Profile" textFill="#979696">
+            <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="118.0" layoutY="697.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <JFXButton layoutX="65.0" layoutY="729.0" onAction="#btnMyProfileOnAction" prefHeight="40.0" style="-fx-cursor: hand;" text="My Profile" textFill="#979696">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <VBox layoutY="167.0" prefHeight="454.0" prefWidth="250.0">
+            <VBox layoutY="190.0" prefHeight="454.0" prefWidth="250.0">
                <children>
                   <JFXButton fx:id="btnDashboard" alignment="TOP_LEFT" onAction="#btnMoveToDashboardOnAction" prefHeight="63.0" prefWidth="249.0" styleClass="sideBar" text="Dashboard" textFill="#1d4e89">
                      <graphic>
@@ -110,11 +110,11 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnRoute" alignment="TOP_LEFT" layoutX="10.0" layoutY="325.0" onAction="#btnMoveToRouteOnAction" prefHeight="63.0" prefWidth="249.0" styleClass="sideBar" text="Route" textFill="#979696">
+                  <JFXButton fx:id="btnMap" alignment="TOP_LEFT" layoutX="10.0" layoutY="325.0" onAction="#btnLoadMapOnAction" prefHeight="63.0" prefWidth="249.0" styleClass="sideBar" text="Map" textFill="#979696">
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../gift/icons8-route.gif" />
+                              <Image url="@../icon/icons8-google-maps-48.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -148,8 +148,8 @@
    <center>
       <Pane fx:id="rootNode" prefHeight="200.0" prefWidth="881.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Circle fx:id="profilePicture11" fill="#ffffff00" layoutX="1371.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="profilePicture111" fill="#ffffff00" layoutX="1299.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="profilePicture2" fill="#ffffff00" layoutX="1371.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="profilePicture3" fill="#ffffff00" layoutX="1299.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
             <Text fill="#1d4e89" layoutX="145.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US Cargo...!">
                <font>
                   <Font name="System Bold" size="17.0" />
@@ -355,7 +355,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Hyperlink fx:id="hplCopmpany3" layoutX="91.0" layoutY="258.0" onAction="#hplCompany3OnAction" text="Company">
+                  <Hyperlink fx:id="hplCompany3" layoutX="91.0" layoutY="258.0" onAction="#hplCompany3OnAction" text="Company">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

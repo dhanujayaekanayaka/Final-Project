@@ -2,6 +2,10 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -11,90 +15,291 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="709.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.ServicceFormController">
+<AnchorPane prefHeight="1015.0" prefWidth="1671.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.finalProject.controller.ServicceFormController">
    <children>
-      <Pane prefHeight="83.0" prefWidth="881.0" style="-fx-background-color: white;">
-         <effect>
-            <DropShadow height="10.5" radius="2.125" width="0.0" />
-         </effect>
-         <children>
-            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtSearchBar" layoutX="328.0" layoutY="29.0" onAction="#txtSearchOnAction" prefHeight="27.0" prefWidth="236.0" promptText="Search Package" style="-fx-background-radius: 10; -fx-background-color: lightGray;" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="525.0" layoutY="30.0">
-               <image>
-                  <Image url="@../icon/icons8-search-50.png" />
-               </image>
-            </ImageView>
-            <Circle fill="WHITE" layoutX="595.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="641.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="lblUserName" layoutX="758.0" layoutY="33.0" text="user" />
-            <Circle fx:id="userProfile" fill="WHITE" layoutX="821.0" layoutY="43.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="629.0" layoutY="31.0" style="-fx-cursor: hand;">
-               <image>
-                  <Image url="@../gift/icons8-alert.gif" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="583.0" layoutY="29.0" style="-fx-cursor: hand;">
-               <image>
-                  <Image url="@../gift/icons8-mail(1).gif" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <ScrollPane layoutX="553.0" layoutY="115.0" prefHeight="303.0" prefWidth="321.0">
+      <ScrollPane layoutX="1279.0" layoutY="128.0" prefHeight="554.0" prefWidth="386.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="306.0" prefWidth="290.0" style="-fx-background-color: white;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="375.0" style="-fx-background-color: white;">
                <children>
-                  <Circle fx:id="vp1" fill="WHITE" layoutX="54.0" layoutY="48.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
-                  <Circle fx:id="vp2" fill="WHITE" layoutX="54.0" layoutY="99.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
-                  <Circle fx:id="vp3" fill="WHITE" layoutX="54.0" layoutY="151.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
-                  <Circle fx:id="vp4" fill="WHITE" layoutX="54.0" layoutY="203.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
-                  <Circle fx:id="vp5" fill="WHITE" layoutX="54.0" layoutY="254.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" />
+                  <Circle fx:id="profilePicture1" fill="#ffffff00" layoutX="61.0" layoutY="67.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture2" fill="#ffffff00" layoutX="61.0" layoutY="157.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture3" fill="#ffffff00" layoutX="61.0" layoutY="247.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture4" fill="#ffffff00" layoutX="61.0" layoutY="337.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture5" fill="#ffffff00" layoutX="61.0" layoutY="427.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Line endX="138.0" layoutX="195.0" layoutY="111.0" startX="-136.0" stroke="#908888" />
+                  <Line endX="138.0" layoutX="195.0" layoutY="201.0" startX="-136.0" stroke="#908888" />
+                  <Line endX="138.0" layoutX="195.0" layoutY="291.0" startX="-136.0" stroke="#908888" />
+                  <Line endX="138.0" layoutX="195.0" layoutY="381.0" startX="-136.0" stroke="#908888" />
+                  <Line endX="138.0" layoutX="195.0" layoutY="471.0" startX="-136.0" stroke="#908888" />
+                  <Hyperlink fx:id="hplName1" layoutX="97.0" layoutY="45.0" onAction="#hplName1OnAction" text="Hyperlink">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label fx:id="lblNumber1" layoutX="104.0" layoutY="70.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hplName2" layoutX="97.0" layoutY="135.0" onAction="#hplName2OnAction" text="Hyperlink">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label fx:id="lblNumber2" layoutX="104.0" layoutY="160.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hplName3" layoutX="97.0" layoutY="225.0" onAction="#hplName3OnAction" text="Hyperlink">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label fx:id="lblNumber3" layoutX="104.0" layoutY="250.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hplName4" layoutX="97.0" layoutY="315.0" onAction="#hplName4OnAction" text="Hyperlink">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label fx:id="lblNumber4" layoutX="104.0" layoutY="340.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hplName5" layoutX="97.0" layoutY="405.0" onAction="#hplName5OnAction" text="Hyperlink">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label fx:id="lblNumber5" layoutX="104.0" layoutY="430.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
-      <TableView layoutY="423.0" prefHeight="283.0" prefWidth="881.0">
+      <TableView layoutX="6.0" layoutY="696.0" prefHeight="302.0" prefWidth="955.0">
         <columns>
-          <TableColumn fx:id="clmVehicleId" prefWidth="131.0" text="Vehicle ID" />
-          <TableColumn fx:id="clmDescription" prefWidth="135.0" text="Description" />
-            <TableColumn fx:id="clmServiceCenter" prefWidth="176.0" text="Service Center" />
-            <TableColumn fx:id="clmServiceCost" prefWidth="141.0" text="Service Cost" />
-            <TableColumn fx:id="clmServiceDate" prefWidth="145.0" text="Service Date" />
-            <TableColumn fx:id="clmEdit" prefWidth="152.0" text="Edit" />
+          <TableColumn fx:id="clmVehicleId" prefWidth="89.0" text="Vehicle ID" />
+          <TableColumn fx:id="clmDescription" prefWidth="231.0" text="Description" />
+            <TableColumn fx:id="clmServiceCenter" prefWidth="147.0" text="Service Center" />
+            <TableColumn fx:id="clmServiceCost" prefWidth="173.0" text="Service Cost" />
+            <TableColumn fx:id="clmServiceDate" prefWidth="181.0" text="Service Date" />
+            <TableColumn fx:id="clmEdit" prefWidth="133.0" text="Edit" />
         </columns>
          <effect>
             <DropShadow height="6.0" radius="2.5" width="6.0" />
          </effect>
       </TableView>
-      <Text fill="#1d4e89" layoutX="554.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Need Vehicles">
+      <Text fill="#1d4e89" layoutX="1278.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Need Vehicles">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <Pane layoutX="8.0" layoutY="97.0" prefHeight="316.0" prefWidth="535.0" style="-fx-background-color: white;">
-         <effect>
-            <DropShadow height="6.0" radius="2.5" width="6.0" />
-         </effect>
+      <Pane fx:id="oldPane" layoutX="6.0" layoutY="107.0" prefHeight="574.0" prefWidth="1260.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: lightgray;">
          <children>
-            <TextField fx:id="txtDescription" layoutX="34.0" layoutY="101.0" onAction="#txtJumpToDateOnAction" prefHeight="26.0" prefWidth="469.0" promptText="description" />
-            <TextField fx:id="textDate" layoutX="34.0" layoutY="157.0" onAction="#txtJumpToServiceCenterOnAction" prefHeight="26.0" prefWidth="208.0" promptText="date" />
-            <JFXButton buttonType="RAISED" layoutX="293.0" layoutY="229.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: lightGray;" text="clear" />
-            <JFXButton buttonType="RAISED" layoutX="404.0" layoutY="229.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: lightGreen;" text="save" />
-            <JFXButton buttonType="RAISED" layoutX="183.0" layoutY="229.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: lightGray;" text="update" />
-            <TextField fx:id="txtServiceCenter" layoutX="295.0" layoutY="157.0" prefHeight="26.0" prefWidth="208.0" promptText="service center" />
-            <JFXComboBox fx:id="comboVehicleId" layoutX="34.0" layoutY="41.0" prefHeight="27.0" prefWidth="208.0" promptText="Vehicle ID" />
-            <JFXComboBox fx:id="comboServiceType" layoutX="294.0" layoutY="41.0" prefHeight="27.0" prefWidth="208.0" promptText="service type" />
+            <ImageView fitHeight="320.0" fitWidth="509.0" layoutX="743.0" layoutY="97.0">
+               <image>
+                  <Image url="@../background/cartoon-color-characters-people-and-car-service-repair-concept-vector.jpg" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="comboVehicleId" layoutX="34.0" layoutY="26.0" prefHeight="52.0" prefWidth="395.0" promptText="Vehicle ID" />
+            <JFXComboBox fx:id="comboServiceType" layoutX="483.0" layoutY="27.0" prefHeight="52.0" prefWidth="395.0" promptText="service type" />
+            <TextField fx:id="txtDate" alignment="CENTER" layoutX="34.0" layoutY="255.0" onAction="#txtDateOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Pane layoutX="63.0" layoutY="246.0" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: white;" />
+            <Text layoutX="63.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtDescription" alignment="CENTER" layoutX="34.0" layoutY="147.0" onAction="#txtDescriptionOnAction" prefHeight="52.0" prefWidth="845.0" promptText="description" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Pane layoutX="64.0" layoutY="137.0" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: white;" />
+            <Text layoutX="64.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <JFXButton buttonType="RAISED" layoutX="271.0" layoutY="453.0" onAction="#btnClearOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="clear">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="696.0" layoutY="453.0" onAction="#btnSaveOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: LIGHTBLUE;" text="save">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="483.0" layoutY="453.0" onAction="#btnUpdateOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="update">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="txtAmount" alignment="CENTER" layoutX="34.0" layoutY="355.0" onAction="#txtTypeOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Pane layoutX="63.0" layoutY="346.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: white;" />
+            <Text layoutX="63.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount(LKR)">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <JFXComboBox fx:id="comboPayment" layoutX="485.0" layoutY="353.0" prefHeight="52.0" prefWidth="395.0" promptText="card/deposit" />
+            <JFXComboBox fx:id="comboServiceCenter" layoutX="485.0" layoutY="253.0" prefHeight="52.0" prefWidth="395.0" promptText="service center" />
+            <JFXButton buttonType="RAISED" layoutY="538.0" onAction="#btnAddCenterOnAction" prefHeight="35.0" prefWidth="1260.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15;" text="Add Center">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <Pane fx:id="newPane" prefHeight="574.0" prefWidth="1260.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: lightgray; visibility: false;">
+               <children>
+                  <JFXButton buttonType="RAISED" layoutY="540.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="1260.0" style="-fx-background-color: lightgreen; -fx-background-radius: 15;" text="Back">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="320.0" fitWidth="509.0" layoutX="743.0" layoutY="127.0">
+                     <image>
+                        <Image url="@../background/cartoon-color-characters-people-and-car-service-repair-concept-vector.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtCenter" alignment="CENTER" layoutX="24.0" layoutY="165.0" onAction="#txtCenterOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Auto-Miraj" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="53.0" layoutY="156.0" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: white;" />
+                  <Text layoutX="53.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Center">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Pane layoutX="503.0" layoutY="156.0" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: white;" />
+                  <JFXButton buttonType="RAISED" layoutX="261.0" layoutY="363.0" onAction="#btnClearCenterOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="clear">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="686.0" layoutY="363.0" onAction="#btnSaveCenterOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: LIGHTBLUE;" text="save">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="473.0" layoutY="363.0" onAction="#btnUpdateCenterOnAction" prefHeight="45.0" prefWidth="184.0" style="-fx-background-color: gray;" text="update">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="txtPhone" alignment="CENTER" layoutX="24.0" layoutY="265.0" onAction="#txtPhoneOnAction" prefHeight="52.0" prefWidth="395.0" promptText="091-XXXXXXX" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="53.0" layoutY="256.0" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: white;" />
+                  <Text layoutX="53.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Pane layoutX="503.0" layoutY="256.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: white;" />
+                  <TextField fx:id="txtLocation" alignment="CENTER" layoutX="474.0" layoutY="165.0" onAction="#txtLocationOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Colombo" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="503.0" layoutY="156.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: white;" />
+                  <Text layoutX="503.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtEmail" alignment="CENTER" layoutX="474.0" layoutY="265.0" onAction="#txtEmailOnAction" prefHeight="52.0" prefWidth="395.0" promptText="aoutomiraj@gmail.com" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="503.0" layoutY="256.0" prefHeight="25.0" prefWidth="46.0" style="-fx-background-color: white;" />
+                  <Text layoutX="503.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
          </children>
       </Pane>
+      <Pane prefHeight="96.0" prefWidth="1677.0" style="-fx-background-color: white; -fx-border-color: lightgray;">
+         <children>
+            <Text layoutX="36.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Circle fill="#ffffff00" layoutX="1391.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ffffff00" layoutX="1319.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="userName" layoutX="1531.0" layoutY="44.0" text="user">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1302.0" layoutY="36.0" style="-fx-cursor: hand;">
+         <image>
+            <Image url="@../gift/icons8-mail(1).gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1374.0" layoutY="36.0" style="-fx-cursor: hand;">
+         <image>
+            <Image url="@../gift/icons8-alert.gif" />
+         </image>
+      </ImageView>
+      <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="1637.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <HBox layoutX="809.0" layoutY="31.0" prefHeight="35.0" prefWidth="315.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-search-50(1).png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtSearchBar" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="285.0" promptText="search vehicle" style="-fx-background-color: white; -fx-background-radius: 15;" />
+         </children>
+      </HBox>
+      <Label fx:id="lblDatePicker" layoutX="1169.0" layoutY="42.0" text="2024-01-01">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <BarChart layoutX="973.0" layoutY="695.0" prefHeight="302.0" prefWidth="692.0" style="-fx-border-color: lightgray;">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
    </children>
 </AnchorPane>

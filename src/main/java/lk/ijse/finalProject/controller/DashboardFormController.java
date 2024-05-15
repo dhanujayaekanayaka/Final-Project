@@ -7,17 +7,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -39,7 +38,6 @@ public class DashboardFormController implements Initializable {
     public Circle profilePicture;
     public Label userName;
     public Circle profilePicture1;
-    public Label lblCompanyCount;
     @FXML
     public LineChart<?,?> lineChart;
     @FXML
@@ -51,7 +49,41 @@ public class DashboardFormController implements Initializable {
     public JFXButton btnPackage;
     public JFXButton btnService;
     public JFXButton btnCompany;
-    public JFXButton btnRoute;
+    public JFXButton btnLogout;
+    public Circle profilePicture2;
+    public Circle profilePicture3;
+    public Label lblEmployee1;
+    public Label lblEmployee2;
+    public Label lblEmployee3;
+    public Label blEmployee4;
+    public Label lblVehicle1;
+    public Label lblVehicle2;
+    public Label lblVehicle3;
+    public Label lblVehicle4;
+    public BarChart<?,?>  barChart;
+    public TextField txtSearchBar;
+    public Label lblPackage1;
+    public Label lblPackage2;
+    public Label lblPackage3;
+    public Label lblPackage4;
+    public Hyperlink hplTrackNum1;
+    public Label lblCompany1;
+    public Hyperlink hplTrackNum2;
+    public Label lblCompany2;
+    public Hyperlink hplTrackNum3;
+    public Label lblCompany3;
+    public Hyperlink hplTrackNum4;
+    public Label lblCompany4;
+    public Label lblCompanyProfile1;
+    public Label lblCompanyProfile2;
+    public Label lblCompanyProfile3;
+    public Hyperlink hplCompany1;
+    public Label lblAddress1;
+    public Hyperlink hplCompany2;
+    public Label lblAddress2;
+    public Hyperlink hplCompany3;
+    public Label lblAddress3;
+    public JFXButton btnMap;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -110,7 +142,6 @@ public class DashboardFormController implements Initializable {
         btnDashboard.setTextFill(Paint.valueOf("#979696"));
         btnVehicle.setTextFill(Paint.valueOf("#979696"));
         btnPackage.setTextFill(Paint.valueOf("#979696"));
-        btnRoute.setTextFill(Paint.valueOf("#979696"));
         btnService.setTextFill(Paint.valueOf("#979696"));
         btnCompany.setTextFill(Paint.valueOf("#979696"));
         btnDriver.setTextFill(Paint.valueOf("#1d4e89"));
@@ -122,7 +153,6 @@ public class DashboardFormController implements Initializable {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/vehicleForm.fxml"));
         btnDashboard.setTextFill(Paint.valueOf("#979696"));
         btnPackage.setTextFill(Paint.valueOf("#979696"));
-        btnRoute.setTextFill(Paint.valueOf("#979696"));
         btnService.setTextFill(Paint.valueOf("#979696"));
         btnDriver.setTextFill(Paint.valueOf("#979696"));
         btnCompany.setTextFill(Paint.valueOf("#979696"));
@@ -135,7 +165,6 @@ public class DashboardFormController implements Initializable {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/packageForm.fxml"));
         btnDashboard.setTextFill(Paint.valueOf("#979696"));
         btnVehicle.setTextFill(Paint.valueOf("#979696"));
-        btnRoute.setTextFill(Paint.valueOf("#979696"));
         btnService.setTextFill(Paint.valueOf("#979696"));
         btnDriver.setTextFill(Paint.valueOf("#979696"));
         btnCompany.setTextFill(Paint.valueOf("#979696"));
@@ -152,7 +181,6 @@ public class DashboardFormController implements Initializable {
         btnService.setTextFill(Paint.valueOf("#979696"));
         btnDriver.setTextFill(Paint.valueOf("#979696"));
         btnCompany.setTextFill(Paint.valueOf("#979696"));
-        btnRoute.setTextFill(Paint.valueOf("#1d4e89"));
         this.rootNode.getChildren().clear();
         this.rootNode.getChildren().add(pane);
     }
@@ -162,7 +190,6 @@ public class DashboardFormController implements Initializable {
         btnDashboard.setTextFill(Paint.valueOf("#979696"));
         btnVehicle.setTextFill(Paint.valueOf("#979696"));
         btnPackage.setTextFill(Paint.valueOf("#979696"));
-        btnRoute.setTextFill(Paint.valueOf("#979696"));
         btnDriver.setTextFill(Paint.valueOf("#979696"));
         btnCompany.setTextFill(Paint.valueOf("#979696"));
         btnService.setTextFill(Paint.valueOf("#1d4e89"));
@@ -187,7 +214,6 @@ public class DashboardFormController implements Initializable {
         btnDashboard.setTextFill(Paint.valueOf("#979696"));
         btnVehicle.setTextFill(Paint.valueOf("#979696"));
         btnPackage.setTextFill(Paint.valueOf("#979696"));
-        btnRoute.setTextFill(Paint.valueOf("#979696"));
         btnService.setTextFill(Paint.valueOf("#979696"));
         btnDriver.setTextFill(Paint.valueOf("#979696"));
         btnCompany.setTextFill(Paint.valueOf("#1d4e89"));
@@ -245,9 +271,16 @@ public class DashboardFormController implements Initializable {
         btnService.setStyle("-fx-background-color: #BDE0FE;\n" +
                 "    -fx-border-color: #0F4D87;\n" +
                 "    -fx-border-width: 0px 0px 0px 5px;");
-        btnRoute.setStyle("-fx-background-color: #BDE0FE;\n" +
-                "    -fx-border-color: #0F4D87;\n" +
-                "    -fx-border-width: 0px 0px 0px 5px;");
 
+    }
+
+    public void btnLoadMapOnAction(ActionEvent actionEvent) throws IOException {
+        StackPane stackPane = FXMLLoader.load(this.getClass().getResource("/view/loadGoogleMap.fxml"));
+        Scene scene = new Scene(stackPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Google Map");
+        stage.centerOnScreen();
+        stage.show();
     }
 }

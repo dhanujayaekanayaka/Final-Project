@@ -51,6 +51,16 @@
             <artifactId>javax.mail</artifactId>
             <version>1.5.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

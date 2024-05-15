@@ -5,11 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import lk.ijse.finalProject.model.Client;
 import lk.ijse.finalProject.model.tm.ClientTm;
@@ -21,17 +20,39 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CompanyFormController implements Initializable {
-    public TextField txtName;
     public TextField txtAddress;
     public TextField txtPhone;
     public TextField txtEmail;
     public TextField txtSearch;
-    public Circle userProfile;
     public TableView<ClientTm> tblCompany;
     public TableColumn<?,?> clmCompany;
     public TableColumn<?,?> clmAddress;
     public TableColumn<?,?> clmPhone;
     public TableColumn<?,?> clmEmail;
+    public AnchorPane oldPane;
+    public TextField txtCompany;
+    public TableColumn<?,?> clmEdit;
+    public TableColumn<?,?> clmDelete;
+    public Circle picture1;
+    public Circle picture2;
+    public Circle picture3;
+    public Circle picture4;
+    public Circle picture5;
+    public Label company1;
+    public Label tel1;
+    public Label company2;
+    public Label tel2;
+    public Label company3;
+    public Label tel3;
+    public Label company4;
+    public Label tel4;
+    public Label company5;
+    public Label tel5;
+    public NumberAxis barChart;
+    public Label userName;
+    public Circle profilePicture;
+    public TextField txtSearchBar;
+    public Label lblDatePicker;
 
     public void txtNAmeOnAction(ActionEvent actionEvent) {
         txtAddress.requestFocus();
@@ -52,7 +73,7 @@ public class CompanyFormController implements Initializable {
         String companyName = txtSearch.getText();
         try {
             Client client = ClientRepo.getValues(companyName);
-            txtName.setText(client.getName());
+            txtCompany.setText(client.getName());
             txtAddress.setText(client.getAddress());
             txtPhone.setText(client.getTel());
             txtEmail.setText(client.getEmail());
@@ -62,7 +83,7 @@ public class CompanyFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
-        String name = txtName.getText();
+        String name = txtCompany.getText();
         String address = txtAddress.getText();
         String phone = txtPhone.getText();
         String email = txtEmail.getText();
@@ -85,7 +106,7 @@ public class CompanyFormController implements Initializable {
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
         String searchName = txtSearch.getText();
-        String name = txtName.getText();
+        String name = txtCompany.getText();
         String address = txtAddress.getText();
         String phone = txtPhone.getText();
         String email = txtEmail.getText();
@@ -134,7 +155,7 @@ public class CompanyFormController implements Initializable {
     }
 
     private void clearFields() {
-        txtName.clear();
+        txtCompany.clear();
         txtAddress.clear();
         txtPhone.clear();
         txtEmail.clear();
@@ -164,5 +185,11 @@ public class CompanyFormController implements Initializable {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    }
+
+    public void txtCompanyOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtAddressOnAction(ActionEvent actionEvent) {
     }
 }

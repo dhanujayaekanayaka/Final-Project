@@ -3,11 +3,13 @@ package lk.ijse.finalProject.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.sql.Date;
 
 @NoArgsConstructor
 @Data
+@ToString
 public class Vehicle {
     private String id;
     private String name;

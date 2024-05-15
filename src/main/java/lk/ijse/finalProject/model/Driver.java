@@ -5,6 +5,7 @@ import java.sql.Blob;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 public class Driver {
     private String driver_id;
     private String firstName;
