@@ -41,11 +41,11 @@ public class PackageRepo {
     }
 
     public static String getTrackingNumber() throws SQLException {
-        String sql = "SELECT tracking_number FROM Client_order";
+        String sql = "SELECT tracking_number FROM Client_order ORDER BY order_id DESC LIMIT 1";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
         if (resultSet.next()){
-           return resultSet.getString(2);
+           return resultSet.getString("tracking_number");
         }
         return null;
     }
@@ -55,11 +55,12 @@ public class PackageRepo {
             String[] split = currentTrackingNUmber.split("TR");
             int idNum = Integer.parseInt(split[1]);
             return "TR" + ++idNum;
+        } else {
+            return "TR1";
         }
-        return "TR1";
     }
     public static String getCurrentShipmenId() throws SQLException {
-        String sql = "SELECT shipment_id FROM Shipment";
+        String sql = "SELECT shipment_id FROM Shipment ORDER BY shipment_id DESC LIMIT 1";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
         if (resultSet.next()){
@@ -110,5 +111,53 @@ public class PackageRepo {
             packageList.add(pack);
         }
         return packageList;
+    }
+
+    public static List<Package> getAll() throws SQLException {
+        String sql = "SELECT * FROM Client_order";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<Package> packageList = new ArrayList<>();
+        while (resultSet.next()){
+            String id = resultSet.getString(1);
+            String trackingNumber = resultSet.getString(2);
+            String company_id = resultSet.getString(3);
+            String typeOfGood = resultSet.getString(4);
+            double weight = resultSet.getDouble(5);
+            String type = resultSet.getString(6);
+            Date date = resultSet.getDate(7);
+            String shipmentId = resultSet.getString(8);
+            Package pack = new Package(id,trackingNumber,company_id,typeOfGood,weight,type,date,shipmentId);
+            packageList.add(pack);
+        }
+        return packageList;
+    }
+
+    public static void remove(int selectedIndex) {
+
+    }
+
+    public static List<String> getRecentPackage() throws SQLException {
+        String sql = "SELECT tracking_number FROM Client_order ORDER BY order_id DESC LIMIT 5";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> trackingList = new ArrayList<>();
+        while (resultSet.next()){
+            String trackingNumber = resultSet.getString("tracking_number");
+            trackingList.add(trackingNumber);
+        }
+        return trackingList;
+    }
+
+    public static List<String> getTypeOfGood() throws SQLException {
+        String sql = "SELECT type_of_good FROM Client_order ORDER BY order_id DESC LIMIT 5";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> typeList = new ArrayList<>();
+        while (resultSet.next()){
+            String typeOfGood = resultSet.getString("type_of_good");
+            typeList.add(typeOfGood);
+        }
+        return typeList;
     }
 }

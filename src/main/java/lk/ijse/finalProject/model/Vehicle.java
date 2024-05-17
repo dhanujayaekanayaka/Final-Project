@@ -19,10 +19,10 @@ public class Vehicle {
     private String color;
     private String yom;
     private Date regDate;
-    private String currentDistance;
+    private double currentDistance;
     private String profile_picture;
 
-    public Vehicle(String vehiId, String model, String vehicleNumber, String chassis, String engineNumber, String color, String yom, Date date, String distance, String rest) {
+    public Vehicle(String vehiId, String model, String vehicleNumber, String chassis, String engineNumber, String color, String yom, Date date, double distance, String rest) {
         this.id=vehiId;
         this.name = model;
         this.vehicle_number = vehicleNumber;
@@ -33,7 +33,6 @@ public class Vehicle {
         this.regDate = date;
         this.currentDistance = distance;
         this.profile_picture = rest;
-
 
     }
 }

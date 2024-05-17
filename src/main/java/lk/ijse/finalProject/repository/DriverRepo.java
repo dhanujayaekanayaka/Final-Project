@@ -133,7 +133,7 @@ public class DriverRepo {
     }
 
     public static Driver getDetail(String id) throws SQLException {
-        String sql = "SELECT * FROM Driver WHERE NIC_number = ?";
+        String sql = "SELECT * FROM Driver WHERE vehicle_id = ?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1,id);
         ResultSet resultSet = pstm.executeQuery();

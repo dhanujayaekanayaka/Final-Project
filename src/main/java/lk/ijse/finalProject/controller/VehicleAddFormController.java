@@ -10,7 +10,11 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import lk.ijse.finalProject.model.Vehicle;
+import lk.ijse.finalProject.model.VehicleSave;
+import lk.ijse.finalProject.model.VehicleToBeService;
+import lk.ijse.finalProject.repository.ServiseScheduleRepo;
 import lk.ijse.finalProject.repository.VehicleRepo;
+import lk.ijse.finalProject.repository.VehicleSaveRepo;
 
 import java.io.File;
 import java.io.IOException;
@@ -54,7 +58,7 @@ public class VehicleAddFormController {
         String color = txtColor.getText();
         String yom = txtYom.getText();
         Date date = Date.valueOf(txtRegDate.getText());
-        String distance = txtCurrentMillage.getText();
+        double distance = Double.parseDouble(txtCurrentMillage.getText());
         try {
             String currentId = VehicleRepo.getVehicleId();
             String availableId = VehicleRepo.getVehicleId(currentId);
@@ -70,7 +74,12 @@ public class VehicleAddFormController {
                     distance,
                     absolutePath
             );
-            boolean isSaved = VehicleRepo.registerVehicle(vehicle);
+            String vehicleServiceId = ServiseScheduleRepo.getShchedule1("Vehicle Service");
+            String tyreReplacementId = ServiseScheduleRepo.getShchedule1("Tyre Replacement");
+            VehicleToBeService vehicleService = new VehicleToBeService(vehicleServiceId,availableId,"Vehicle Service",0.0);
+            VehicleToBeService tyreReplacement = new VehicleToBeService(tyreReplacementId,availableId,"Tyre Replacement",0.0);
+            VehicleSave vs = new VehicleSave(vehicle,vehicleService,tyreReplacement);
+            boolean isSaved = VehicleSaveRepo.saveVehicle(vs);
             if (isSaved){
                 clearFields();
                 new Alert(Alert.AlertType.CONFIRMATION,"Vehicle saved successfully").show();

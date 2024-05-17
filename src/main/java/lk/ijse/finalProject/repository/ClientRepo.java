@@ -26,7 +26,7 @@ public class ClientRepo {
             int idNum = Integer.parseInt(split[1]);
             return "C" + ++idNum;
         }
-        return "V1";
+        return "C1";
     }
 
     public static boolean saveCompany(String availableId, String name, String address, String phone, String email) throws SQLException {
@@ -90,5 +90,30 @@ public class ClientRepo {
             clientList.add(client);
         }
         return clientList;
+    }
+
+    public static List<String> getCompanyId() throws SQLException {
+        String sql = "SELECT client_company_id FROM Client";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> idList = new ArrayList<>();
+        while(resultSet.next()){
+            String id = resultSet.getString(1);
+            idList.add(id);
+        }
+        return idList;
+    }
+
+    public static List<String> getCompany() throws SQLException {
+        String sql = "SELECT Company_name FROM Client ORDER BY client_company_id DESC LIMIT 5";
+        PreparedStatement pstm = Dbconnection.
+                getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> companyList = new ArrayList<>();
+        if (resultSet.next()){
+            String companyName = resultSet.getString("company_name");
+            companyList.add(companyName);
+        }
+        return companyList;
     }
 }

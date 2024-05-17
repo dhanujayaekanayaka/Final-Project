@@ -1,5 +1,7 @@
 package lk.ijse.finalProject.controller.mail;
 
+import javafx.scene.control.Alert;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -7,23 +9,19 @@ import java.util.Properties;
 
 
 public class Mail {
-
-    public static void main(String[] args) {
-        final String userName = "adamnickolas123@gmail.com"; //same fromMail
-        final String password = "9F0D42BBD7A8839795AE115336AE800E379Eq";
+    public static void setMail(String email, String tittle, String body) {
+        final String userName = "prisonsystem737@gmail.com";
+        final String password = "vtgrticiqeblrxdi";
+        //final String userName = "sahandanujaya48@gmail.com";
+        //final String password = "95334238Sd$";
         final String toEmail = "sahandanujaya48@gmail.com";
 
-        System.out.println("TLSEmail Start");
+        System.out.println("Start");
         Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.elasticemail.com"); //SMTP Host
-        props.put("mail.smtp.port", "2525"); //TLS Port
-        props.put("mail.smtp.auth", "true"); //enable authentication
-        props.put("mail.smtp.starttls.enable", "true"); //enable STARTTLS
-        //props.put("mail.smtp.ssl.protocols", "TLSv1.2");
-        // props.put("mail.smtp.ssl.enable", "true");
-        // props.put("mail.smtp.socketFactory.port", "587"); //TLS Port
-
-        //Session session = Session.getDefaultInstance(props);
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", 587);
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
         Session session = Session.getDefaultInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
 
@@ -35,11 +33,11 @@ public class Mail {
         try{
             MimeMessage message = new MimeMessage(session);
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail, true));
-            message.setSubject("Prueba");
-            message.setText("Blablabla");
-            System.out.println("sending...");
+            message.setSubject(tittle);
+            message.setText(body);
+            new Alert(Alert.AlertType.INFORMATION,"Sending....").showAndWait();
             Transport.send(message);
-            System.out.println("Sent message successfully....");
+            new Alert(Alert.AlertType.CONFIRMATION,"Send successfully").show();
 
         }catch (MessagingException me){
             System.out.println("Exception: "+me);

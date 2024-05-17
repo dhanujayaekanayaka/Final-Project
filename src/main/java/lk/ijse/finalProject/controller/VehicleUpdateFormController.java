@@ -109,7 +109,7 @@ public class VehicleUpdateFormController implements Initializable {
         String color = txtColor.getText();
         String yom = txtYom.getText();
         Date date = Date.valueOf(txtRegDate.getText());
-        String distance = txtCurrentMillage.getText();
+        double distance = Double.parseDouble(txtCurrentMillage.getText());
 
         Vehicle vehicle = new Vehicle(vehiId,model,vehicleNumber,chassis,engineNumber,color,yom,date,distance,rest);
         try {
@@ -148,7 +148,7 @@ public class VehicleUpdateFormController implements Initializable {
             txtColor.setText(vehicle.getColor());
             txtYom.setText(vehicle.getYom());
             txtRegDate.setText(String.valueOf(vehicle.getRegDate()));
-            txtCurrentMillage.setText(vehicle.getCurrentDistance());
+            txtCurrentMillage.setText(String.valueOf(vehicle.getCurrentDistance()));
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }

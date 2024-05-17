@@ -7,13 +7,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import lk.ijse.finalProject.model.Client;
 import lk.ijse.finalProject.model.tm.ClientTm;
 import lk.ijse.finalProject.repository.ClientRepo;
+import lk.ijse.finalProject.util.Regex;
 
+import java.awt.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
@@ -23,7 +29,6 @@ public class CompanyFormController implements Initializable {
     public TextField txtAddress;
     public TextField txtPhone;
     public TextField txtEmail;
-    public TextField txtSearch;
     public TableView<ClientTm> tblCompany;
     public TableColumn<?,?> clmCompany;
     public TableColumn<?,?> clmAddress;
@@ -53,24 +58,35 @@ public class CompanyFormController implements Initializable {
     public Circle profilePicture;
     public TextField txtSearchBar;
     public Label lblDatePicker;
+    public Circle profilePicture1;
+    public Circle profilePicture2;
+    public Circle profilePicture3;
+    public Circle profilePicture4;
+    public Circle profilePicture5;
 
-    public void txtNAmeOnAction(ActionEvent actionEvent) {
-        txtAddress.requestFocus();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setTable();
+        setCellValueFactory();
+        setProfile();
     }
 
-    public void txtAddresOnAction(ActionEvent actionEvent) {
-        txtPhone.requestFocus();
+    private void setProfile() {
+        Image image1 = new Image(getClass().getResourceAsStream("/company/images.png"));
+        Image image2 = new Image(getClass().getResourceAsStream("/company/LALANNN.jpg"));
+        Image image3 = new Image(getClass().getResourceAsStream("/company/brandixleed-002.jpg"));
+        Image image4 = new Image(getClass().getResourceAsStream("/company/MAS.jpeg"));
+        Image image5 = new Image(getClass().getResourceAsStream("/company/images.png"));
+        
+        
     }
 
     public void txtPhoneOnAction(ActionEvent actionEvent) {
         txtEmail.requestFocus();
     }
 
-    public void txtEmailOnAction(ActionEvent actionEvent) {
-    }
-
     public void txtSearchOnAction(ActionEvent actionEvent) {
-        String companyName = txtSearch.getText();
+        String companyName = txtSearchBar.getText();
         try {
             Client client = ClientRepo.getValues(companyName);
             txtCompany.setText(client.getName());
@@ -90,36 +106,48 @@ public class CompanyFormController implements Initializable {
         try {
             String currentId = ClientRepo.getCurrentId();
             String availableId = ClientRepo.getAvailableId(currentId);
-            boolean isUpdated = ClientRepo.saveCompany(availableId, name, address, phone, email);
-            if (isUpdated){
-                clearFields();
-                setTable();
-                setCellValueFactory();
-                new Alert(Alert.AlertType.CONFIRMATION,"Company saved successfully").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR,"Company not saved").show();
+            if (isValided()) {
+                boolean isUpdated = ClientRepo.saveCompany(availableId, name, address, phone, email);
+                if (isUpdated) {
+                    clearFields();
+                    setTable();
+                    setCellValueFactory();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Company saved successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Company not saved").show();
+                }
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
     }
 
+    private boolean isValided() {
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NAME,txtCompany)) return true;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtAddress)) return true;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PHONE,txtPhone)) return true;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.EMAIL,txtEmail)) return true;
+        return false;
+    }
+
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        String searchName = txtSearch.getText();
+        String searchName = txtSearchBar.getText();
         String name = txtCompany.getText();
         String address = txtAddress.getText();
         String phone = txtPhone.getText();
         String email = txtEmail.getText();
         Client client = new Client(name,address,phone,email);
         try {
-            boolean isUpdated = ClientRepo.updateClient(searchName, client);
-            if (isUpdated){
-                clearFields();
-                setTable();
-                setCellValueFactory();
-                new Alert(Alert.AlertType.CONFIRMATION,"Company updated successfully").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR,"Company not updated").show();
+            if (isValided()) {
+                boolean isUpdated = ClientRepo.updateClient(searchName, client);
+                if (isUpdated) {
+                    clearFields();
+                    setTable();
+                    setCellValueFactory();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Company updated successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Company not updated").show();
+                }
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -127,16 +155,18 @@ public class CompanyFormController implements Initializable {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-        String searchName = txtSearch.getText();
+        String searchName = txtSearchBar.getText();
         try {
-            boolean isDeleted = ClientRepo.deleteClient(searchName);
-            if (isDeleted){
-                clearFields();
-                setTable();
-                setCellValueFactory();
-                new Alert(Alert.AlertType.CONFIRMATION,"Client deleted successfully").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR,"Client deleted unsuccessfully").show();
+            if (isValided()) {
+                boolean isDeleted = ClientRepo.deleteClient(searchName);
+                if (isDeleted) {
+                    clearFields();
+                    setTable();
+                    setCellValueFactory();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Client deleted successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Client deleted unsuccessfully").show();
+                }
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -161,12 +191,6 @@ public class CompanyFormController implements Initializable {
         txtEmail.clear();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        setTable();
-        setCellValueFactory();
-    }
-
     private void setTable() {
         ObservableList<ClientTm> observableList = FXCollections.observableArrayList();
         try {
@@ -188,8 +212,26 @@ public class CompanyFormController implements Initializable {
     }
 
     public void txtCompanyOnAction(ActionEvent actionEvent) {
+        txtAddress.requestFocus();
     }
 
     public void txtAddressOnAction(ActionEvent actionEvent) {
+        txtPhone.requestFocus();
+    }
+
+    public void companyNameKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtCompany);
+    }
+
+    public void addressKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtAddress);
+    }
+
+    public void emailKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.EMAIL,txtEmail);
+    }
+
+    public void phoneKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PHONE,txtPhone);
     }
 }

@@ -48,7 +48,7 @@ public class VehicleViewFormController implements Initializable {
         txtChassisNumber.setText(vehicle.getChassis());
         txtEngineNumber.setText(vehicle.getEngineNum());
         txtVehicleNumber.setText(vehicle.getVehicle_number());
-        txtCurrentMileage.setText(vehicle.getCurrentDistance());
+        txtCurrentMileage.setText(String.valueOf(vehicle.getCurrentDistance()));
     }
 
     @Override
@@ -66,7 +66,7 @@ public class VehicleViewFormController implements Initializable {
             txtChassisNumber.setText(vehicle.getChassis());
             txtEngineNumber.setText(vehicle.getEngineNum());
             txtVehicleNumber.setText(vehicle.getVehicle_number());
-            txtCurrentMileage.setText(vehicle.getCurrentDistance());
+            txtCurrentMileage.setText(String.valueOf(vehicle.getCurrentDistance()));
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }

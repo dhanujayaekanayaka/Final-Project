@@ -6,6 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static lk.ijse.finalProject.repository.VehicleToBeServiceRepo.getCurrentDistance;
+
 public class VehicleRepo {
     public static boolean registerVehicle(Vehicle vehicle) throws SQLException {
         String sql = "INSERT INTO Vehicle VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -18,8 +20,8 @@ public class VehicleRepo {
         pstm.setObject(6, vehicle.getColor());
         pstm.setObject(7, vehicle.getYom());
         pstm.setObject(8, vehicle.getRegDate());
-        pstm.setObject(9, vehicle.getCurrentDistance());
-        pstm.setObject(10, vehicle.getProfile_picture());
+        pstm.setObject(9, vehicle.getProfile_picture());
+        pstm.setObject(10, vehicle.getCurrentDistance());
         return pstm.executeUpdate() > 0;
     }
 
@@ -65,7 +67,9 @@ public class VehicleRepo {
         ResultSet resultSet = pstm.executeQuery();
         List<String> idList = new ArrayList<>();
         while (resultSet.next()) {
-            idList.add(resultSet.getString(1));
+            String id = resultSet.getString("vehicle_id");
+            idList.add(id);
+            System.out.println(id);
         }
         return idList;
     }
@@ -84,7 +88,7 @@ public class VehicleRepo {
             String color = resultSet.getString(6);
             String yom = resultSet.getString(7);
             Date reg = Date.valueOf(resultSet.getString(8));
-            String distance = resultSet.getString(9);
+            double distance = resultSet.getDouble(9);
             Blob profile = resultSet.getBlob(10);
             Vehicle vehicle = new Vehicle(id, name, number, chassis, engine, color, yom, reg, distance, profile.toString());
             return vehicle;
@@ -123,7 +127,7 @@ public class VehicleRepo {
             String color = resultSet.getString(6);
             String yom = resultSet.getString(7);
             Date regDate = Date.valueOf(resultSet.getString(8));
-            String distance = resultSet.getString(9);
+            double distance = resultSet.getDouble(9);
             String img = resultSet.getString(10);
             Vehicle vehicle = new Vehicle(vehiId,name,number,chassis,engine,color,yom,regDate,distance,img);
             return vehicle;

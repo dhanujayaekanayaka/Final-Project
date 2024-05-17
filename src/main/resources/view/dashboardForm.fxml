@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Box?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -36,7 +37,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <VBox layoutY="190.0" prefHeight="454.0" prefWidth="250.0">
+            <VBox layoutX="38.0" layoutY="190.0" prefHeight="454.0" prefWidth="174.0">
                <children>
                   <JFXButton fx:id="btnDashboard" alignment="TOP_LEFT" onAction="#btnMoveToDashboardOnAction" prefHeight="63.0" prefWidth="249.0" styleClass="sideBar" text="Dashboard" textFill="#1d4e89">
                      <graphic>
@@ -124,7 +125,7 @@
                   </JFXButton>
                </children>
             </VBox>
-            <JFXButton fx:id="btnLogout" alignment="BOTTOM_LEFT" layoutX="-1.0" layoutY="906.0" onAction="#btnMyProfileOnAction" prefHeight="40.0" prefWidth="249.0" style="-fx-cursor: hand;" text="     Logout" textFill="#979696">
+            <JFXButton fx:id="btnLogout" alignment="BOTTOM_LEFT" layoutX="52.0" layoutY="905.0" onAction="#btnMyProfileOnAction" prefHeight="47.0" prefWidth="145.0" style="-fx-cursor: hand;" text="Logout" textFill="#979696">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -142,6 +143,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
+            <Box fx:id="box" depth="100" height="100" layoutX="119.0" layoutY="828.0" width="100" />
          </children>
       </Pane>
    </left>
@@ -189,19 +191,19 @@
             </LineChart>
             <Pane layoutX="13.0" layoutY="610.0" prefHeight="394.0" prefWidth="1243.0" style="-fx-border-color: lightgray; -fx-border-radius: 20;">
                <children>
-                  <Label fx:id="lblEmployee1" layoutX="70.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
-                  <Label fx:id="lblEmployee2" layoutX="200.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
-                  <Label fx:id="lblEmployee3" layoutX="330.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
-                  <Label fx:id="blEmployee4" layoutX="460.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
+                  <Label fx:id="lblEmployee1" layoutX="70.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Label fx:id="lblEmployee2" layoutX="200.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Label fx:id="lblEmployee3" layoutX="330.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Label fx:id="blEmployee4" layoutX="460.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
                   <Text layoutX="70.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Text>
-                  <Label fx:id="lblVehicle1" layoutX="70.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
-                  <Label fx:id="lblVehicle2" layoutX="200.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
-                  <Label fx:id="lblVehicle3" layoutX="330.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
-                  <Label fx:id="lblVehicle4" layoutX="460.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Label" />
+                  <Label fx:id="lblVehicle1" layoutX="70.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Label fx:id="lblVehicle2" layoutX="200.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Label fx:id="lblVehicle3" layoutX="330.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Label fx:id="lblVehicle4" layoutX="460.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
                   <Text layoutX="70.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicles">
                      <font>
                         <Font name="System Bold" size="17.0" />
@@ -222,7 +224,6 @@
                   </Text>
                </children>
             </Pane>
-            <Circle fx:id="profilePicture1" fill="#ffffff00" layoutX="1625.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
             <HBox layoutX="789.0" layoutY="31.0" prefHeight="35.0" prefWidth="315.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;">
                <children>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -240,10 +241,6 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Text>
-                  <Label fx:id="lblPackage1" layoutX="20.0" layoutY="60.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
-                  <Label fx:id="lblPackage2" layoutX="20.0" layoutY="150.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
-                  <Label fx:id="lblPackage3" layoutX="20.0" layoutY="240.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
-                  <Label fx:id="lblPackage4" layoutX="20.0" layoutY="330.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
                   <Hyperlink layoutX="171.0" layoutY="433.0" onAction="#hplSeeAllPackageOnAction" text="See all" />
                   <Line endX="237.0" layoutX="104.0" layoutY="137.0" startX="-51.0" stroke="#948d8d" />
                   <Line endX="237.0" layoutX="104.0" layoutY="227.0" startX="-51.0" stroke="#948d8d" />
@@ -297,7 +294,7 @@
                   <Hyperlink fx:id="hplTrackNum4" layoutX="86.0" layoutY="341.0" onAction="#hplTrackNum4OnAction" text="Tracking Number">
                      <font>
                         <Font name="System Bold" size="15.0" />
-                     </font>
+                     </font>backgroundImage
                   </Hyperlink>
                   <Label layoutX="93.0" layoutY="364.0" text="Company-">
                      <font>
@@ -309,6 +306,10 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
+                  <Circle fx:id="package1" fill="#ffffff00" layoutX="56.0" layoutY="94.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="package2" fill="#ffffff00" layoutX="56.0" layoutY="184.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="package3" fill="#ffffff00" layoutX="56.0" layoutY="274.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="package4" fill="#ffffff00" layoutX="56.0" layoutY="364.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </Pane>
             <Pane layoutX="1267.0" layoutY="609.0" prefHeight="394.0" prefWidth="394.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: lightgray;">
@@ -318,9 +319,6 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Text>
-                  <Label fx:id="lblCompanyProfile1" layoutX="24.0" layoutY="64.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
-                  <Label fx:id="lblCompanyProfile2" layoutX="24.0" layoutY="154.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
-                  <Label fx:id="lblCompanyProfile3" layoutX="24.0" layoutY="244.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
                   <Hyperlink layoutX="171.0" layoutY="358.0" onAction="#hplSeeAllCompanyOnAction" text="See all" />
                   <Line endX="237.0" layoutX="111.0" layoutY="142.0" startX="-51.0" stroke="#948d8d" />
                   <Line endX="237.0" layoutX="111.0" layoutY="232.0" startX="-51.0" stroke="#948d8d" />
@@ -370,8 +368,12 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
+                  <Circle fx:id="company1" fill="#ffffff00" layoutX="60.0" layoutY="101.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="company2" fill="#ffffff00" layoutX="60.0" layoutY="191.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="company3" fill="#ffffff00" layoutX="60.0" layoutY="281.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </Pane>
+            <Circle fx:id="profilePicture1" fill="#ffffff00" layoutX="1614.0" layoutY="52.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
          <effect>
             <DropShadow height="6.0" radius="2.5" width="6.0" />

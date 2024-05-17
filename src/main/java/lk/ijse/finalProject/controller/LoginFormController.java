@@ -69,7 +69,7 @@ public class LoginFormController {
             String dbPw = resultSet.getString("password");
             if (password.equals(dbPw)){
                 try {
-                    navigateToTheDashboard();
+                    navigateToTheDashboard(username);
                 } catch (IOException e) {
                     new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
 
@@ -82,14 +82,15 @@ public class LoginFormController {
         }
     }
 
-    private void navigateToTheDashboard() throws IOException {
+    private void navigateToTheDashboard(String dbUser) throws IOException {
         BorderPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboardForm.fxml"));
         Scene scene = new Scene(rootNode);
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("US CARGO FREIGHT SERVICE");
         stage.centerOnScreen();
-
+        PackageFormController packageFormController = new PackageFormController();
+        packageFormController.sendUser(dbUser);
     }
 
     public void hplForgotPasswordOnAction(ActionEvent actionEvent) {

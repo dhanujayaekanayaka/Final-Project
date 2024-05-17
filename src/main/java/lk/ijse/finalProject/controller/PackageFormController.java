@@ -1,21 +1,25 @@
 package lk.ijse.finalProject.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import lk.ijse.finalProject.model.*;
 import lk.ijse.finalProject.model.Package;
-import lk.ijse.finalProject.repository.PackageRepo;
-import lk.ijse.finalProject.repository.PackageSaveRepo;
-import lk.ijse.finalProject.repository.RouteRepo;
-import lk.ijse.finalProject.repository.ShipmentRepo;
+import lk.ijse.finalProject.model.tm.PackageTm;
+import lk.ijse.finalProject.repository.*;
 import lk.ijse.finalProject.util.Regex;
 
 import java.net.URL;
@@ -23,6 +27,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class PackageFormController implements Initializable {
@@ -33,8 +38,7 @@ public class PackageFormController implements Initializable {
     public TableColumn<?,?> columnPrice;
     public TableColumn<?,?> columnDelete;
     public TextField txtWeight;
-    public JFXComboBox<String> comboTransportMode;
-    public TableView<?> tblPackage;
+    public TableView<PackageTm> tblPackage;
     public JFXComboBox<String> comboId;
     public AnchorPane oldPane;
     public TextField txtDate;
@@ -60,6 +64,144 @@ public class PackageFormController implements Initializable {
     public TextField txtSearchBar;
     public Label lblDatePicker;
     public AnchorPane newPane;
+    public JFXComboBox<String> comboVehicleId;
+    public String user;
+    public Label tracking1;
+    public Label tracking2;
+    public Label tracking3;
+    public Label tracking4;
+    public Label tracking5;
+
+    public void sendUser(String dbUser) {
+        user = dbUser;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setCombo();
+        setComboVehicleId();
+        setComboDescription();
+        setDate();
+        setComboRoute();
+        setTable();
+        setCellValueFactory();
+        setUserName();
+        setProfile();
+        setpackageName();
+
+    }
+
+    private void setpackageName() {
+        try {
+            List<String> trackingList = PackageRepo.getRecentPackage();
+
+            if (trackingList.size() < 1){
+                tracking1.setText("No Data");
+            } else {
+                tracking1.setText(trackingList.get(0));
+            }
+            if (trackingList.size() < 2){
+                tracking2.setText("No Data");
+            } else {
+                tracking2.setText(trackingList.get(1));
+            }
+            if (trackingList.size() < 3){
+                tracking3.setText("No Data");
+            } else {
+                tracking3.setText(trackingList.get(2));
+            }
+            if (trackingList.size() < 4){
+                tracking4.setText("No Data");
+            } else {
+                tracking4.setText(trackingList.get(3));
+            }
+            if (trackingList.size() < 5){
+                tracking5.setText("No Data");
+            } else {
+                tracking5.setText(trackingList.get(4));
+            }
+
+            List<String> packageList = PackageRepo.getTypeOfGood();
+            if (packageList.size() < 1){
+                packageType1.setText("No Data");
+            } else {
+                packageType1.setText(packageList.get(0));
+            }
+            if (packageList.size() < 2){
+                packageType2.setText("No Data");
+            } else {
+                packageType2.setText(packageList.get(1));
+            }
+            if (packageList.size() < 3){
+                packageType3.setText("No Data");
+            } else {
+                packageType3.setText(packageList.get(2));
+            }
+            if (packageList.size() < 4){
+                packageType4.setText("No Data");
+            } else {
+                packageType4.setText(packageList.get(3));
+            }
+            if (packageList.size() < 5){
+                packageType5.setText("No Data");
+            } else {
+                packageType5.setText(packageList.get(4));
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
+    }
+
+    private void setProfile() {
+        Image image = new Image(getClass().getResourceAsStream("/image/humen1.jpeg"));
+        profilePicture.setFill(new ImagePattern(image));
+        Image image1 = new Image(getClass().getResourceAsStream("/package/HealthiestFruits-feb2318dc0a3454993007f57c724753f.jpg"));
+        Image image2 = new Image(getClass().getResourceAsStream("/package/fast-fashion2.jpeg"));
+        Image image3 = new Image(getClass().getResourceAsStream("/package/086924c9-23b7-41c6-9218-45685c563a2e-h.jpeg"));
+        Image image4 = new Image(getClass().getResourceAsStream("/package/images.jpeg"));
+        Image image5 = new Image(getClass().getResourceAsStream("/package/1_0x0_2119x1415_0x520_new_tyres.jpg"));
+        picture1.setFill(new ImagePattern(image1));
+        picture2.setFill(new ImagePattern(image2));
+        picture3.setFill(new ImagePattern(image3));
+        picture4.setFill(new ImagePattern(image4));
+        picture5.setFill(new ImagePattern(image5));
+    }
+
+    private void setUserName() {
+        userName.setText(user);
+    }
+
+    private void setCellValueFactory() {
+        columnCompany.setCellValueFactory(new PropertyValueFactory<>("companyId"));
+        colmTrackingNumber.setCellValueFactory(new PropertyValueFactory<>("trackingNumber"));
+        columnWeight.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        columnTypeOfGood.setCellValueFactory(new PropertyValueFactory<>("typeOfGood"));
+        columnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+    }
+
+    private void setTable() {
+        ObservableList<PackageTm> obList = FXCollections.observableArrayList();
+        try {
+            List<Package> packageList = PackageRepo.getAll();
+            for (Package pack : packageList){
+                PackageTm tm = new PackageTm(
+                        pack.getOrderId(),
+                        pack.getTrackingNumber(),
+                        pack.getCompanyId(),
+                        pack.getTypeOfGood(),
+                        pack.getWeight(),
+                        pack.getDeliveryType(),
+                        pack.getBorrowDAte(),
+                        pack.getShipmentId(),
+                        pack.getWeight()*500
+                );
+                obList.add(tm);
+            }
+            tblPackage.setItems(obList);
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
+    }
 
 
     public void btnClearOnAction(ActionEvent actionEvent) {
@@ -76,32 +218,58 @@ public class PackageFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
         String companyId = comboId.getValue();
         String typeOfGood = txtType.getText();
         double weight = Double.parseDouble(txtWeight.getText());
-        String vehicleId = comboTransportMode.getValue();
+        String vehicleId = comboVehicleId.getValue();
         Date date = Date.valueOf(txtDate.getText());
         String routId = comboRoute.getValue();
         double shipmentCost = weight * 500;
 
         try {
+            System.out.println("Come to try catch1");
             String currentId = PackageRepo.getCurrentId();
+            System.out.println("is ok1");
             String availableId = PackageRepo.getAvailableId(currentId);
+            System.out.println("is ok2");
+
             String currentTrackingNUmber = PackageRepo.getTrackingNumber();
+            System.out.println("is ok3");
             String availableNumber = PackageRepo.getAvailableNumber(currentTrackingNUmber);
+            System.out.println("is ok4");
+
             String currentShipmentId = PackageRepo.getCurrentShipmenId();
+            System.out.println("is ok5");
             String availableShipmentId = PackageRepo.getAvailableShipmentId(currentShipmentId);
-            String destination = getTransportMode(routId);
+            System.out.println("is ok6");
+
+          //  String destination = getTransportMode(routId);
+            String destination = RouteRepo.getDestination(routId);
+            System.out.println("is ok7");
             String mode = RouteRepo.getMode(destination);
+            System.out.println("is ok8");
+
             double distance = Double.parseDouble(RouteRepo.getDistance(routId));
+            System.out.println("is ok9");
             String description = RouteRepo.getDescription(routId);
+            System.out.println("is ok10");
+
             Shipment shipment = new Shipment(availableShipmentId,shipmentCost,routId);
             Package savePackage = new Package(availableId,availableNumber,companyId,typeOfGood,weight,mode,date,availableShipmentId);
+
             DeliveryDetail deliveryDetail = new DeliveryDetail(availableShipmentId,vehicleId,destination);
             Route route = new Route(routId,"Panadura",destination,description,distance);
-            PackageSave packageSave = new PackageSave(savePackage,shipment,deliveryDetail,route);
-            PackageSaveRepo.placeClientOrder(packageSave);
 
+            PackageSave packageSave = new PackageSave(savePackage,shipment,deliveryDetail,route,comboVehicleId.getValue());
+            System.out.println("go to this");
+            boolean isPlaced = PackageSaveRepo.placeClientOrder(packageSave);
+            if (isPlaced){
+                new Alert(Alert.AlertType.CONFIRMATION,"Package placed successfully").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR,"Package placed unsuccessfully").show();
+            }
+            System.out.println("end try catch");
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
@@ -121,26 +289,44 @@ public class PackageFormController implements Initializable {
         String companyId = comboId.getValue();
         String typeOfGood = txtType.getText();
         double weight = Double.parseDouble(txtWeight.getText());
-        String mode = comboTransportMode.getValue();
+        String mode = comboVehicleId.getValue();
         Date date = Date.valueOf(txtDate.getText());
         String routId = comboRoute.getValue();
         String packId = txtSearchBar.getText();
 
     }
-
     public void comboIdOnAction(ActionEvent actionEvent) {
     }
+
     public void txtWeightOnAction(ActionEvent actionEvent) {
         txtDate.requestFocus();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        setCombo();
-        setTransportMode();
-        setComboDescription();
-        setDate();
+    private void setComboVehicleId() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> vehicleId = VehicleRepo.getId();
+            for (String id : vehicleId){
+                System.out.println(id);
+                obList.add(id);
+            }
+            comboVehicleId.setItems(obList);
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
+    }
 
+    private void setComboRoute() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> idList = RouteRepo.getId();
+            for (String id : idList){
+                obList.add(id);
+            }
+            comboRoute.setItems(obList);
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     private void setDate() {
@@ -159,13 +345,13 @@ public class PackageFormController implements Initializable {
         ObservableList<String> modes = FXCollections.observableArrayList();
         modes.add("Flight");
         modes.add("Ship");
-        comboTransportMode.setItems(modes);
+        comboVehicleId.setItems(modes);
     }
 
     private void setCombo() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
-            List<String> companyId = PackageRepo.getCompanyId();
+            List<String> companyId = ClientRepo.getCompanyId();
             for (String id : companyId){
                 obList.add(id);
             }
@@ -176,6 +362,7 @@ public class PackageFormController implements Initializable {
     }
 
     public void txtDateOnAction(ActionEvent actionEvent) {
+
     }
 
     public void txtTypeOnAction(ActionEvent actionEvent) {
@@ -192,7 +379,7 @@ public class PackageFormController implements Initializable {
             comboId.setItems((ObservableList<String>) all.get(2));
             ObservableList<String> routeId = ShipmentRepo.getRouteId(String.valueOf(all.get(8)));
             comboRoute.setItems(routeId);
-            comboTransportMode.setItems((ObservableList<String>) all.get(5));
+            comboVehicleId.setItems((ObservableList<String>) all.get(5));
 
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage(),ButtonType.CANCEL).show();
@@ -240,13 +427,13 @@ public class PackageFormController implements Initializable {
                 Route route = new Route(nextAvailableId, location, destination, description, distance);
                 boolean isSaved = RouteRepo.saveRoute(route);
                 if (isSaved) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Route saved successfully", ButtonType.OK).show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Route saved successfully").show();
                 } else {
-                    new Alert(Alert.AlertType.ERROR, "Route saved unsuccessfully", ButtonType.CANCEL).show();
+                    new Alert(Alert.AlertType.ERROR, "Route saved unsuccessfully").show();
                 }
             }
             } catch(SQLException e){
-                new Alert(Alert.AlertType.ERROR, e.getMessage(), ButtonType.OK).show();
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 

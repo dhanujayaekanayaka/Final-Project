@@ -1,5 +1,6 @@
 package lk.ijse.finalProject.model.tm;
 
+import com.jfoenix.controls.JFXButton;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,4 +19,6 @@ public class PackageTm {
     private String deliveryType;
     private Date borrowDAte;
     private String ShipmentId;
+    private double price;
+
 }

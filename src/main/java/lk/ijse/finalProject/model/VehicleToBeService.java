@@ -1,6 +1,5 @@
 package lk.ijse.finalProject.model;
 
-import com.jfoenix.controls.JFXComboBox;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,11 +9,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 @ToString
-public class PackageSave {
-    private Package aPackage;
-    private Shipment shipment;
-    private DeliveryDetail deliveryDetail;
-    private Route route;
+public class VehicleToBeService {
+    private String id;
     private String vehicleId;
-
+    private String status;
+    private double alert_distance;
 }

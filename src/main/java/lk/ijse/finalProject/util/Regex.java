@@ -7,10 +7,13 @@ public class Regex {
 
     public static boolean setTextFieldColor(TextField location, javafx.scene.control.TextField textField) {
         if (Regex.isTextFieldValid(location,textField.getText())){
-            textField.setStyle("-fx-text-color: green");
+            textField.setStyle("-fx-text-fill: green");
+            textField.setStyle("-fx-text-fill: green");
+
             return true;
         } else {
-            textField.setStyle("-fx-text-color: Red");
+            textField.setStyle("-fx-text-fill: Red");
+            textField.setStyle("-fx-text-fill: Red");
             return false;
         }
     }
@@ -18,9 +21,6 @@ public class Regex {
     private static boolean isTextFieldValid(TextField location, String text) {
         String field = "";
         switch (location) {
-            case ID:
-                field = "^([A-Z][0-9]{3})$\"";
-                break;
             case NAME:
                 field = "^[A-z|\\\\s]{3,}$";
                 break;
@@ -28,19 +28,25 @@ public class Regex {
                 field = "[A-z][0-9]{8,}$";
                 break;
             case WORD:
-                field = "";
+                field = "^[A-Za-z\\s]{4,}$";
                 break;
             case DATE:
-                field = "";
+                field = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$";
                 break;
             case PRICE:
-                field = "";
+                field = "^-?\\d*\\.\\d+$";
                 break;
             case WEIGHT:
-                field = "";
+                field = "^-?\\d*\\.\\d+$";
                 break;
             case DISTANCE:
-                field = "";
+                field = "^-?\\d*\\.\\d+$";
+                break;
+            case PHONE:
+                field ="^([+]94{1,3}|[0])([1-9]{2})([0-9]){7}$";
+                break;
+            case EMAIL:
+                field = "^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$";
         }
         Pattern pattern = Pattern.compile(field);
         if (text != null){

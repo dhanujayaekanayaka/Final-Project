@@ -12,19 +12,17 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Box;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import lk.ijse.finalProject.DB.Dbconnection;
 
 import javax.swing.text.StyledEditorKit;
-import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -84,9 +82,21 @@ public class DashboardFormController implements Initializable {
     public Hyperlink hplCompany3;
     public Label lblAddress3;
     public JFXButton btnMap;
+    public Box box;
+    public Circle package1;
+    public Circle package2;
+    public Circle package3;
+    public Circle package4;
+    public Circle company1;
+    public Circle company2;
+    public Circle company3;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image image = new Image(getClass().getResourceAsStream("/driver/driver1.jpg"));
+        BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,new BackgroundSize(100,100,true,true,true,true));
+        Background background = new Background(backgroundImage);
+        lblEmployee1.setBackground(background);
         setUserName();
         setProfilePicture();
         setDate();
@@ -106,6 +116,10 @@ public class DashboardFormController implements Initializable {
         series1.getData().add(new XYChart.Data("4",7));
 
         lineChart.getData().add(series1);
+        barChart.getData().add(series);
+        barChart.setBarGap(10);
+        barChart.setStyle("-fx-bar-color : blue");
+        barChart.getData().add(series1);
 
 
     }
@@ -119,6 +133,29 @@ public class DashboardFormController implements Initializable {
         Image dp = new Image(String.valueOf(this.getClass().getResource("/image/humen1.jpeg")));
         profilePicture.setFill(new ImagePattern(dp));
         profilePicture1.setFill(new ImagePattern(dp));
+
+        Image employee1 = new Image(getClass().getResourceAsStream("/driver/driver1.jpg"));
+        Image employee2 = new Image(getClass().getResourceAsStream("/driver/humen3.jpeg"));
+        Image employee3 = new Image(getClass().getResourceAsStream("/driver/driver2.jpg"));
+        Image employee4 = new Image(getClass().getResourceAsStream("/driver/humen4.jpeg"));
+
+        Image package1 = new Image(getClass().getResourceAsStream("/package/1_0x0_2119x1415_0x520_new_tyres.jpg"));
+        Image package2 = new Image(getClass().getResourceAsStream("/package/086924c9-23b7-41c6-9218-45685c563a2e-h.jpeg"));
+        Image package3 = new Image(getClass().getResourceAsStream("/package/fast-fashion2.jpeg"));
+        Image package4 = new Image(getClass().getResourceAsStream("/package/HealthiestFruits-feb2318dc0a3454993007f57c724753f.jpg"));
+
+        this.package1.setFill(new ImagePattern(package1));
+        this.package2.setFill(new ImagePattern(package2));
+        this.package3.setFill(new ImagePattern(package3));
+        this.package4.setFill(new ImagePattern(package4));
+
+        Image company1 = new Image(getClass().getResourceAsStream("/company/MAS.jpeg"));
+        Image company2 = new Image(getClass().getResourceAsStream("/company/LALANNN.jpg"));
+        Image company3 = new Image(getClass().getResourceAsStream("/company/brandixleed-002.jpg"));
+
+        this.company1.setFill(new ImagePattern(company1));
+        this.company2.setFill(new ImagePattern(company2));
+        this.company3.setFill(new ImagePattern(company3));
     }
 
     public void setDate(){
@@ -281,6 +318,6 @@ public class DashboardFormController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("Google Map");
         stage.centerOnScreen();
-        stage.show();
+
     }
 }

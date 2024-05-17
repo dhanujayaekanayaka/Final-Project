@@ -111,49 +111,49 @@ public class DriverFormController {
     }
 
     private void setName() {
-        try {
-            List<String> nameList = DriverRepo.getName() ;
-            if(nameList.size() < 1){
-                hplName1.setText("no data");
-            } else {
-                hplName1.setText(nameList.get(0));
-            }
-            if (nameList.size() < 2) {
-                hplName2.setText("no data");
-            } else {
-                hplName2.setText(nameList.get(1));
-            }
-            if (nameList.size() < 3) {
-                hplName3.setText("no data");
-            } else {
-                hplName3.setText(nameList.get(2));
-            }
-            if (nameList.size() < 4) {
-                hplName4.setText("no data");
-            } else {
-                hplName4.setText(nameList.get(3));
-            }
-            if (nameList.size() < 5) {
-                lblId4.setText("no data");
-            } else {
-                hplName5.setText(nameList.get(4));
-            }
-            if (nameList.size() < 6) {
-                hplName6.setText("no data");
-            } else {
-                hplName6.setText(nameList.get(5));
-            }
-            if (nameList.size() < 7){
-                hplName7.setText("no data");
-            } else {
-                hplName7.setText(nameList.get(6));
-            }
-            if (nameList.size() < 8) {
-                hplName8.setText("no data");
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-        }
+//        try {
+//            List<String> nameList = DriverRepo.getName() ;
+//            if(nameList.size() < 1){
+//                hplName1.setText("no data");
+//            } else {
+//                hplName1.setText(nameList.get(0));
+//            }
+//            if (nameList.size() < 2) {
+//                hplName2.setText("no data");
+//            } else {
+//                hplName2.setText(nameList.get(1));
+//            }
+//            if (nameList.size() < 3) {
+//                hplName3.setText("no data");
+//            } else {
+//                hplName3.setText(nameList.get(2));
+//            }
+//            if (nameList.size() < 4) {
+//                hplName4.setText("no data");
+//            } else {
+//                hplName4.setText(nameList.get(3));
+//            }
+//            if (nameList.size() < 5) {
+//                lblId4.setText("no data");
+//            } else {
+//                hplName5.setText(nameList.get(4));
+//            }
+//            if (nameList.size() < 6) {
+//                hplName6.setText("no data");
+//            } else {
+//                hplName6.setText(nameList.get(5));
+//            }
+//            if (nameList.size() < 7){
+//                hplName7.setText("no data");
+//            } else {
+//                hplName7.setText(nameList.get(6));
+//            }
+//            if (nameList.size() < 8) {
+//                hplName8.setText("no data");
+//            }
+//        } catch (SQLException e) {
+//            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+//        }
     }
 
 

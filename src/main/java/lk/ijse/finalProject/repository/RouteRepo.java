@@ -7,6 +7,8 @@ import lk.ijse.finalProject.model.Route;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RouteRepo {
 
@@ -45,13 +47,13 @@ public class RouteRepo {
         pstm.setObject(1,routId);
         ResultSet resultSet = pstm.executeQuery();
         if (resultSet.next()){
-            return resultSet.getString(3);
+            return resultSet.getString("last_location");
         }
         return null;
     }
 
     public static String getMode(String destination) {
-        if (destination.equals("Colombo_port")){
+        if (destination.equals("Colombo")){
             return "Ship";
         } else if (destination.equals("Katunayake")){
             return "AirPlane";
@@ -61,12 +63,12 @@ public class RouteRepo {
     }
 
     public static String getDistance(String routId) throws SQLException {
-        String sql = "SELECT route_id FROM Rout WHERE route_id = ?";
+        String sql = "SELECT distance FROM Route WHERE route_id = ?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1,routId);
         ResultSet resultSet = pstm.executeQuery();
         if (resultSet.next()){
-            return resultSet.getString(5);
+            return resultSet.getString("distance");
         }
         return null;
     }
@@ -77,8 +79,20 @@ public class RouteRepo {
         pstm.setObject(1,routId);
         ResultSet resultSet = pstm.executeQuery();
         if (resultSet.next()){
-            return resultSet.getString(4);
+            return resultSet.getString("route_description");
         }
         return null;
+    }
+
+    public static List<String > getId() throws SQLException {
+        String sql = "SELECT route_id FROM Route";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> idList = new ArrayList<>();
+        while(resultSet.next()){
+            String id = resultSet.getString(1);
+            idList.add(id);
+        }
+        return idList;
     }
 }
