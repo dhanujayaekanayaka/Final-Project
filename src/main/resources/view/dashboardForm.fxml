@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Box?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -143,7 +142,6 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <Box fx:id="box" depth="100" height="100" layoutX="119.0" layoutY="828.0" width="100" />
          </children>
       </Pane>
    </left>
@@ -170,7 +168,8 @@
             <Label fx:id="userName" layoutX="1511.0" layoutY="44.0" text="user">
                <font>
                   <Font size="15.0" />
-               </font></Label>
+               </font>
+            </Label>
             <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1282.0" layoutY="36.0" style="-fx-cursor: hand;">
                <image>
                   <Image url="@../gift/icons8-mail(1).gif" />
@@ -191,19 +190,11 @@
             </LineChart>
             <Pane layoutX="13.0" layoutY="610.0" prefHeight="394.0" prefWidth="1243.0" style="-fx-border-color: lightgray; -fx-border-radius: 20;">
                <children>
-                  <Label fx:id="lblEmployee1" layoutX="70.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Label fx:id="lblEmployee2" layoutX="200.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Label fx:id="lblEmployee3" layoutX="330.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Label fx:id="blEmployee4" layoutX="460.0" layoutY="75.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
                   <Text layoutX="70.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Text>
-                  <Label fx:id="lblVehicle1" layoutX="70.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Label fx:id="lblVehicle2" layoutX="200.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Label fx:id="lblVehicle3" layoutX="330.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Label fx:id="lblVehicle4" layoutX="460.0" layoutY="265.0" prefHeight="105.0" prefWidth="105.0" style="-fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;" />
                   <Text layoutX="70.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicles">
                      <font>
                         <Font name="System Bold" size="17.0" />
@@ -222,6 +213,14 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Text>
+                  <Circle fx:id="employee1" fill="#ffffff00" layoutX="122.0" layoutY="128.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="employee2" fill="#ffffff00" layoutX="252.0" layoutY="128.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="employee3" fill="#ffffff00" layoutX="382.0" layoutY="128.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="employee4" fill="#ffffff00" layoutX="512.0" layoutY="128.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vehicle1" fill="#ffffff00" layoutX="122.0" layoutY="308.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vehicle2" fill="#ffffff00" layoutX="252.0" layoutY="308.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vehicle3" fill="#ffffff00" layoutX="382.0" layoutY="308.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="vehicle4" fill="#ffffff00" layoutX="512.0" layoutY="308.0" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </Pane>
             <HBox layoutX="789.0" layoutY="31.0" prefHeight="35.0" prefWidth="315.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;">

@@ -160,4 +160,15 @@ public class PackageRepo {
         }
         return typeList;
     }
+
+    public static int getPackageCount1(String c) throws SQLException {
+        String sql = "SELECT COUNT(*) package_count FROM Client_order WHERE client_company_id =?";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setObject(1,c);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()){
+            return resultSet.getInt("package_count");
+        }
+        return 0;
+    }
 }

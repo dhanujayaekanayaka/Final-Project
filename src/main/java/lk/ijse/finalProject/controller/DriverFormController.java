@@ -12,15 +12,24 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import lk.ijse.finalProject.DB.Dbconnection;
 import lk.ijse.finalProject.model.Driver;
 import lk.ijse.finalProject.model.Vehicle;
 import lk.ijse.finalProject.repository.DriverRepo;
 import lk.ijse.finalProject.repository.VehicleRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 public class DriverFormController {
 
     public AnchorPane rootNode;
@@ -50,13 +59,13 @@ public class DriverFormController {
     public Label userName;
     public TextField txtSearchBar;
     public Label lblDatePicker;
-    public Label lblDriver2;
-    public Label lblDriver3;
-    public Label lblDriver4;
-    public Label lblDriver5;
-    public Label lblDriver6;
-    public Label lblDriver7;
-    public ImageView imgView;
+    public Circle profilePicture1;
+    public Circle profilePicture2;
+    public Circle profilePicture3;
+    public Circle profilePicture4;
+    public Circle profilePicture5;
+    public Circle profilePicture6;
+    public Circle profilePicture7;
     @FXML
     BorderPane borderPane;
 
@@ -111,49 +120,46 @@ public class DriverFormController {
     }
 
     private void setName() {
-//        try {
-//            List<String> nameList = DriverRepo.getName() ;
-//            if(nameList.size() < 1){
-//                hplName1.setText("no data");
-//            } else {
-//                hplName1.setText(nameList.get(0));
-//            }
-//            if (nameList.size() < 2) {
-//                hplName2.setText("no data");
-//            } else {
-//                hplName2.setText(nameList.get(1));
-//            }
-//            if (nameList.size() < 3) {
-//                hplName3.setText("no data");
-//            } else {
-//                hplName3.setText(nameList.get(2));
-//            }
-//            if (nameList.size() < 4) {
-//                hplName4.setText("no data");
-//            } else {
-//                hplName4.setText(nameList.get(3));
-//            }
-//            if (nameList.size() < 5) {
-//                lblId4.setText("no data");
-//            } else {
-//                hplName5.setText(nameList.get(4));
-//            }
-//            if (nameList.size() < 6) {
-//                hplName6.setText("no data");
-//            } else {
-//                hplName6.setText(nameList.get(5));
-//            }
-//            if (nameList.size() < 7){
-//                hplName7.setText("no data");
-//            } else {
-//                hplName7.setText(nameList.get(6));
-//            }
-//            if (nameList.size() < 8) {
-//                hplName8.setText("no data");
-//            }
-//        } catch (SQLException e) {
-//            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-//        }
+        try {
+            List<String> nameList = DriverRepo.getName() ;
+            if(nameList.size() < 1){
+                hplName1.setText("no data");
+            } else {
+                hplName1.setText(nameList.get(0));
+            }
+            if (nameList.size() < 2) {
+                hplName2.setText("no data");
+            } else {
+                hplName2.setText(nameList.get(1));
+            }
+            if (nameList.size() < 3) {
+                hplName3.setText("no data");
+            } else {
+                hplName3.setText(nameList.get(2));
+            }
+            if (nameList.size() < 4) {
+                hplName4.setText("no data");
+            } else {
+                hplName4.setText(nameList.get(3));
+            }
+            if (nameList.size() < 5) {
+                lblId4.setText("no data");
+            } else {
+                hplName5.setText(nameList.get(4));
+            }
+            if (nameList.size() < 6) {
+                hplName6.setText("no data");
+            } else {
+                hplName6.setText(nameList.get(5));
+            }
+            if (nameList.size() < 7){
+                hplName7.setText("no data");
+            } else {
+                hplName7.setText(nameList.get(6));
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
 
@@ -170,30 +176,30 @@ public class DriverFormController {
         Image image6 = new Image(String.valueOf(this.getClass().getResource("/driver/manager1.jpg")));
         Image image7 = new Image(String.valueOf(this.getClass().getResource("/driver/driver2.jpg")));
         Image image8 = new Image(String.valueOf(this.getClass().getResource("/driver/dispatcher.jpeg")));
-        double bgX = lblDriver1.getScaleX();
-        double bgY = lblDriver1.getScaleY();
-       BackgroundImage bgImage = new BackgroundImage(
-               image,
-               BackgroundRepeat.REPEAT,
-               BackgroundRepeat.REPEAT,
-               BackgroundPosition.CENTER,
-               new BackgroundSize(bgX,bgY,true,true,true,true)
-               );
-        ImageIcon imageIcon = new ImageIcon(String.valueOf(image1));
-        lblDriver1.setBackground(new Background(bgImage));
+
+//       BackgroundImage bgImage = new BackgroundImage(
+//               image,
+//               BackgroundRepeat.REPEAT,
+//               BackgroundRepeat.REPEAT,
+//               BackgroundPosition.CENTER,
+//               new BackgroundSize(bgX,bgY,true,true,true,true)
+//               );
+//        ImageIcon imageIcon = new ImageIcon(String.valueOf(image1));
+//        lblDriver1.setBackground(new Background(bgImage));
 
 
 
-//       dp2.setFill(new ImagePattern(image2));
-//       dp3.setFill(new ImagePattern(image3));
-//       dp4.setFill(new ImagePattern(image4));
-//       dp5.setFill(new ImagePattern(image5));
-//       dp6.setFill(new ImagePattern(image6));
-//       dp7.setFill(new ImagePattern(image7));
-//       dp8.setFill(new ImagePattern(image8));
+       profilePicture1.setFill(new ImagePattern(image2));
+       profilePicture2.setFill(new ImagePattern(image3));
+       profilePicture3.setFill(new ImagePattern(image4));
+       profilePicture4.setFill(new ImagePattern(image5));
+       profilePicture5.setFill(new ImagePattern(image6));
+       profilePicture6.setFill(new ImagePattern(image7));
+       profilePicture7.setFill(new ImagePattern(image8));
     }
 
     public void btnClearOnAction(ActionEvent event) {
+
     }
 
 
@@ -227,10 +233,13 @@ public class DriverFormController {
         this.node.getChildren().add(pane);
     }
 
-    public void btnAlertOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/alertForm.fxml"));
-        this.rootNode.getChildren().clear();
-        this.rootNode.getChildren().add(pane);
+    public void btnAlertOnAction(ActionEvent actionEvent) throws  SQLException, JRException {
+        JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/report/driverDetail.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        Map<String,Object> data = new HashMap<>();
+        data.put("Date" ,lblDatePicker.getText());
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, data, Dbconnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasperPrint,false);
     }
 
     public void sendParent(BorderPane parent) {

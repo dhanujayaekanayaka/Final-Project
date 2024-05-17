@@ -21,14 +21,21 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import lk.ijse.finalProject.DB.Dbconnection;
 import lk.ijse.finalProject.model.Vehicle;
 import lk.ijse.finalProject.model.tm.VehicleTm;
 import lk.ijse.finalProject.repository.DriverRepo;
 import lk.ijse.finalProject.repository.VehicleRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -226,13 +233,13 @@ public class VehicleFormController {
         Image image7 = new Image(String.valueOf(this.getClass().getResource("/truck/daf.jpg")));
         Image image8 = new Image(String.valueOf(this.getClass().getResource("/truck/images.jpeg")));
 
-//        vp1.setFill(new ImagePattern(image1));
-//        vp2.setFill(new ImagePattern(image2));
-//        vp3.setFill(new ImagePattern(image3));
-//        vp4.setFill(new ImagePattern(image4));
-//        vp5.setFill(new ImagePattern(image5));
-//        vp6.setFill(new ImagePattern(image6));
-//        vp7.setFill(new ImagePattern(image7));
+        vp1.setFill(new ImagePattern(image1));
+        vp2.setFill(new ImagePattern(image2));
+        vp3.setFill(new ImagePattern(image3));
+        vp4.setFill(new ImagePattern(image4));
+        vp5.setFill(new ImagePattern(image5));
+        vp6.setFill(new ImagePattern(image6));
+        vp7.setFill(new ImagePattern(image7));
 //        vp8.setFill(new ImagePattern(image8));
     }
     public void btnTipsOnAction(ActionEvent actionEvent) throws IOException {
@@ -257,10 +264,14 @@ public class VehicleFormController {
 
     }
 
-    public void btnAlertOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/view/alertForm.fxml"));
-        this.rootNode.getChildren().clear();
-        this.rootNode.getChildren().add(pane);
+    public void btnAlertOnAction(ActionEvent actionEvent) throws IOException, JRException, SQLException {
+        JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/report/VehicleDetail.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        Map<String,Object> data = new HashMap<>();
+        data.put("Date" ,lblDatePicker.getText());
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport, data, Dbconnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasperPrint,false);
     }
 
     public void comboIdOnAction(ActionEvent actionEvent) {

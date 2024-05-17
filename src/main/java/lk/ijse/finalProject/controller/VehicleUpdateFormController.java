@@ -8,11 +8,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import lk.ijse.finalProject.model.Vehicle;
 import lk.ijse.finalProject.repository.VehicleRepo;
+import lk.ijse.finalProject.util.Regex;
 
 import java.io.File;
 import java.net.URL;
@@ -113,17 +115,31 @@ public class VehicleUpdateFormController implements Initializable {
 
         Vehicle vehicle = new Vehicle(vehiId,model,vehicleNumber,chassis,engineNumber,color,yom,date,distance,rest);
         try {
-            boolean isUpdated = VehicleRepo.updateVehicle(vehicle);
-            if (isUpdated) {
-                clearFields();
-                new Alert(Alert.AlertType.CONFIRMATION, "Vehicle updated successfully").show();
-            }else {
-                new Alert(Alert.AlertType.ERROR, "Vehicle can't update").show();
+            if (isValided()) {
+                boolean isUpdated = VehicleRepo.updateVehicle(vehicle);
+                if (isUpdated) {
+                    clearFields();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Vehicle updated successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Vehicle can't update").show();
+                }
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
 
+    }
+
+    private boolean isValided() {
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtModel)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NUMBERPLATE,txtVehicleNumber)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtChassisNumber)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtRegDate)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtEngineNumber)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.YOM,txtYom)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtColor)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DISTANCE,txtCurrentMillage)) return false;
+        return true;
     }
 
     private void clearFields() {
@@ -152,6 +168,36 @@ public class VehicleUpdateFormController implements Initializable {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    }
+    public void modelKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtModel);
+    }
 
+    public void vehicleNumberKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NUMBERPLATE,txtVehicleNumber);
+    }
+
+    public void colorKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtColor);
+    }
+
+    public void yomKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.YOM,txtYom);
+    }
+
+    public void dateKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtRegDate);
+    }
+
+    public void distanceKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DISTANCE,txtCurrentMillage);
+    }
+
+    public void chassisNumberKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtChassisNumber);
+    }
+
+    public void engineNumberKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtEngineNumber);
     }
 }

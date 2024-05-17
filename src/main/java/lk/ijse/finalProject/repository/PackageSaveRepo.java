@@ -28,7 +28,7 @@ public class PackageSaveRepo {
                     if (isUpdated){
                         System.out.println("Invoke to statement4");
                         double currentDistance = VehicleToBeServiceRepo.getCurrentDistance(packageSave.getVehicleId());
-                        if (currentDistance >= 50){
+                        if (currentDistance >= 5000){
                             System.out.println("get current distance ?");
                             String title = "Vehicle Service Information";
                             String body = "Vehicle " + packageSave.getVehicleId() + ",Your service time has come";
@@ -39,14 +39,14 @@ public class PackageSaveRepo {
                             Mail mail = new Mail();
                             mail.setMail(email,title,body);
                             System.out.println("Send successfull");
-                        }if(currentDistance >=100){
+                        }if(currentDistance >=10000){
                             String title = "Tyre Replacement Information";
                             String body = "Vehicle " + packageSave.getVehicleId() + ",Your Tyre Replacement has come";
                             Driver dr = DriverRepo.getDetail(packageSave.getVehicleId());
                             String email = dr.getEmail();
                             Mail mail = new Mail();
                             mail.setMail(email,title,body);
-                        }if(currentDistance == 110){
+                        }if(currentDistance == 10100){
                             VehicleToBeServiceRepo.clearDistance(packageSave.getVehicleId());
                         }
                         System.out.println("Invoke to this");

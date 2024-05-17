@@ -105,12 +105,37 @@ public class ClientRepo {
     }
 
     public static List<String> getCompany() throws SQLException {
-        String sql = "SELECT Company_name FROM Client ORDER BY client_company_id DESC LIMIT 5";
+        String sql = "SELECT company_name FROM Client ORDER BY client_company_id DESC LIMIT 5";
         PreparedStatement pstm = Dbconnection.
                 getInstance().getConnection().prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
         List<String> companyList = new ArrayList<>();
         if (resultSet.next()){
+            String companyName = resultSet.getString("company_name");
+            companyList.add(companyName);
+        }
+        return companyList;
+    }
+
+    public static List<String> getNumber() throws SQLException {
+        String sql = "SELECT contact_number FROM Client";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> numberList = new ArrayList<>();
+        while (resultSet.next()){
+            String contactNumber = resultSet.getString("contact_number");
+            numberList.add(contactNumber);
+        }
+        return numberList;
+    }
+
+    public static List<String> getAllCompany() throws SQLException {
+        String sql = "SELECT company_name FROM Client";
+        PreparedStatement pstm = Dbconnection.
+                getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> companyList = new ArrayList<>();
+        while (resultSet.next()){
             String companyName = resultSet.getString("company_name");
             companyList.add(companyName);
         }

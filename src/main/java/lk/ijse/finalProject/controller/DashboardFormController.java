@@ -50,20 +50,8 @@ public class DashboardFormController implements Initializable {
     public JFXButton btnLogout;
     public Circle profilePicture2;
     public Circle profilePicture3;
-    public Label lblEmployee1;
-    public Label lblEmployee2;
-    public Label lblEmployee3;
-    public Label blEmployee4;
-    public Label lblVehicle1;
-    public Label lblVehicle2;
-    public Label lblVehicle3;
-    public Label lblVehicle4;
     public BarChart<?,?>  barChart;
     public TextField txtSearchBar;
-    public Label lblPackage1;
-    public Label lblPackage2;
-    public Label lblPackage3;
-    public Label lblPackage4;
     public Hyperlink hplTrackNum1;
     public Label lblCompany1;
     public Hyperlink hplTrackNum2;
@@ -72,9 +60,6 @@ public class DashboardFormController implements Initializable {
     public Label lblCompany3;
     public Hyperlink hplTrackNum4;
     public Label lblCompany4;
-    public Label lblCompanyProfile1;
-    public Label lblCompanyProfile2;
-    public Label lblCompanyProfile3;
     public Hyperlink hplCompany1;
     public Label lblAddress1;
     public Hyperlink hplCompany2;
@@ -93,10 +78,7 @@ public class DashboardFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Image image = new Image(getClass().getResourceAsStream("/driver/driver1.jpg"));
-        BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,new BackgroundSize(100,100,true,true,true,true));
-        Background background = new Background(backgroundImage);
-        lblEmployee1.setBackground(background);
+
         setUserName();
         setProfilePicture();
         setDate();

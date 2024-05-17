@@ -119,7 +119,7 @@
             </ImageView>
             <JFXComboBox fx:id="comboVehicleId" layoutX="34.0" layoutY="26.0" prefHeight="52.0" prefWidth="395.0" promptText="Vehicle ID" />
             <JFXComboBox fx:id="comboServiceType" layoutX="483.0" layoutY="27.0" prefHeight="52.0" prefWidth="395.0" promptText="service type" />
-            <TextField fx:id="txtDate" alignment="CENTER" layoutX="34.0" layoutY="255.0" onAction="#txtDateOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+            <TextField fx:id="txtDate" alignment="CENTER" layoutX="34.0" layoutY="255.0" onAction="#txtDateOnAction" onKeyReleased="#dateKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-border-radius: ; -fx-border-color: lightgray;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -130,7 +130,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="txtDescription" alignment="CENTER" layoutX="34.0" layoutY="147.0" onAction="#txtDescriptionOnAction" prefHeight="52.0" prefWidth="845.0" promptText="description" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+            <TextField fx:id="txtDescription" alignment="CENTER" layoutX="34.0" layoutY="147.0" onAction="#txtDescriptionOnAction" onKeyReleased="#descriptionKeyReleasedOnAction" prefHeight="52.0" prefWidth="845.0" promptText="description" style="-fx-border-radius: ; -fx-border-color: lightgray;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -156,7 +156,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="txtAmount" alignment="CENTER" layoutX="34.0" layoutY="355.0" onAction="#txtTypeOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+            <TextField fx:id="txtAmount" alignment="CENTER" layoutX="34.0" layoutY="355.0" onAction="#txtTypeOnAction" onKeyReleased="#amountKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-border-radius: ; -fx-border-color: lightgray;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -186,7 +186,7 @@
                         <Image url="@../background/cartoon-color-characters-people-and-car-service-repair-concept-vector.jpg" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="txtCenter" alignment="CENTER" layoutX="24.0" layoutY="165.0" onAction="#txtCenterOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Auto-Miraj" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                  <TextField fx:id="txtCenter" alignment="CENTER" layoutX="24.0" layoutY="165.0" onAction="#txtCenterOnAction" onKeyReleased="#centersKeyReleasedAction" prefHeight="52.0" prefWidth="395.0" promptText="Auto-Miraj" style="-fx-border-radius: ; -fx-border-color: lightgray;">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -213,7 +213,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <TextField fx:id="txtPhone" alignment="CENTER" layoutX="24.0" layoutY="265.0" onAction="#txtPhoneOnAction" prefHeight="52.0" prefWidth="395.0" promptText="091-XXXXXXX" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                  <TextField fx:id="txtPhone" alignment="CENTER" layoutX="24.0" layoutY="265.0" onAction="#txtPhoneOnAction" onKeyReleased="#phoneOnKeyReleasedAction" prefHeight="52.0" prefWidth="395.0" promptText="091-XXXXXXX" style="-fx-border-radius: ; -fx-border-color: lightgray;">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -225,7 +225,7 @@
                      </font>
                   </Text>
                   <Pane layoutX="503.0" layoutY="256.0" prefHeight="25.0" prefWidth="41.0" style="-fx-background-color: white;" />
-                  <TextField fx:id="txtLocation" alignment="CENTER" layoutX="474.0" layoutY="165.0" onAction="#txtLocationOnAction" prefHeight="52.0" prefWidth="395.0" promptText="Colombo" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                  <TextField fx:id="txtLocation" alignment="CENTER" layoutX="474.0" layoutY="165.0" onAction="#txtLocationOnAction" onKeyReleased="#locationOnKeyReleasedAction" prefHeight="52.0" prefWidth="395.0" promptText="Colombo" style="-fx-border-radius: ; -fx-border-color: lightgray;">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -236,7 +236,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="txtEmail" alignment="CENTER" layoutX="474.0" layoutY="265.0" onAction="#txtEmailOnAction" prefHeight="52.0" prefWidth="395.0" promptText="aoutomiraj@gmail.com" style="-fx-border-radius: ; -fx-border-color: lightgray;">
+                  <TextField fx:id="txtEmail" alignment="CENTER" layoutX="474.0" layoutY="265.0" onAction="#txtEmailOnAction" onKeyReleased="#emailOnKeyReleasedAction" prefHeight="52.0" prefWidth="395.0" promptText="aoutomiraj@gmail.com" style="-fx-border-radius: ; -fx-border-color: lightgray;">
                      <font>
                         <Font size="15.0" />
                      </font>

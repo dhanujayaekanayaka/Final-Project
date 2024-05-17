@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
@@ -17,6 +18,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import lk.ijse.finalProject.repository.DriverRepo;
 import lk.ijse.finalProject.repository.VehicleRepo;
+import lk.ijse.finalProject.util.Regex;
 
 import javax.swing.*;
 import java.io.File;
@@ -73,23 +75,36 @@ public class DriverAddFormController implements Initializable {
             String phone = txtPhone.getText();
             String email = txtEmail.getText();
             String id = comboId.getValue();
-
             try {
-                String currentDriverId = DriverRepo.getCurrentDriverId();
-                String driverId = DriverRepo.generateDriverId(currentDriverId);
-                boolean isSaved = DriverRepo.saveDriver(driverId, firstName, lastName, address, nic, dob, id, phone, email,rest);
-                if (isSaved){
-                    clearFields();
-                    setCombo();
-                    newPane.setVisible(true);
-                    oldPane.setOpacity(0.32);
-                    new Alert(Alert.AlertType.CONFIRMATION,"Driver saved SuccessFully").show();
-                } else {
-                    new Alert(Alert.AlertType.ERROR,"Driver can't save").show();
+                if (isValided()) {
+                    String currentDriverId = DriverRepo.getCurrentDriverId();
+                    String driverId = DriverRepo.generateDriverId(currentDriverId);
+                    boolean isSaved = DriverRepo.saveDriver(driverId, firstName, lastName, address, nic, dob, id, phone, email, rest);
+                    if (isSaved) {
+                        clearFields();
+                        setCombo();
+                        newPane.setVisible(true);
+                        oldPane.setOpacity(0.32);
+                        new Alert(Alert.AlertType.CONFIRMATION, "Driver saved SuccessFully").show();
+                    } else {
+                        new Alert(Alert.AlertType.ERROR, "Driver can't save").show();
+                    }
                 }
+
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             }
+    }
+
+    private boolean isValided() {
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtFirstName)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtLastName)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtAddress)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtDob)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.EMAIL,txtEmail)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PHONE,txtPhone)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtNic)) return false;
+        return true;
     }
 
     private void clearFields() {
@@ -165,5 +180,33 @@ public class DriverAddFormController implements Initializable {
         driverProfile.setFill(new ImagePattern(image));
 
 
+    }
+
+    public void firstNameKeyReleaseOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtFirstName);
+    }
+
+    public void lastNameKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtLastName);
+    }
+
+    public void dobKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtDob);
+    }
+
+    public void nicKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtNic);
+    }
+
+    public void phoneKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PHONE,txtPhone);
+    }
+
+    public void emailKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.EMAIL,txtEmail);
+    }
+
+    public void addressKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtAddress);
     }
 }

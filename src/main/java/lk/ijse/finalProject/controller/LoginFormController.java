@@ -125,10 +125,10 @@ public class LoginFormController {
     }
 
     public void txtPasswordKeyReleasedOnAction(KeyEvent keyEvent) {
-        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PASSWORD,txtPassword);
+       // Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PASSWORD,txtPassword);
     }
 
     public void txtUserNameKeyReleasedOnAction(KeyEvent keyEvent) {
-        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NAME,txtUsername);
+       // Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NAME,txtUsername);
     }
 }

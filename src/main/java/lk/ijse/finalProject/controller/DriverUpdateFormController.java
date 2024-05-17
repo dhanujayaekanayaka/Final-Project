@@ -9,12 +9,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import lk.ijse.finalProject.model.Driver;
 import lk.ijse.finalProject.repository.DriverRepo;
+import lk.ijse.finalProject.util.Regex;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +38,7 @@ public class DriverUpdateFormController implements Initializable {
     public JFXComboBox<String> comboDriverId;
     public String absolutePath;
     public AnchorPane rootNode;
+    public Pane oldPane;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -75,17 +79,30 @@ public class DriverUpdateFormController implements Initializable {
         String email = txtEmail.getText();
         Driver driver = new Driver(id,firstName,lastName,address,dob,nic,tel,email,absolutePath);
         try {
-            boolean isUpdated = DriverRepo.updateDriver(driver);
-            if (isUpdated){
-                clearFields();
-                new Alert(Alert.AlertType.CONFIRMATION,"Driver Updated Successfully").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR,"Driver can't Update").show();
+            if (isVlided()) {
+                boolean isUpdated = DriverRepo.updateDriver(driver);
+                if (isUpdated) {
+                    clearFields();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Driver Updated Successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Driver can't Update").show();
+                }
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
 
+    }
+
+    private boolean isVlided() {
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtFirstName)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtLastName)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtAddress)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtDob)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.EMAIL,txtEmail)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PHONE,txtPhone)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtNic)) return false;
+        return true;
     }
 
     private void clearFields() {
@@ -154,5 +171,32 @@ public class DriverUpdateFormController implements Initializable {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    }
+    public void firstNameKeyReleaseOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtFirstName);
+    }
+
+    public void lastNameKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtLastName);
+    }
+
+    public void dobKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtDob);
+    }
+
+    public void nicKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtNic);
+    }
+
+    public void phoneKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.PHONE,txtPhone);
+    }
+
+    public void emailKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.EMAIL,txtEmail);
+    }
+
+    public void addressKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtAddress);
     }
 }

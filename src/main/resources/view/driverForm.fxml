@@ -89,7 +89,6 @@
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblDriver3" layoutX="33.0" layoutY="253.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
                   <Hyperlink fx:id="hplName3" layoutX="99.0" layoutY="260.0" onAction="#hplName3Onaction" text="Name">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -111,7 +110,6 @@
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblDriver4" layoutX="33.0" layoutY="363.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
                   <Hyperlink fx:id="hplName4" layoutX="99.0" layoutY="370.0" onAction="#hplName4OnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -133,7 +131,6 @@
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblDriver5" layoutX="33.0" layoutY="473.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
                   <Hyperlink fx:id="hplName5" layoutX="99.0" layoutY="480.0" onAction="#hplName5OnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -155,7 +152,6 @@
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblDriver6" layoutX="33.0" layoutY="583.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
                   <Hyperlink fx:id="hplName6" layoutX="99.0" layoutY="590.0" onAction="#hplName6OnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -177,7 +173,6 @@
                         <Image url="@../icon/icons8-back-64(2).png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblDriver7" layoutX="33.0" layoutY="693.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
                   <Hyperlink fx:id="hplName7" layoutX="99.0" layoutY="700.0" onAction="#hplName7OnAction" text="Name">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -193,8 +188,13 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblDriver1" layoutX="33.0" layoutY="33.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
-                  <Label fx:id="lblDriver2" layoutX="33.0" layoutY="143.0" prefHeight="66.0" prefWidth="66.0" style="-fx-background-radius: 33; -fx-border-radius: 33; -fx-border-color: black;" />
+                  <Circle fx:id="profilePicture1" fill="#ffffff00" layoutX="69.0" layoutY="63.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture2" fill="#ffffff00" layoutX="69.0" layoutY="173.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture3" fill="#ffffff00" layoutX="69.0" layoutY="283.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture4" fill="#ffffff00" layoutX="69.0" layoutY="393.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture5" fill="#ffffff00" layoutX="69.0" layoutY="503.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture6" fill="#ffffff00" layoutX="69.0" layoutY="613.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="profilePicture7" fill="#ffffff00" layoutX="69.0" layoutY="723.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
                <effect>
                   <DropShadow />
@@ -242,7 +242,7 @@
             <Image url="@../gift/icons8-alert.gif" />
          </image>
       </ImageView>
-      <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="1635.0" layoutY="42.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="profilePicture" fill="#ffffff00" layoutX="1625.0" layoutY="42.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
       <HBox layoutX="799.0" layoutY="21.0" prefHeight="35.0" prefWidth="315.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;">
          <children>
             <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">

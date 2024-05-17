@@ -47,6 +47,19 @@ public class Regex {
                 break;
             case EMAIL:
                 field = "^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$";
+                break;
+            case NIC:
+                field = "^\\d{11,12}[a-z]?$";
+                break;
+            case YOM:
+                field = "^\\d{4}$\n";
+                break;
+            case NUMBERPLATE:
+                field = "^[A-Z]{1,3}-\\d{1,4}$";
+                break;
+            case MIX:
+                field = "^[A-Z0-9]{17}$";
+
         }
         Pattern pattern = Pattern.compile(field);
         if (text != null){

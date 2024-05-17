@@ -32,31 +32,31 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="txtFirstName" alignment="CENTER" layoutX="182.0" layoutY="276.0" onAction="#txtFirstNameOnAction" prefHeight="52.0" prefWidth="395.0" promptText="sahan" style="-fx-background-radius: 25;">
+            <TextField fx:id="txtFirstName" alignment="CENTER" layoutX="182.0" layoutY="276.0" onAction="#txtFirstNameOnAction" onKeyReleased="#firstNameKeyReleaseOnAction" prefHeight="52.0" prefWidth="395.0" promptText="sahan" style="-fx-background-radius: 25;">
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <TextField fx:id="txtLastName" alignment="CENTER" layoutX="661.0" layoutY="276.0" onAction="#txtLastNameOnAction" prefHeight="52.0" prefWidth="395.0" promptText="dhanujaya" style="-fx-background-radius: 25;">
+            <TextField fx:id="txtLastName" alignment="CENTER" layoutX="661.0" layoutY="276.0" onAction="#txtLastNameOnAction" onKeyReleased="#lastNameKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="dhanujaya" style="-fx-background-radius: 25;">
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <TextField fx:id="txtDob" alignment="CENTER" layoutX="182.0" layoutY="475.0" onAction="#txtDobOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 25;">
+            <TextField fx:id="txtDob" alignment="CENTER" layoutX="182.0" layoutY="475.0" onAction="#txtDobOnAction" onKeyReleased="#dobKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="yyyy/mm/dd" style="-fx-background-radius: 25;">
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <TextField fx:id="txtNic" alignment="CENTER" layoutX="661.0" layoutY="475.0" onAction="#txtNicOnACtion" prefHeight="52.0" prefWidth="395.0" promptText="2003XXXXXXXX" style="-fx-background-radius: 25;">
+            <TextField fx:id="txtNic" alignment="CENTER" layoutX="661.0" layoutY="475.0" onAction="#txtNicOnACtion" onKeyReleased="#nicKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="2003XXXXXXXX" style="-fx-background-radius: 25;">
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <TextField fx:id="txtPhone" alignment="CENTER" layoutX="182.0" layoutY="575.0" onAction="#txtPhoneOnAction" prefHeight="52.0" prefWidth="395.0" promptText="07XXXXXXXX" style="-fx-background-radius: 25;">
+            <TextField fx:id="txtPhone" alignment="CENTER" layoutX="182.0" layoutY="575.0" onAction="#txtPhoneOnAction" onKeyReleased="#phoneKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="07XXXXXXXX" style="-fx-background-radius: 25;">
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <TextField fx:id="txtEmail" alignment="CENTER" layoutX="661.0" layoutY="575.0" onAction="#txtEmailOnAction" prefHeight="52.0" prefWidth="395.0" promptText="abc@gmail.com" style="-fx-background-radius: 25;">
+            <TextField fx:id="txtEmail" alignment="CENTER" layoutX="661.0" layoutY="575.0" onAction="#txtEmailOnAction" onKeyReleased="#emailKeyReleasedOnAction" prefHeight="52.0" prefWidth="395.0" promptText="abc@gmail.com" style="-fx-background-radius: 25;">
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <TextField fx:id="txtAddress" alignment="CENTER" layoutX="182.0" layoutY="376.0" onAction="#txtAddressOnAction" prefHeight="52.0" prefWidth="875.0" promptText="116/1,Grace Peris Road,Panadura" style="-fx-background-radius: 25;">
+            <TextField fx:id="txtAddress" alignment="CENTER" layoutX="182.0" layoutY="376.0" onAction="#txtAddressOnAction" onKeyReleased="#addressKeyReleasedOnAction" prefHeight="52.0" prefWidth="875.0" promptText="116/1,Grace Peris Road,Panadura" style="-fx-background-radius: 25;">
                <font>
                   <Font size="14.0" />
                </font></TextField>

@@ -197,12 +197,12 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <BarChart layoutX="1189.0" layoutY="627.0" prefHeight="377.0" prefWidth="476.0" style="-fx-border-color: lightgray;">
+            <BarChart fx:id="barChart1" layoutX="1189.0" layoutY="627.0" prefHeight="377.0" prefWidth="476.0" style="-fx-border-color: lightgray;">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
               <yAxis>
-                <NumberAxis fx:id="barChart" side="LEFT" />
+                <NumberAxis side="LEFT" />
               </yAxis>
             </BarChart>
          </children>

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -15,6 +16,7 @@ import lk.ijse.finalProject.model.VehicleToBeService;
 import lk.ijse.finalProject.repository.ServiseScheduleRepo;
 import lk.ijse.finalProject.repository.VehicleRepo;
 import lk.ijse.finalProject.repository.VehicleSaveRepo;
+import lk.ijse.finalProject.util.Regex;
 
 import java.io.File;
 import java.io.IOException;
@@ -79,16 +81,30 @@ public class VehicleAddFormController {
             VehicleToBeService vehicleService = new VehicleToBeService(vehicleServiceId,availableId,"Vehicle Service",0.0);
             VehicleToBeService tyreReplacement = new VehicleToBeService(tyreReplacementId,availableId,"Tyre Replacement",0.0);
             VehicleSave vs = new VehicleSave(vehicle,vehicleService,tyreReplacement);
-            boolean isSaved = VehicleSaveRepo.saveVehicle(vs);
-            if (isSaved){
-                clearFields();
-                new Alert(Alert.AlertType.CONFIRMATION,"Vehicle saved successfully").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR,"Vehicle can't save").show();
+            if (isValided()) {
+                boolean isSaved = VehicleSaveRepo.saveVehicle(vs);
+                if (isSaved) {
+                    clearFields();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Vehicle saved successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Vehicle can't save").show();
+                }
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    }
+
+    private boolean isValided() {
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtModel)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NUMBERPLATE,txtVehicleNumber)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtChassisNumber)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtRegDate)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtEngineNumber)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.YOM,txtYom)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtColor)) return false;
+        if (!Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DISTANCE,txtCurrentMillage)) return false;
+        return true;
     }
 
     public void txtModelOnAction(ActionEvent actionEvent) {
@@ -141,5 +157,37 @@ public class VehicleAddFormController {
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
 
+    }
+
+    public void modelKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtModel);
+    }
+
+    public void vehicleNumberKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.NUMBERPLATE,txtVehicleNumber);
+    }
+
+    public void colorKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.WORD,txtColor);
+    }
+
+    public void yomKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.YOM,txtYom);
+    }
+
+    public void dateKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DATE,txtRegDate);
+    }
+
+    public void distanceKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.DISTANCE,txtCurrentMillage);
+    }
+
+    public void chassisNumberKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtChassisNumber);
+    }
+
+    public void engineNumberKeyReleasedOnAction(KeyEvent keyEvent) {
+        Regex.setTextFieldColor(lk.ijse.finalProject.util.TextField.MIX,txtEngineNumber);
     }
 }
